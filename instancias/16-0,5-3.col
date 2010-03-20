@@ -1,0 +1,121 @@
+c Grafo creado por el generador de grafos aleatorios
+c en formato del desafío DIMACS de Fernando Torre.
+c Grafo generado con densidad 0.500000
+
+p edge 16 67
+
+n    1 30
+n    2 -35
+n    3 -78
+n    4  1
+n    5 -54
+n    6 -41
+n    7 83
+n    8 10
+n    9 32
+n   10 -76
+n   11 -1
+n   12 -23
+n   13  0
+n   14 58
+n   15  1
+n   16 -23
+
+c Aristas que parten del vértice    1
+e    1    4
+e    1    5
+e    1    7
+e    1   10
+e    1   12
+e    1   13
+e    1   16
+
+c Aristas que parten del vértice    2
+e    2    4
+e    2    5
+e    2    6
+e    2   10
+e    2   11
+e    2   12
+e    2   14
+
+c Aristas que parten del vértice    3
+e    3    6
+e    3    7
+e    3   10
+e    3   11
+e    3   12
+e    3   14
+e    3   15
+e    3   16
+
+c Aristas que parten del vértice    4
+e    4   11
+e    4   13
+e    4   14
+e    4   15
+
+c Aristas que parten del vértice    5
+e    5    5
+e    5    6
+e    5    8
+e    5   10
+e    5   11
+e    5   12
+e    5   14
+e    5   15
+
+c Aristas que parten del vértice    6
+e    6   10
+e    6   12
+e    6   14
+e    6   15
+
+c Aristas que parten del vértice    7
+e    7    8
+e    7    9
+e    7   11
+e    7   12
+e    7   13
+e    7   15
+e    7   16
+
+c Aristas que parten del vértice    8
+e    8    8
+e    8   10
+e    8   11
+e    8   12
+e    8   13
+e    8   15
+e    8   16
+
+c Aristas que parten del vértice    9
+e    9   14
+e    9   15
+e    9   16
+
+c Aristas que parten del vértice   10
+e   10   12
+e   10   13
+e   10   15
+
+c Aristas que parten del vértice   11
+e   11   12
+e   11   14
+
+c Aristas que parten del vértice   12
+e   12   14
+e   12   15
+e   12   16
+
+c Aristas que parten del vértice   13
+e   13   13
+e   13   14
+e   13   15
+
+c Aristas que parten del vértice   14
+e   14   15
+
+c Aristas que parten del vértice   15
+
+c Aristas que parten del vértice   16

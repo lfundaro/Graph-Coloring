@@ -148,15 +148,11 @@ void update_saturation(int vertex, int new_color,int old_color,Graph graph[],int
 //Funcion recursiva que libera una lista enlazada
 //simple con apuntadores a arreglos.
 void del_array_list(linked_array_list* al){
-  linked_array_list* next = al->next;
+  if(al->next!=NULL){
+    del_array_list(al->next);
+  }
   free(al->array);
   free(al);
-  del_array_list(next);
-  /* if(al->next!=NULL){ */
-  /*   del_array_list(al->next); */
-  /* } */
-  /* free(al->array); */
-  /* free(al); */
 }
 
 
@@ -324,7 +320,6 @@ Graph* interchange(Graph graph[],int* satur_degree,int vertex, int high_color, i
 
   free(color_set);
   free(colors);
-  free(neighbours);
   free(next_swap);
   }
 }

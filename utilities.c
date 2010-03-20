@@ -71,6 +71,12 @@ void alarmHandler() {
   exit(0);
 }
 
+void init_tmp_graph(linked_list ** tmp_graph, int vertex_num) {
+  int i;
+  for(i = 0; i < vertex_num; i++) 
+    tmp_graph[i] = NULL;
+}
+
 
 
 

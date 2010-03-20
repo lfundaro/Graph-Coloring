@@ -49,4 +49,10 @@ void alarmHandler();
 /********************************************************/
 void free_tmp_graph(int, struct linked_list **);
 
+
+/**************************************************/
+/* Inicializa los apuntadores del grafo temporal. */
+/**************************************************/
+void init_tmp_graph(linked_list **, int);
+
 #endif

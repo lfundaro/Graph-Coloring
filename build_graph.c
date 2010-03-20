@@ -40,6 +40,7 @@ Graph * create_graph(int vertex_num) {
   
 struct linked_list ** fill_tmp_graph(int vertex_num) {
   linked_list ** tmp_graph = (linked_list **) malloc(sizeof(linked_list *) * vertex_num);
+  init_tmp_graph(tmp_graph, vertex_num);
   regex_t * __restrict compiled_edge = (regex_t *) malloc(sizeof (regex_t));
   (void) regcomp(compiled_edge,"^e (.) (.)", REG_EXTENDED);   // Compilacion de RegEx para vertices  
   char * line = NULL;
@@ -80,14 +81,14 @@ void fill_graph(int vertex_num, struct linked_list ** tmp_graph, Graph * graph) 
   linked_list * aux;
   int len;
   for(i = 0; i < vertex_num; i++) {
-    len = list_length(*tmp_graph[i]);
+    len = list_length(tmp_graph[i]);
     graph[i].adj_size = len;
-    graph->adjacents = (int *) malloc(sizeof(int) * len);
+    graph[i].adjacents = (int *) malloc(sizeof(int) * len);
     aux = tmp_graph[i];
     for(j = 0; j < len; j++) {
-        graph->adjacents[j] = aux->vertex;
+        graph[i].adjacents[j] = aux->vertex;
         aux = aux->next;
     }
   }
-  free_tmp_graph(tmp_graph);
+  free_tmp_graph(vertex_num, tmp_graph);
 }
