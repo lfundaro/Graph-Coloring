@@ -40,7 +40,7 @@ pair dsatur(Graph graph[], tuple deg_vert[], int vertex_num, int start_point) {
   lower_bound++;
   num_colored++;
   int * members = (int *) malloc(sizeof(int) * vertex_num);
-  graph_init(members, vertex_num);
+  initialize(members, vertex_num);
   members[v_i] = 1;
   // El grado de saturación de un vértice coloreado ya no nos 
   // interesa, por lo tanto lo ponemos en -1
@@ -149,23 +149,23 @@ int repeated(int max, int * satur_degree, int vertex_num, int found) {
 } 
 
 // Actualiza los grados de saturación de colores adyacentes
-void update_satur(struct Graph * graph, int * satur_degree, int v_i, int color) {
+void update_satur(Graph * graph, int * satur_degree, int v_i, int color) {
   // Buscar los adyacentes a v_i
-  linked_list * forward = graph[v_i].pt;
-  while (forward != NULL) {
-    // Si el vértice ya fue coloreado entonces no actualizo 
-    // su grado de saturación
-    if (satur_degree[forward->vertex] != -1) {
+  // Si el vértice ya fue coloreado entonces no actualizo 
+  // su grado de saturación
+  int i;
+  int * adjacents = graph[v_i].adjacents;
+  for(i = 0; i < graph[v_i].adj_size; i++) {
+    if (satur_degree[adjacents[i]] != -1) {
       // Quiero saber si el vértice adyacente a v_i tiene en su 
       // arreglo de colores adyacentes el color "color".
-      if (graph[forward->vertex].color_around[color] == 0) {
-        satur_degree[forward->vertex] += 1;
-      }
-      graph[forward->vertex].color_around[color]++;
+      if (graph[adjacents[i]].color_around[color] == 0) 
+        satur_degree[adjacents[i]] += 1;
+      graph[adjacents[i]].color_around[color]++;
     }
-    forward = forward->next;  
   }
-} 
+}
+
 
 // Devuelve el próximo vértice de grado mayor e incrementa
 // el apuntador base al próximo elemento.
@@ -200,29 +200,28 @@ int leastp_color(struct Graph * graph,int v_i,int vertex_num) {
 //Función que descolorea un vértice para detectar 
 //más fácilmente una clique máxima
 void uncolor(struct Graph * graph, int v_i, int color) {
-  linked_list * aux;
-  aux = graph[v_i].pt;
-  while(aux != NULL) {
-    graph[aux->vertex].color_around[color] = 0;
-    aux = aux->next;
+  int * adjacents = graph[v_i].adjacents;
+  int i;
+  for(i = 0; i < graph[v_i].adj_size; i++) {
+    graph[adjacents[i]].color_around[color] = 0;
   }
 }
 
 int makes_clique(struct Graph * graph, int v_i, int * members, int vertex_num) {
   int i;
-  linked_list * aux;
+  int j;
   int is_there = 0;
   int decision = 1;
+  int * adjacents;
   for(i = 0; i < vertex_num; i++) {
     is_there = 0;
     if (members[i] == 1) {
-      aux = graph[v_i].pt;
-      while (aux != NULL) {
-        if (aux->vertex == i) {
+      adjacents = graph[v_i].adjacents;
+      for(j = 0; j < graph[v_i].adj_size; j++) {
+        if (adjacents[j] == i) {
           is_there = 1;
           break;
         }
-        aux = aux->next;
       }
       decision = decision & is_there;
     }
@@ -230,8 +229,8 @@ int makes_clique(struct Graph * graph, int v_i, int * members, int vertex_num) {
   return decision;
 }
 
-void check_interchange(int * last_color, int highest_color, int * used_colors, 
-                       Graph * graph, int num_colored, int * satur_degree, 
+void check_interchange(int * last_color, int highest_color, int * used_colors,
+                       Graph * graph, int num_colored, int * satur_degree,
                        int vertex_num, int v_i) {
   if (*last_color > highest_color)
     highest_color = *last_color;

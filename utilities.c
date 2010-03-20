@@ -11,6 +11,13 @@ int list_length(linked_list * list){
   return len;
 }
 
+void initialize(int* array,int N) {
+  int i;
+  for(i=0;i<N;i++) {
+    array[i]=0;
+  }
+}
+
 void graph_init(struct Graph * graph, int vertex_num) {
   int j;
   int k;
@@ -24,12 +31,14 @@ void graph_init(struct Graph * graph, int vertex_num) {
 //Función que libera de memoria la estructura del grafo
 void free_graph(struct Graph * graph, int vertex_num) {
   int i;
-  for(i = 0; i < vertex_num; i++) 
+  for(i = 0; i < vertex_num; i++) { 
     free(graph[i].color_around);
+    free(graph[i].adjacents);
+  }
   free(graph);
 }
 
-void free_tmp_graph(int vertex_num, struct linked_list * tmp_graph) {
+void free_tmp_graph(int vertex_num, struct linked_list ** tmp_graph) {
   int i;
   linked_list * back;
   linked_list * forward;

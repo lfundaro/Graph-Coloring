@@ -46,6 +46,7 @@ typedef struct Graph {
   int color;
   int * adjacents;
   int * color_around;
+  int adj_size;
 } Graph;
 
 /************************************************************/

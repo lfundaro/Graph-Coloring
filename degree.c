@@ -6,18 +6,9 @@
 
 void degree(Graph * graph, int vertex_num, tuple deg_vert[]) {
   int i;
-  int count = 0;
-  linked_list * aux;
   for(i = 0; i < vertex_num; i++) {
-    aux = (linked_list *) graph[i].pt; // Apunta al primer adyacente
-      while (aux != NULL) {
-        count++;
-        aux = aux->next;
-      }
-      // Se asigna una tuple vertice-grado al arreglo deg_vert
-      tuple new_tuple = { i, count };
+      tuple new_tuple = { i, graph[i].adj_size };
       deg_vert[i] = new_tuple;
-      count = 0;
   }
 }
 
