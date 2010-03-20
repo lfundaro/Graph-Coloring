@@ -1,3 +1,3 @@
-# include <stdli.h>
+# include <stdlib.h>
 
-int * twoOnN(int,int,int);
+int* twoOnN(int[],int[],int);

@@ -202,7 +202,7 @@ Graph* interchange(Graph graph[],int* satur_degree,int vertex, int high_color, i
   //Estructuras para determinar los colores y nodos adyacentes
   int* color_set = (int*)malloc((high_color+1) * sizeof (int));//Conjunto vectorial de colores adyacentes
   int* neighbours = graph[vertex].adjacents;//Vecinos del nodo para el cual se hara intercambio
-  int n_of_neightbours = graph[verters].adj_size;
+  int n_of_neighbours = graph[vertex].adj_size;
   int* colors;
   int n_of_colors;
 
@@ -227,10 +227,10 @@ Graph* interchange(Graph graph[],int* satur_degree,int vertex, int high_color, i
 
   //Recorro los vecinos
   i=0;
-  while (i < n_of_neightbours){
+  while (i < n_of_neighbours){
     //Si esta coloreado, marco el color en el arreglo vectorial
-    if (graph[neightbours[i]].color > -1){
-      color_set[graph[neightbours[i]].color]]=1;
+    if (graph[neighbours[i]].color > -1){
+      color_set[graph[neighbours[i]].color]=1;
     
     ++i;
   }
@@ -326,4 +326,5 @@ Graph* interchange(Graph graph[],int* satur_degree,int vertex, int high_color, i
   free(colors);
   free(neighbours);
   free(next_swap);
+  }
 }
