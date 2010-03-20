@@ -66,6 +66,6 @@ int makes_clique(Graph *, int, int *, int);
 /* cual devuelve el color más pequeño que se puede */
 /* utilizar.                                       */
 /***************************************************/
-void check_interchange(int *, int, int *, Graph *, int, int *, int, int);
+void check_interchange(int *, int *, int *, Graph *, int, int *, int, int);
 
 

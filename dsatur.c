@@ -10,7 +10,8 @@ pair dsatur(Graph graph[], tuple deg_vert[], int vertex_num, int start_point) {
   int used_colors[vertex_num]; 
   int upper_bound = 0; //Coloración lograda 
   int lower_bound = 0; //Clique máxima encontrada
-  int highest_color = 0;  
+  int * highest_color = (int *) malloc(sizeof(int));  
+  *highest_color = 0;
   int flag = 1;
   int i; 
 
@@ -118,6 +119,7 @@ pair dsatur(Graph graph[], tuple deg_vert[], int vertex_num, int start_point) {
     pair early_result;
     early_result.clique = lower_bound;
     early_result.members = members;
+    free(highest_color);
     return early_result;
   }
   
@@ -127,6 +129,7 @@ pair dsatur(Graph graph[], tuple deg_vert[], int vertex_num, int start_point) {
       upper_bound++;  //Se cuenta número de colores usados
   }
   free(members);
+  free(highest_color);
   free(satur_degree);
   pair result;
   result.clique = lower_bound;
@@ -229,17 +232,17 @@ int makes_clique(struct Graph * graph, int v_i, int * members, int vertex_num) {
   return decision;
 }
 
-void check_interchange(int * last_color, int highest_color, int * used_colors,
+void check_interchange(int * last_color, int * highest_color, int * used_colors,
                        Graph * graph, int num_colored, int * satur_degree,
                        int vertex_num, int v_i) {
-  if (*last_color > highest_color)
-    highest_color = *last_color;
+  if (*last_color > *highest_color)
+    *highest_color = *last_color;
   //Chequeos para intercambio
   if (used_colors[*last_color] == 0) {
     //Se quiere hacer intercambio a partir del 4to vértice
     //que se va a colorear
-    if (highest_color > 0 && num_colored > 2) {
-      interchange(graph, satur_degree, v_i, highest_color, vertex_num);
+    if (*highest_color > 0 && num_colored > 2) {
+      interchange(graph, satur_degree, v_i, *highest_color, vertex_num);
       *last_color = leastp_color(graph, v_i, vertex_num);
     }
   }
