@@ -24,8 +24,8 @@ twoOnN.o: twoOnN.c
 utilities.o: utilities.c
 	gcc -c -g utilities.c utilities.h
 
-#Forward.o: Forward.c
-#	gcc -c -g Forward.c Forward.h
+Forward.o: Forward.c
+	gcc -c -g Forward.c Forward.h
 
 clean:
 	rm -rf *.o *.out semantic.cache *.gch *~  main

@@ -46,9 +46,9 @@ struct linked_list ** fill_tmp_graph(int vertex_num) {
   char * line = NULL;
   size_t len = 0;
   ssize_t read;
-  int d1;  
-  int d2;
-  int dump;
+  int d1=0;  
+  int d2=0;
+  int dump=0;
   // Lectura del resto del archivo
   while ((read = getline(&line, &len, stdin)) != -1) {
     if (regexec(compiled_edge, line, 0, NULL, 0) == 0) { 

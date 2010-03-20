@@ -1,3 +1,4 @@
+# include "Forward.h"
 
 /*Funcion que calcula la cantidad de colores posibles
   para un vertice*/
@@ -38,7 +39,9 @@ int nxt_color(int* FC, int FC_size, int* color_use_record){
 }
 
 
-void color_ca_and_satur(Graph* graph, int* satur_degree, int v_i, int color){
+/*Actualiza el color around de los vertices cuando se colorea un vertice
+  y su grado de saturacion tambien*/
+void color_ca_and_satur(Graph * graph, int* satur_degree, int v_i, int color){
   // Buscar los adyacentes a v_i
   // Si el vértice ya fue coloreado entonces no actualizo 
   // su grado de saturación
@@ -58,6 +61,7 @@ void color_ca_and_satur(Graph* graph, int* satur_degree, int v_i, int color){
   }
 }
 
+
 /*Funcion que actualiza el color mas alto usado y el primer nodo con ese color
   cuando se pone un color*/
 /*Modifica el color mas alto usado y el primer nodo en tener ese color a traves
@@ -69,7 +73,10 @@ void color_maxcolor(int* max_color, int* st_max_color, int v_i, int v_i_color){
   }
 }
 
-int nxt_vertex(int* satur, int vertex_num, Graph graph, int* base){
+
+/*Devuelve cual es el proximo vertice a colorear basado en el 
+  grado de saturacion y en el grado de los vertices*/
+int nxt_vertex(int* satur, int vertex_num, Graph* graph, int* base){
   int i;
   int max_satur_degree;
   int nxt_vert;
