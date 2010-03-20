@@ -1,10 +1,7 @@
 all: main
 
-main: main.o degree.o dsatur.o interchange.o twoOnN.o build_graph.o utilities.o Forward.o
-	gcc main.o degree.o dsatur.o build_graph.o twoOnN.o interchange.o utilities.o Forward.o -o main
-
-degree.o: degree.c
-	gcc -c -g degree.c degree.h
+main: main.o dsatur.o interchange.o twoOnN.o build_graph.o utilities.o Forward.o
+	gcc main.o dsatur.o build_graph.o twoOnN.o interchange.o utilities.o Forward.o -o main
 
 main.o: main.c
 	gcc -c -g main.c main.h 

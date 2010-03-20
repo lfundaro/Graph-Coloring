@@ -77,6 +77,64 @@ void init_tmp_graph(linked_list ** tmp_graph, int vertex_num) {
     tmp_graph[i] = NULL;
 }
 
+void order_graph(int vertex_num, Graph * graph) {
+  // Apuntador a la base del arreglo de adyacencias
+  int * base;
+  // Número de elementos del arreglo a ordenar 
+  size_t nmemb;
+  size_t size = sizeof(int);
+  int i;
+  for(i = 0; i < vertex_num; i++) {
+    base = graph[i].adjacents;
+    nmemb = graph[i].adj_size;
+    qsort(base, nmemb, size, compare_vertices);
+  }
+}
+
+/***************************************************************/
+/* Función que compara vértices. Es usada como parámetro para  */
+/* las funciones bsearch y qsort (Binary Search y Quicksort    */
+/* respectivamente).                                           */
+/***************************************************************/ 
+int compare_vertices(const void * __a, const void * __b) {
+  int * a = (int *) __a;
+  int * b = (int *) __b;
+  if (*a < *b)
+    return -1;
+  if (*a > *b) 
+    return 1;
+  if (*a == *b)
+    return 0;
+}
+
+/* Funcion que compara dos elementos tuple segun los  */
+/* grados de los vértices. */
+
+int compare_tuples(const void * __a, const void * __b) { 
+  tuple * a = (tuple *) __a;
+  tuple * b = (tuple *) __b;
+  if (a->degree < b->degree) 
+    return 1;
+  if (a->degree > b->degree)
+    return -1;
+  if (a->degree == b->degree)
+    return 0;
+}
+
+/* Funcion que dado un arreglo de lista de adyacencias */
+/* y el número de vértices del grafo, retorna un arreglo */
+/* de tuplas vértice-grado */
+
+void degree(Graph * graph, int vertex_num, tuple deg_vert[]) {
+  int i;
+  for(i = 0; i < vertex_num; i++) {
+      tuple new_tuple = { i, graph[i].adj_size };
+      deg_vert[i] = new_tuple;
+  }
+}
+
+
+
 
 
 

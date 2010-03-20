@@ -1,5 +1,4 @@
 # include "structs.h"
-# include "degree.h"
 # include "utilities.h"
 # include <stdlib.h>
 # include <stdio.h>

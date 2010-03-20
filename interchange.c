@@ -33,14 +33,14 @@ void dfs(int neighbour, int* colors, Graph graph[],int* control_set){
 //es decir, que no pertenesca a una componente ya explorara.
 int get_nxt_neighbour(int last_neighbour,int* neighbours,int n_of_neighbours,linked_array_list* components){
 
-  int i=1;//i sera 1 mientras no consiga un proximo vecino
+  int i = 1;//i sera 1 mientras no consiga un proximo vecino
   linked_array_list* aux;//Recorrera las componentes
   int next_neighbour = ++last_neighbour;
 
-  while (i==1&&next_neighbour<n_of_neighbours){
+  while (i == 1 && next_neighbour < n_of_neighbours){
     aux = components;
     //Recorro las componentes
-    while (aux!=NULL){
+    while (aux != NULL){
       //Si el vecino actual pertenece a la componente,
       //hago i=2 y reviso el proximo vecino.
       if ((aux->array)[neighbours[next_neighbour]]==1) {
@@ -266,7 +266,7 @@ Graph* interchange(Graph graph[],int* satur_degree,int vertex, int high_color, i
       la lista de componentes que nunca se usara y que se liberara al final.*/
     components=(linked_array_list*)malloc(sizeof (linked_array_list));
     control_set=(int*)malloc(vertex_num * sizeof (int));
-    //initialize(control_set,vertex_num); //Pork esta se estaba haciendo??
+    initialize(control_set,vertex_num); //Pork esta se estaba haciendo??
     components->array=control_set;
     components->next=NULL;
 
@@ -275,19 +275,19 @@ Graph* interchange(Graph graph[],int* satur_degree,int vertex, int high_color, i
     while(j<n_of_neighbours){
       //Si el color del vecino coincide con uno de los pares
       if (graph[neighbours[j]].color==pair[0]||
-	  graph[neighbours[j]].color==pair[1]){
-
+          graph[neighbours[j]].color==pair[1]){
+        
 	//Creo una nueva componente al final de la lista
-	tail->next=(linked_array_list*)malloc(sizeof (linked_array_list));
-	tail=tail->next;
-	tail->color=graph[neighbours[j]].color;
-	control_set=(int*)malloc(vertex_num * sizeof (int));
-	initialize(control_set,vertex_num);
-	tail->array=control_set;
-	tail->next=NULL;
-
-	//Calculo los nodos alcanzables desde este vecino
-	dfs(neighbours[j],pair,graph,control_set);
+        tail->next=(linked_array_list*)malloc(sizeof (linked_array_list));
+        tail=tail->next;
+        tail->color=graph[neighbours[j]].color;
+        control_set=(int*)malloc(vertex_num * sizeof (int));
+        initialize(control_set,vertex_num);
+        tail->array=control_set;
+        tail->next=NULL;
+        
+        //Calculo los nodos alcanzables desde este vecino
+        dfs(neighbours[j],pair,graph,control_set);
       }
       //Calculo el proximo vecino que no he alcanzado
       j=get_nxt_neighbour(j,neighbours,n_of_neighbours,components);

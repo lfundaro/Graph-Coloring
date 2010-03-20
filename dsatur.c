@@ -27,7 +27,7 @@ pair dsatur(Graph graph[], tuple deg_vert[], int vertex_num, int start_point) {
   // Coloración del primer vértice
   if (start_point == -1) { //Se parte del vértice de grado mayor
     //Ordenamiento decreciente
-    qsort(base, nmemb, size, compare);
+    qsort(base, nmemb, size, compare_tuples);
     v_i = get_max_degree(base,graph,vertex_num);
   }
   else
@@ -78,6 +78,7 @@ pair dsatur(Graph graph[], tuple deg_vert[], int vertex_num, int start_point) {
       /* check_interchange(&last_color,highest_color,used_colors, */
       /*                   graph, num_colored, satur_degree,  */
       /*                   vertex_num, v_i); */
+
 
       //Se colorea finalmente el vértice
       graph[v_i].color = last_color;
