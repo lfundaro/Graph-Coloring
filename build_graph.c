@@ -19,6 +19,8 @@ int get_vertex_num() {
   }
   free(compiled_num);
   free(dump);
+  if (line != NULL) 
+    free(line);
   return vertex_num;
 }
 
@@ -48,7 +50,7 @@ struct linked_list ** fill_tmp_graph(int vertex_num) {
   ssize_t read;
   int d1;  
   int d2;
-  int dump;
+  char * dump = (char *) malloc(sizeof(char)*12);
   // Lectura del resto del archivo
   while ((read = getline(&line, &len, stdin)) != -1) {
     if (regexec(compiled_edge, line, 0, NULL, 0) == 0) { 
@@ -72,6 +74,7 @@ struct linked_list ** fill_tmp_graph(int vertex_num) {
     }
   }
   free(compiled_edge);
+  free(dump);
   return tmp_graph;
 }
 
