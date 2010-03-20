@@ -34,6 +34,7 @@ void free_graph(struct Graph * graph, int vertex_num) {
   for(i = 0; i < vertex_num; i++) { 
     free(graph[i].color_around);
     free(graph[i].adjacents);
+    free(graph[i].FC);
   }
   free(graph);
 }

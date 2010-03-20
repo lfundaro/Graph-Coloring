@@ -1,10 +1,16 @@
 all: main
 
-main: main.o dsatur.o interchange.o twoOnN.o build_graph.o utilities.o Forward.o
-	gcc main.o dsatur.o build_graph.o twoOnN.o interchange.o utilities.o Forward.o -o main
+main: main.o dsatur.o implicit_enum.o backwards.o interchange.o twoOnN.o build_graph.o utilities.o Forward.o
+	gcc main.o dsatur.o build_graph.o backwards.o implicit_enum.o twoOnN.o interchange.o utilities.o Forward.o -o main
 
 main.o: main.c
 	gcc -c -g main.c main.h 
+
+implicit_enum: implicit_enum.c
+	gcc -c -g implicit_enum.c implicit_enum.h
+
+backwards: backwards.c
+	gcc -c -g backwards.c backwards.h
 
 dsatur.o: dsatur.c
 	gcc -c -g dsatur.c dsatur.h

@@ -14,7 +14,7 @@ int main() {
 
   order_graph(vertex_num, graph);
 
-  //   Se prepara la estructura que contiene los vértices 
+  // Se prepara la estructura que contiene los vértices 
   // ordenados por orden decreciente de grados
   tuple * deg_vert = (tuple *) malloc(sizeof(tuple)*vertex_num);
   degree(graph, vertex_num, deg_vert);
@@ -35,29 +35,22 @@ int main() {
   // Se obtiene cota superior
   result = dsatur(graph, deg_vert, vertex_num, -1);
   int upper_bound = result.coloring;
-  printf("coloracion %d \n", upper_bound);
   // Se obtiene cota inferior corriendo
   // Brelaz+Interchange N veces
   int lower_bound = -1;
-  // Arreglo donde están los vértices
-  // que forman la clique máxima.
-  int * members;
 
-  /* int i; */
-  /* for(i = 0; i < vertex_num; i++) { */
-  /*   graph_init(graph, vertex_num); */
-  /*   result = dsatur(graph, deg_vert, vertex_num, i); */
-  /*   if (result.clique > lower_bound) { */
-  /*     lower_bound = result.clique; */
-  /*     members = result.members; */
-  /*     continue; */
-  /*   } */
-  /*   free(result.members); */
-  /* } */
+  // Arreglo que contiene los miembros de la máxima 
+  // clique encontrada por Brelaz+Interchange
+  int * members = determine_max_clique(graph, vertex_num,
+                                       deg_vert,&lower_bound);
+  
+  
+  printf("Resultados de Brelaz+interchange \n");
+  printf("Cota superior = %d \n", upper_bound);
+  printf("Cota inferior = %d \n", lower_bound);
 
-  /* printf("Resultados de Brelaz+interchange \n"); */
-  /* printf("Cota superior = %d \n", upper_bound); */
-  /* printf("Cota inferior = %d \n", lower_bound); */
+  init_FC(graph, vertex_num, upper_bound);
+
   /* if (lower_bound == upper_bound) */
   /*   printf("Número cromático = %d \n", upper_bound); */
   /* else { */
@@ -72,7 +65,7 @@ int main() {
 
   free_graph(graph, vertex_num);
   free(deg_vert);
-  //free(members);
+  free(members);
   return EXIT_SUCCESS;
 }
 

@@ -18,21 +18,6 @@ typedef struct linked_array_list {
 } linked_array_list;
 
 
-
-/**********************************************************/
-/* Estructura que se utiliza para construir temporalmente */
-/* la estructura de grafo. Esto es así porque el formato  */
-/* DIMACS no permite saber a priori cuántos vecinos       */
-/* tiene un nodo, sino hasta cuando se leen. Los vecinos  */
-/* se pondrán temporaralmente en una lista enlazada para  */
-/* luego ser pasados a la estructura Graph.               */
-/**********************************************************/ 
-/* typedef struct Temp { */
-/*   int vertex; */
-/*   struct linked_list * pt; */
-/* } Temp; */
-
-
 /**********************************************************************/
 /* Estructura que almacena el color de un vértice. El apuntador       */
 /* a adjacents permite saber cuáles son los vecinos de un vértice.    */
@@ -46,6 +31,7 @@ typedef struct Graph {
   int color;
   int * adjacents;
   int * color_around;
+  int * FC;
   int adj_size;
 } Graph;
 

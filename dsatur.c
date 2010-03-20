@@ -120,6 +120,7 @@ pair dsatur(Graph graph[], tuple deg_vert[], int vertex_num, int start_point) {
     pair early_result;
     early_result.clique = lower_bound;
     early_result.members = members;
+    free(satur_degree);
     free(highest_color);
     return early_result;
   }
@@ -248,4 +249,25 @@ void check_interchange(int * last_color, int * highest_color, int * used_colors,
       *last_color = leastp_color(graph, v_i, vertex_num);
     }
   }
+}
+
+/*****************************************/
+/* Corrida de Brelaz+Interchange N veces */
+/*****************************************/
+int * determine_max_clique(Graph * graph, int vertex_num,
+                           tuple * deg_vert, int * lower_bound) {
+  int i;
+  pair result;
+  int * members;
+  for(i = 0; i < vertex_num; i++) {
+    graph_init(graph, vertex_num);
+    result = dsatur(graph, deg_vert, vertex_num, i);
+    if (result.clique > *lower_bound) {
+      *lower_bound = result.clique;
+      members = result.members;
+      continue;
+    }
+    free(result.members);
+  }
+  return members;
 }

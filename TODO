@@ -1,0 +1,33 @@
+Implicit Enum:
+- Recibe parametros UB, LB de brelaz
+- Se tiene un arreglo tamaño del grafo con la coloracion parcial, 
+este arreglo escribe cuando se ha completado una colaracion. 
+- Tiene un arreglo que lleva la pupularidad de un color.
+
+Cambios estructura del grafo:
+- Agregar estructura FC e inicializarla.
+
+Backtracking: 
+- Cuando suba actualizo registro de popularidad, grados DSATUR, 
+base, color around.
+- Actualizo max color con ayuda de traza y tabla de popularidad.
+
+Labeling:
+- Usamos una lista enlazada insertando por head, un arreglo con q-1 colores, 
+uso la funcion max color y empiezo desde el vértice que tenga ese color
+a hacer el etiquetado. 
+
+Hacer el esqueleto de Implicit Enum.
+
+
+mapeo de variables compartidas
+
+traza -> trace (arreglo proporcinal a tam de vertices)
+maxcolor -> max_used_color
+1er vertice coloreado con max color -> first_max_color 
+r -> current_vertex
+satur -> satur_degree
+grafo -> graph 
+base -> base (apuntado a deg_vert)
+ties_num -> ties_num
+

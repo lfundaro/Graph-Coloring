@@ -68,3 +68,11 @@ int makes_clique(Graph *, int, int *, int);
 void check_interchange(int *, int *, int *, Graph *, int, int *, int, int);
 
 
+/**********************************************************/
+/* Algoritmo que corre Brelaz+Interchange N veces         */
+/* para determinar una cota inferior (clique máxima).     */
+/* Retorna un apuntador a un arreglo de enteros, el       */
+/* cual es precisamente los miembros de la clique máxima. */
+/**********************************************************/
+int * determine_max_clique(Graph *, int, tuple *, int *);
+
