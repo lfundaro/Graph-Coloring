@@ -1,7 +1,7 @@
 all: main
 
-main: main.o degree.o dsatur.o interchange.o twoOnN.o build_graph.o utilities.o 
-	gcc main.o degree.o dsatur.o build_graph.o twoOnN.o interchange.o utilities.o -o main
+main: main.o degree.o dsatur.o interchange.o twoOnN.o build_graph.o utilities.o Forward.o
+	gcc main.o degree.o dsatur.o build_graph.o twoOnN.o interchange.o utilities.o Forward.o -o main
 
 degree.o: degree.c
 	gcc -c -g degree.c degree.h
@@ -24,6 +24,8 @@ twoOnN.o: twoOnN.c
 utilities.o: utilities.c
 	gcc -c -g utilities.c utilities.h
 
+Forward.o: Forward.c
+	gcc -c -g Forward.c Forward.h
+
 clean:
 	rm -rf *.o *.out semantic.cache *.gch *~  main
-

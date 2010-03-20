@@ -83,7 +83,7 @@ int main() {
 
   free_graph(graph, vertex_num);
   free(deg_vert);
-  //  free(members);
+  //free(members);
   return EXIT_SUCCESS;
 }
 
