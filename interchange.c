@@ -35,7 +35,7 @@ int get_nxt_neighbour(int last_neighbour,int* neighbours,int n_of_neighbours,lin
 
   int i = 1;//i sera 1 mientras no consiga un proximo vecino
   linked_array_list* aux;//Recorrera las componentes
-  int next_neighbour = ++last_neighbour;
+  int next_neighbour = (last_neighbour+1);
 
   while (i == 1 && next_neighbour < n_of_neighbours){
     aux = components;
@@ -200,7 +200,7 @@ Graph* interchange(Graph graph[],int* satur_degree,int vertex, int high_color, i
   int* neighbours = graph[vertex].adjacents;//Vecinos del nodo para el cual se hara intercambio
   int n_of_neighbours = graph[vertex].adj_size;
   int* colors;
-  int n_of_colors;
+  int n_of_colors = 0;
 
   //Estructuras para el calculo de componentes
   linked_array_list* components;
@@ -227,15 +227,15 @@ Graph* interchange(Graph graph[],int* satur_degree,int vertex, int high_color, i
     //Si esta coloreado, marco el color en el arreglo vectorial
     if (graph[neighbours[i]].color > -1){
       color_set[graph[neighbours[i]].color]=1;
-    
-    ++i;
+    }
+    i++;
   }
   
   //Calculo del numero de colores distintos adyacentes
   for(i=0;i<high_color+1;i++){
     n_of_colors += color_set[i];
   }
-
+  
   //Guardo los colores adyacentes en un arreglo
   colors = (int*)malloc(n_of_colors * sizeof (int));
   j=0;
@@ -245,15 +245,15 @@ Graph* interchange(Graph graph[],int* satur_degree,int vertex, int high_color, i
       ++j;
     }
   }
-
+  
   //Inicializo la estructura necesaria para el calculo
   //de las combinaciones de colores
   next_swap[0]=0;
   next_swap[1]=2;
-
-
+  
+  
   /*CICLO PRINCIPAL*/
-
+  
   pair=(int*)twoOnN(colors,next_swap,n_of_colors);
   j=0; //j recorrera el arreglo de adyacentes neighbours[]
 
@@ -290,13 +290,14 @@ Graph* interchange(Graph graph[],int* satur_degree,int vertex, int high_color, i
         dfs(neighbours[j],pair,graph,control_set);
       }
       //Calculo el proximo vecino que no he alcanzado
-      j=get_nxt_neighbour(j,neighbours,n_of_neighbours,components);
+      j = (get_nxt_neighbour(j,neighbours,n_of_neighbours,components));
     }
     tail=components;
     components=components->next;
+    free(tail->array);
     free(tail);
 
-    //Prodedo si el intercambio me es util...
+    //Procedo si el intercambio me es util...
     if (check_subgraph(neighbours,n_of_neighbours,components)){
 
       //Hago intercambio para colorear con el menor color posible.
@@ -321,5 +322,5 @@ Graph* interchange(Graph graph[],int* satur_degree,int vertex, int high_color, i
   free(color_set);
   free(colors);
   free(next_swap);
-  }
 }
+

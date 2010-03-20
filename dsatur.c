@@ -65,9 +65,9 @@ pair dsatur(Graph graph[], tuple deg_vert[], int vertex_num, int start_point) {
       v_i = get_max_degree(base,graph,vertex_num);
       last_color = leastp_color(graph, v_i, vertex_num);
       //Hacer intercambio si es posible
-      /* check_interchange(&last_color,highest_color,used_colors, */
-      /*                   graph, num_colored, satur_degree,  */
-      /*                   vertex_num, v_i); */
+      check_interchange(&last_color,highest_color,used_colors,
+                        graph, num_colored, satur_degree,
+                        vertex_num, v_i);
       //Se colorea finalmente el vértice
       graph[v_i].color = last_color;
     }
@@ -75,9 +75,9 @@ pair dsatur(Graph graph[], tuple deg_vert[], int vertex_num, int start_point) {
       v_i = found;
       last_color = leastp_color(graph, v_i, vertex_num);
       //Hacer intercambio si es posible
-      /* check_interchange(&last_color,highest_color,used_colors, */
-      /*                   graph, num_colored, satur_degree,  */
-      /*                   vertex_num, v_i); */
+      check_interchange(&last_color,highest_color,used_colors,
+                        graph, num_colored, satur_degree,
+                        vertex_num, v_i);
 
 
       //Se colorea finalmente el vértice
