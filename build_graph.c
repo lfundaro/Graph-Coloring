@@ -26,7 +26,8 @@ Graph * create_graph(int vertex_num) {
   struct Graph * graph = (Graph *) malloc(sizeof(Graph) * vertex_num);
   int i;
   for (i = 0; i < vertex_num ; i++) {
-    graph[i].pt = NULL;
+    graph[i].adjacents = NULL;
+    graph[i].adj_size = 0;
     graph[i].color = -1; // Color inicial
     graph[i].color_around = (int *) malloc(sizeof(int)*vertex_num); 
     int j;
@@ -37,8 +38,8 @@ Graph * create_graph(int vertex_num) {
   return graph;
 }
   
-struct linked_list * fill_tmp_graph(int vertex_num) {
-  linked_list * tmp_graph = (linked_list *) malloc(sizeof(linked_list) * vertex_num);
+struct linked_list ** fill_tmp_graph(int vertex_num) {
+  linked_list ** tmp_graph = (linked_list **) malloc(sizeof(linked_list *) * vertex_num);
   regex_t * __restrict compiled_edge = (regex_t *) malloc(sizeof (regex_t));
   (void) regcomp(compiled_edge,"^e (.) (.)", REG_EXTENDED);   // Compilacion de RegEx para vertices  
   char * line = NULL;
@@ -73,17 +74,18 @@ struct linked_list * fill_tmp_graph(int vertex_num) {
   return tmp_graph;
 }
 
-void fill_graph(int vertex_num, struct linked_list * tmp_graph, Graph * graph) {
+void fill_graph(int vertex_num, struct linked_list ** tmp_graph, Graph * graph) {
   int i;
   int j;
   linked_list * aux;
   int len;
   for(i = 0; i < vertex_num; i++) {
-    len = list_length(tmp_graph[i]);
+    len = list_length(*tmp_graph[i]);
+    graph[i].adj_size = len;
     graph->adjacents = (int *) malloc(sizeof(int) * len);
     aux = tmp_graph[i];
     for(j = 0; j < len; j++) {
-        graph->adjacents[j] = aux.vertex;
+        graph->adjacents[j] = aux->vertex;
         aux = aux->next;
     }
   }

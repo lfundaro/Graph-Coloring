@@ -28,7 +28,7 @@ Graph * create_graph(int);
 /* utiliza expresiones regulares para detectar los lados en   */
 /* el archivo. Los bucles son ignorados.                      */
 /**************************************************************/
-struct linked_list * fill_tmp_graph(int);
+struct linked_list ** fill_tmp_graph(int);
 
 /****************************************************/
 /* Llena la matriz de adyacencias con los vértices  */
@@ -36,7 +36,7 @@ struct linked_list * fill_tmp_graph(int);
 /* para detectar los lados en el archivo.           */
 /* Los bucles son ignorados.                        */
 /****************************************************/
-void fill_graph(int, struct linked_list *, Graph *);
+void fill_graph(int, struct linked_list **, Graph *);
 
 
 

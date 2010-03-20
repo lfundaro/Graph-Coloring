@@ -1,13 +1,20 @@
 # ifndef UTILITIES
 # define UTILITIES
 
-#include "structs.h"
+# include "structs.h"
+# include <signal.h>
+# include <sys/time.h>
 
 
 /***********************************************************/
 /* Función que permite determinar la longitud de una lista */
 /***********************************************************/
 int list_length(linked_list *);
+
+/***********************************************/
+/* Funcion que inicializa un arreglo en ceros. */
+/***********************************************/
+void initialize(int*,int);
 
 /****************************************************************/
 /* Inicialización de la estructura de grafo. Pone todos         */
@@ -40,6 +47,6 @@ void alarmHandler();
 /* Función que libera toda la memoria ocupada           */
 /* por la lista enlazada que almacena el grafo temporal */
 /********************************************************/
-void free_tmp_graph(int, struct linked_list *) 
+void free_tmp_graph(int, struct linked_list **);
 
 #endif
