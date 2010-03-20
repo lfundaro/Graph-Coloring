@@ -4,7 +4,8 @@
 # include "structs.h"
 # include <signal.h>
 # include <sys/time.h>
-
+# include <stdlib.h>
+# include <stdlib.h>
 
 /***********************************************************/
 /* Función que permite determinar la longitud de una lista */
@@ -54,5 +55,27 @@ void free_tmp_graph(int, struct linked_list **);
 /* Inicializa los apuntadores del grafo temporal. */
 /**************************************************/
 void init_tmp_graph(linked_list **, int);
+
+/***********************************************************/
+/* Función de comparación que se utiliza para comparar si  */
+/* un vértice es mayor que otro. Esta función es pasada    */
+/* como parámetro a la función qsort (Quicksort).          */
+/***********************************************************/
+int compare_vertices(const void *, const void *);
+
+/*****************************************************/
+/* Funcion que compara dos elementos tuple segun los */
+/* grados de los vértices.                           */
+/*****************************************************/
+int compare_tuples(const void *, const void *);
+
+
+/*********************************************************/
+/* Funcion que dado un arreglo de lista de adyacencias   */
+/* y el número de vértices del grafo, retorna un arreglo */
+/* de tuplas vértice-grado                               */
+/*********************************************************/
+void degree(struct Graph *, int, struct tuple *);
+
 
 #endif

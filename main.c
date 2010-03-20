@@ -12,17 +12,19 @@ int main() {
 
   fill_graph(vertex_num, tmp_graph, graph);
 
-  /* int i; */
-  /* int j; */
-  /* int * k; */
-  /* for(i = 0; i < vertex_num; i++) { */
-  /*   printf("vértice %d \n",i+1); */
-  /*   printf("-------------\n"); */
-  /*   k = graph[i].adjacents; */
-  /*   for(j = 0; j < graph[i].adj_size; j++) */
-  /*     printf("%d \n", k[j]+1); */
-  /*   printf("-------------\n"); */
-  /* } */
+  order_graph(vertex_num, graph);
+
+  int i;
+  int j;
+  int * k;
+  for(i = 0; i < vertex_num; i++) {
+    printf("vértice %d \n",i+1);
+    printf("-------------\n");
+    k = graph[i].adjacents;
+    for(j = 0; j < graph[i].adj_size; j++)
+      printf("%d \n", k[j]+1);
+    printf("-------------\n");
+  }
 
 
   //   Se prepara la estructura que contiene los vértices 
