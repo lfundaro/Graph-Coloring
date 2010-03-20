@@ -76,9 +76,9 @@ void color_maxcolor(int* max_color, int* st_max_color, int v_i, int v_i_color){
 
 /*Devuelve cual es el proximo vertice a colorear basado en el 
   grado de saturacion y en el grado de los vertices*/
-int nxt_vertex(int* satur, int vertex_num, Graph* graph, int* base){
+int nxt_vertex(int * satur, int vertex_num, Graph* graph, int* base){
   int i;
-  int max_satur_degree;
+  int max_satur_degree = -1;
   int nxt_vert;
 
   for(i = 0; i < vertex_num; i++) {

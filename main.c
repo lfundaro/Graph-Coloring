@@ -14,19 +14,6 @@ int main() {
 
   order_graph(vertex_num, graph);
 
-  int i;
-  int j;
-  int * k;
-  for(i = 0; i < vertex_num; i++) {
-    printf("vértice %d \n",i+1);
-    printf("-------------\n");
-    k = graph[i].adjacents;
-    for(j = 0; j < graph[i].adj_size; j++)
-      printf("%d \n", k[j]+1);
-    printf("-------------\n");
-  }
-
-
   //   Se prepara la estructura que contiene los vértices 
   // ordenados por orden decreciente de grados
   tuple * deg_vert = (tuple *) malloc(sizeof(tuple)*vertex_num);
@@ -106,6 +93,7 @@ int main() {
 /*   } */
 
 
+
   /* int i; */
   /* int j; */
   /* int * k; */
@@ -113,8 +101,8 @@ int main() {
   /*   printf("vértice %d \n",i+1); */
   /*   printf("-------------\n"); */
   /*   k = graph[i].adjacents; */
-  /*   for(j = 0; j < graph[i].adj_size; j++)  */
-  /*     printf("%d \n", k[j]+1);       */
+  /*   for(j = 0; j < graph[i].adj_size; j++) */
+  /*     printf("%d \n", k[j]+1); */
   /*   printf("-------------\n"); */
   /* } */
 
