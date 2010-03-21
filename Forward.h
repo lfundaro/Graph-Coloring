@@ -28,7 +28,7 @@ void color_ca_and_satur(Graph *, int* , int , int );
 /*Modifica el color mas alto usado y el primer nodo en tener ese color a traves
   de efectos de borde, recibe apuntadores a ambos valores*/
 //int* max_color, int* st_max_color, int v_i, int v_i_color
-void color_maxcolor(int* , int* , int , int );
+void color_maxcolor(int , int , int , int );
 
 /*Devuelve cual es el proximo vertice a colorear basado en el 
   grado de saturacion y en el grado de los vertices*/
