@@ -4,9 +4,6 @@ Implicit Enum:
 este arreglo escribe cuando se ha completado una colaracion. 
 - Tiene un arreglo que lleva la pupularidad de un color.
 
-Cambios estructura del grafo:
-- Agregar estructura FC e inicializarla.
-
 Backtracking: 
 - Cuando suba actualizo registro de popularidad, grados DSATUR, 
 base, color around.
@@ -31,3 +28,11 @@ grafo -> graph
 base -> base (apuntado a deg_vert)
 ties_num -> ties_num
 
+
+Funciones a implementar segun pizarra
+- Labeling 
+- Forward 
+- Backward
+- Construccion FC
+- Actualizar color around (al subir y al bajar) 
+- Actualizar grado de saturacion al subir y al bajar
