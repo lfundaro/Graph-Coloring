@@ -38,5 +38,11 @@ struct linked_list ** fill_tmp_graph(int);
 /****************************************************/
 void fill_graph(int, struct linked_list **, Graph *);
 
+/****************************************************************/
+/* Funcion que inicializa la estructura FC que tiene cada       */
+/* vértice del grafo. Por defecto, el tamano de esta estructura */
+/* será igual a upper_bound.                                    */
+/****************************************************************/
+void init_FC(Graph *, int, int);
 
 

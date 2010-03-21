@@ -95,3 +95,13 @@ void fill_graph(int vertex_num, struct linked_list ** tmp_graph, Graph * graph) 
   }
   free_tmp_graph(vertex_num, tmp_graph);
 }
+
+void init_FC(Graph * graph, int vertex_num, int upper_bound) {
+  int i;
+  int j;
+  for(i = 0; i < vertex_num; i++) {
+    graph[i].FC = (int *) malloc(sizeof(int) * upper_bound);
+    for(j = 0; j < upper_bound; j++) 
+      graph[i].FC[j] = 1;
+    }
+}
