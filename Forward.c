@@ -165,7 +165,7 @@ void Forward(int* start_vert,
     
     //Busco el siguiente vertice a colorear y
     //calculo su FC
-    current_vert = nxt_vert(satur_degree,n_of_vertex,graph,deg_vert);
+    current_vert = nxt_vertex(satur_degree,n_of_vertex,graph,deg_vert);
     FC_size = mix((ub-1),max_color);
     FC = graph[current_vert].FC;
     genFC(FC,
