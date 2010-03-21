@@ -29,6 +29,7 @@ void dfs(int neighbour, int* colors, Graph graph[],int* control_set){
 
 
 /*Funcion que calcula el proximo vecino a partir del cual se aplicara DFS*/
+
 //--Se asegura de que el vecino no halla sido alcanzado por un DFS anterior,
 //es decir, que no pertenesca a una componente ya explorara.
 int get_nxt_neighbour(int last_neighbour,int* neighbours,int n_of_neighbours,linked_array_list* components){
