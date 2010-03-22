@@ -21,6 +21,9 @@ int number_of_FCs(int* FC, int FC_size){
   return n;
 }
 
+
+/*Funcion que revisa si ya se colorearon
+  todos los nodos del grafo*/
 int complete_coloring(Graph* g, int n_of_vertex){
   int cc = 1;
   int i;
@@ -31,6 +34,7 @@ int complete_coloring(Graph* g, int n_of_vertex){
 
   return cc;
 }
+
 
 /*Funcion que calcula el proximo color a utilizar*/
 /*Recibe el conjunto de colores posibles y el registro con el
@@ -105,17 +109,63 @@ int nxt_vertex(int * satur, int vertex_num, Graph* graph, int* deg_vert){
   return nxt_vert;
 }
 
-void genFC(int* FC, int FC_size, int* color_around){
-  int i;
 
+/*Regenera el FC de un vertice*/
+void genFC(int vert,
+	   int* FC,
+	   int FC_size,
+	   Graph* graph,
+	   int* satur_degree,
+	   int upper_bound){
+  int i;
+  int* color_around = graph[vert].color_around;
+  
   for(i=0; i < FC_size; ++i){
     if (color_around[i]>0)
       FC[i]=0;
     else
-      FC[i]=1;
+      FC[i]=lookahead(vert,i,upper_bound,graph,satur_degree);
   }
 }
 
+
+/*Procedimiento de lookahead para reducir el tamano del FC*/
+int lookahead(int vert,
+	      int color,
+	      int upper_bound,
+	      Graph* graph,
+	      int* satur_degree){
+  int i;
+  int adj_satur;
+
+  int adj_num = graph[vert].adj_size;
+  int* adjs = graph[vert].adjacents;
+
+  //Recorro los vecinos del nodo
+  for (i=0; i<adj_num; ++i){
+
+    //Tomo la saturacion del vecino
+    adj_satur = satur_degree[adjs[i]];
+
+    //Si no tiene un nodo adyacente de menor rango
+    //con este color, aumento su saturacion
+    if (graph[adjs[i]].color_around[color] == 0)
+      adj_satur += 1;
+
+    //Si su saturacion es igual la cota superior
+    //menos uno, su FC sera vacio, devuelvo falso.
+    if (adj_satur == (upper_bound-1))
+      return 0;
+  }
+  
+  //Si ningun vecino devolvio falso,
+  //devuelvo true.
+  return 1;
+}
+
+
+/*Calcula el nodo de menor rango con el color que se
+  se le pasa como primer argumento*/
 int new_first_max_color(int color, int* trace, Graph* graph){
   int i = 0;
 
@@ -126,6 +176,20 @@ int new_first_max_color(int color, int* trace, Graph* graph){
   return trace[i];
 }
 
+
+/*
+  Funcion que actualiza mejor coloracion alcanzada
+ */
+void update_coloring(Graph* g, int n_of_vertex, int* coloring){
+  int i;
+  
+  for (i=0; i<n_of_vertex; ++i){
+    coloring[i] = g[i].color;
+  }
+}
+
+
+/*Funcion Forward*/
 void Forward(int* start_vert,
 	     int* max_used_color,
 	     int* first_max_color,
@@ -134,7 +198,6 @@ void Forward(int* start_vert,
 	     int* satur_degree,
 	     int* popularity,
 	     int* deg_vert,
-	     int* ties_num,
 	     Graph* graph,
 	     int n_of_vertex,
 	     int* coloring){
@@ -143,7 +206,6 @@ void Forward(int* start_vert,
   int max_color = *max_used_color;
   int st_max_color = *first_max_color;
   int ub = *upper_bound;
-  int ties = *ties_num;
   
   int* FC = graph[current_vert].FC;
   int FC_size = mix((ub-1),max_color);
@@ -168,9 +230,12 @@ void Forward(int* start_vert,
     current_vert = nxt_vertex(satur_degree,n_of_vertex,graph,deg_vert);
     FC_size = mix((ub-1),max_color);
     FC = graph[current_vert].FC;
-    genFC(FC,
+    genFC(current_vert,
+	  FC,
 	  FC_size,
-	  graph[current_vert].color_around);
+	  graph,
+	  satur_degree,
+	  ub);
   }
   
   //Si tengo una coloracion completa, actualizo
@@ -180,6 +245,7 @@ void Forward(int* start_vert,
     *max_used_color = (max_color-1);
     *first_max_color = new_first_max_color( (max_color-1) ,trace,graph);
     *start_vert = st_max_color;
+    update_coloring(graph,n_of_vertex,coloring);
   }
   //Si tengo que hacer backtrack, lo hago desde donde estoy.
   //El upperbound no cambia ni el max_used_color
