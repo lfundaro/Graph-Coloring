@@ -6,10 +6,10 @@ main: main.o dsatur.o implicit_enum.o backwards.o interchange.o twoOnN.o build_g
 main.o: main.c
 	gcc -c -g main.c main.h 
 
-implicit_enum: implicit_enum.c
+implicit_enum.o: implicit_enum.c
 	gcc -c -g implicit_enum.c implicit_enum.h
 
-backwards: backwards.c
+backwards.o: backwards.c
 	gcc -c -g backwards.c backwards.h
 
 dsatur.o: dsatur.c

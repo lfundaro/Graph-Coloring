@@ -144,6 +144,16 @@ void degree(Graph * graph, int vertex_num, tuple deg_vert[]) {
   }
 }
 
+void free_tuple_list(tuple_list * list) {
+  tuple_list * back;
+  tuple_list * forward;
+  back = list;
+  forward = list;
+  while (forward != NULL) {
+    forward = back->next;
+    free(back);
+  }
+}
 
 
 

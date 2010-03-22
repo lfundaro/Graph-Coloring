@@ -18,6 +18,19 @@ typedef struct linked_array_list {
 } linked_array_list;
 
 
+/******************************************************/
+/* Tuplas enlazadas que se utilizan para el           */
+/* proceso de labelling. Posee un elemento llamado    */
+/* vertex que indica el vértice y el otro llamado     */
+/* position que indica dónde se consiguió el vértice  */
+/* en la traza.                                       */
+/******************************************************/
+typedef struct tuple_list {
+  int vertex;
+  int position;
+  struct tuple_list * next;
+} tuple_list;
+
 /**********************************************************************/
 /* Estructura que almacena el color de un vértice. El apuntador       */
 /* a adjacents permite saber cuáles son los vecinos de un vértice.    */

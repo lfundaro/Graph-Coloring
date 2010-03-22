@@ -8,6 +8,7 @@ Backtracking:
 - Cuando suba actualizo registro de popularidad, grados DSATUR, 
 base, color around.
 - Actualizo max color con ayuda de traza y tabla de popularidad.
+- COMENTAR LABELING BIEN !
 
 Labeling:
 - Usamos una lista enlazada insertando por head, un arreglo con q-1 colores, 
