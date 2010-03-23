@@ -1,70 +1,97 @@
 # include "implicit_enum.h"
+# include "Forward.h"
+# include "backwards.h"
+
+void color_clique(Graph* graph, 
+		  int* satur_degree, int* popularity,
+		  int* clique, int lower_bound){
+  int current_vert;
+  int color;
+  int i;
+
+  for (i=0; i<lower_bound; ++i){
+    color = i;
+    current_vert = clique[i]; 
+
+    graph[current_vert].color = color;    
+    
+    color_ca_and_satur(graph,satur_degree,current_vert,color);
+    popularity[color] += 1;
+  }
+}
 
 
-void implicit_enum(int upper_bound, int lower_bound,
+void implicit_enum(int * upper_bound, int lower_bound,
                    int * members, Graph * graph,
                    tuple * deg_vert, int vertex_num) {
+  int i;
   
+  //Inicialización de arreglo de grados de saturación
+  int * satur_degree = (int *) malloc(sizeof(int)*vertex_num);
+  for(i = 0; i < vertex_num; i++) 
+    satur_degree[i] = 0;
+
+  // Tabla de popularidad de un color
+  int * popularity = (int *) malloc(sizeof(int) * (*upper_bound));
+  for(i = 0; i < vertex_num; i++) 
+    popularity[i] = 0;
 
   // Se comienza por colorear la clique máxima encontrada
   // por Brelaz+Interchange
-
-  // IMPLEMENTAR FUNCION COLOR-CLIQUE
-
+  color_clique(graph,satur_degree,popularity,members,lower_bound);
 
   // Se aumenta la cota para hacer converger el algoritmo 
   // en caso de no encontrarse mejor coloracion que upper_bound
-  upper_bound += 1;
+  *upper_bound += 1;
 
   // Se crea la traza que contiene la secuencia de vértices
   // coloreados cuando se hace backtracking
   int * trace = (int *) malloc(sizeof(int) * vertex_num);
 
+  // Profundidad alcanzada en el árbol de backtrack
+  int * depth = (int *) malloc(sizeof(int));
+  *depth = 0;
+
   // Máximo color utilizado hasta el momento 
   int * max_used_color = (int *) malloc(sizeof(int));
+  *max_used_color = (lower_bound-1);
 
   // Posición en la traza del vértice con máximo color
   int * vertex_max_color = (int *) malloc(sizeof(int));
+  *vertex_max_color = 0;
 
   // Vértice de partida para forwards
   int * current_vertex = (int *) malloc(sizeof(int));
-
-  //Inicialización de arreglo de grados de saturación
-  int * satur_degree = (int *) malloc(sizeof(int)*vertex_num);
-  int i;
-  for(i = 0; i < vertex_num; i++) 
-    satur_degree[i] = 0;
-
+  *current_vertex = nxt_vertex(satur_degree,vertex_num,graph,deg_vert);
   
   // Apuntador a la primera casilla de arreglo vértice-grado
   tuple * base = deg_vert;
-
-  // Tabla de popularidad de un color
-  int * popularity = (int *) malloc(sizeof(int) * upper_bound);
-  for(i = 0; i < vertex_num; i++) 
-    popularity[i] = 0;
   
   // Coloración conseguida hasta el momento
-  int * coloring = (int *) malloc(sizeof(int) * upper_bound);
-
-  // Profundidad alcanzada en el árbol de backtrack
-  int * depth = (int *) malloc(sizeof(int));
+  int * coloring = (int *) malloc(sizeof(int) * vertex_num);
   
   while(1) {
-    //    Forward(*args);
-    if (*coloring == lower_bound)
+    Forward(current_vertex,max_used_color,vertex_max_color,
+	    upper_bound,trace,depth,satur_degree,popularity,
+	    deg_vert,graph,vertex_num,coloring);
+    if (*upper_bound == lower_bound)
       break;
     else {
       backwards(trace, max_used_color, vertex_max_color,
                 current_vertex, satur_degree, graph, base,
-                popularity, coloring, depth, upper_bound);
+                popularity, coloring, depth, *upper_bound);
       if (*current_vertex == -1)
         // Ya no hay vértices para hacer backtrack
         break;
-      }
     }
+  }
+
   // Se imprime el número cromático
-  printf("");
+  printf("Numero cromatico: %d\n",max_used_color);
+  printf("Vertice  Color\n");
+  for (i=0; i<vertex_num; ++i){
+    printf("%d - %d\n",i,coloring[i]);
+  }
 
   free(trace);
   free(max_used_color);

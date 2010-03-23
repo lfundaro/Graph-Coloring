@@ -81,17 +81,17 @@ void color_ca_and_satur(Graph * graph, int* satur_degree, int v_i, int color){
   cuando se pone un color*/
 /*Modifica el color mas alto usado y el primer nodo en tener ese color a traves
   de efectos de borde, recibe apuntadores a ambos valores*/
-void color_maxcolor(int max_color, int st_max_color, int v_i, int v_i_color){
-  if (v_i_color > max_color){
-    max_color = v_i_color;
-    st_max_color = v_i;
+void color_maxcolor(int* max_color, int* st_max_color, int depth, int v_i_color){
+  if (v_i_color > *max_color){
+    *max_color = v_i_color;
+    *st_max_color = depth;
   }
 }
 
 
 /*Devuelve cual es el proximo vertice a colorear basado en el 
   grado de saturacion y en el grado de los vertices*/
-int nxt_vertex(int * satur, int vertex_num, Graph* graph, int* deg_vert){
+int nxt_vertex(int * satur, int vertex_num, Graph* graph, tuple* deg_vert){
   int i;
   int max_satur_degree = -1;
   int nxt_vert;
@@ -173,7 +173,7 @@ int new_first_max_color(int color, int* trace, Graph* graph){
     ++i;
   }
 
-  return trace[i];
+  return i;
 }
 
 
@@ -198,7 +198,7 @@ void Forward(int* start_vert,
 	     int* depth,
 	     int* satur_degree,
 	     int* popularity,
-	     int* deg_vert,
+	     tuple* deg_vert,
 	     Graph* graph,
 	     int n_of_vertex,
 	     int* coloring){
@@ -226,7 +226,7 @@ void Forward(int* start_vert,
     
     //Actualizo las estructuras auxiliares
     color_ca_and_satur(graph,satur_degree,current_vert,nxt_col);
-    color_maxcolor(max_color,st_max_color,current_vert,nxt_col);
+    color_maxcolor(&max_color,&st_max_color,(dth-1),nxt_col);
     popularity[nxt_col] += 1;
     
     //Busco el siguiente vertice a colorear y

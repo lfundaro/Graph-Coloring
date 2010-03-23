@@ -41,7 +41,7 @@ void color_ca_and_satur(Graph*,int*,int,int);
   nodo con ese color cuando se pone un color.
 */
 //int* max_color, int* st_max_color, int v_i, int v_i_color
-void color_maxcolor(int,int,int,int);
+void color_maxcolor(int*,int*,int,int);
 
 
 /*
@@ -49,7 +49,7 @@ void color_maxcolor(int,int,int,int);
   grado de saturacion y en el grado de los vertices
 */
 //int* satur, int vertex_num, Graph graph, int* base
-int nxt_vertex(int*,int,Graph*,int*);
+int nxt_vertex(int*,int,Graph*,tuple*);
 
 
 /*
@@ -98,8 +98,8 @@ Funcion Forward
 //int* depth,           <- Posicion de la traza hasta donde existen nodos validos
 //int* satur_degree,    <- Arreglo con los grados de saturacion de los nodos
 //int* popularity,      <- Arreglo con el numero de veces que se ha usado cada color
-//int* deg_vert,        <- Arreglo con los nodos ordenados por grado
+//tuple* deg_vert,        <- Arreglo con los nodos ordenados por grado
 //Graph* graph,
 //int n_of_vertex,      <- Grado del grafo
 //int* coloring         <- Mejor coloracion encontrada hasta el momento
-void Forward(int*,int*,int*,int*,int*,int*,int*,int*,int*,Graph*,int,int*);
+void Forward(int*,int*,int*,int*,int*,int*,int*,int*,tuple*,Graph*,int,int*);
