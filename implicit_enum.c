@@ -4,19 +4,24 @@
 
 void color_clique(Graph* graph, 
 		  int* satur_degree, int* popularity,
-		  int* clique, int lower_bound){
+		  int* clique, int vertex_num){
   int current_vert;
   int color;
   int i;
+  int j = 0;
 
-  for (i=0; i<lower_bound; ++i){
-    color = i;
-    current_vert = clique[i]; 
-
-    graph[current_vert].color = color;    
-    
-    color_ca_and_satur(graph,satur_degree,current_vert,color);
-    popularity[color] += 1;
+  for (i=0; i<vertex_num; ++i){
+    if (clique[i]){
+      color = j;
+      current_vert = i; 
+      
+      graph[current_vert].color = color;    
+      
+      color_ca_and_satur(graph,satur_degree,current_vert,color);
+      popularity[color] += 1;
+      
+      ++j;
+    }
   }
 }
 
@@ -87,7 +92,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
   }
 
   // Se imprime el número cromático
-  printf("Numero cromatico: %d\n",max_used_color);
+  printf("Numero cromatico: %d\n",*max_used_color);
   printf("Vertice  Color\n");
   for (i=0; i<vertex_num; ++i){
     printf("%d - %d\n",i,coloring[i]);
