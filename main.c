@@ -51,17 +51,17 @@ int main() {
 
   init_FC(graph, vertex_num, upper_bound);
 
-  /* if (lower_bound == upper_bound) */
-  /*   printf("Número cromático = %d \n", upper_bound); */
-  /* else { */
-  /*   // Aqui va el algoritmo de Enumeracion Implicita nuevo. */
-  /*   printf("No tengo número cromático \n"); */
-  /* } */
+  if (lower_bound == upper_bound)
+    printf("Número cromático = %d \n", upper_bound);
+  else {
+    implicit_enum(upper_bound, lower_bound, members, graph,
+                  deg_vert, vertex_num);
+  }
 
-  /* // TERMINA ALGORITMO */
-  /* double tiempo_final = timer(); */
+  // TERMINA ALGORITMO
+  double tiempo_final = timer();
   
-  /* printf("Tiempo en segundos de ejecución del programa: %1.4f \n", (tiempo_inicial - tiempo_final)*-1); */
+  printf("Tiempo en segundos de ejecución del programa: %1.4f \n", (tiempo_inicial - tiempo_final)*-1);
 
   free_graph(graph, vertex_num);
   free(deg_vert);
