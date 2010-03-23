@@ -11,10 +11,8 @@
 /* de label. Mientras se sube por el arbol, es necesario      */
 /* actualizar estructuras como color_around, popularity, etc. */
 /**************************************************************/
-void backwards(int *, int *, int *, int *, int *, 
-               Graph *, tuple *, int *, int *, 
-               int *, int, int);
-
+void backwards(int *, int *, int *, int *,  int *, Graph *, 
+               tuple *, int *, int *, int* , int);
 
 /***************************************************************/
 /* Función que dado un vértice decoloreado, restablece su      */
@@ -52,11 +50,24 @@ int * is_adjacent(int *, int, Graph *);
 /**************************************/
 /* Función que etiqueta los vértices  */
 /**************************************/
-tuple_list * label(Graph *, int *, int *, int *);
+tuple_list * label(Graph *, int, int, int *);
 
 /*********************************************************/
 /* Función que determina el máximo color utilizado hasta */
 /* ahora.                                                */
 /*********************************************************/
 void max_color(int *, int *, int);
+
+/* /\********************************************************\/ */
+/* /\* Procedimiento utilizado para quitar etiquetas desde  *\/ */
+/* /\* el vértice X_k hasta el vértice X_n.                 *\/ */
+/* /\********************************************************\/ */
+/* void unlabel(Graph *, int *, int, int); */
+
+/**********************************************************/
+/* Procedimiento que determina el vértice de mínimo rango */
+/* que tiene el máximo color utilizado hasta el momento.  */
+/**********************************************************/
+void det_vertex_max_color(Graph *, int *, int, int *, int);
+
 
