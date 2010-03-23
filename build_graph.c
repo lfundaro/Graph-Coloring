@@ -102,6 +102,6 @@ void init_FC(Graph * graph, int vertex_num, int upper_bound) {
   for(i = 0; i < vertex_num; i++) {
     graph[i].FC = (int *) malloc(sizeof(int) * upper_bound);
     for(j = 0; j < upper_bound; j++) 
-      graph[i].FC[j] = 1;
+      graph[i].FC[j] = 0;
     }
 }

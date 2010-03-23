@@ -51,7 +51,7 @@ void backwards(int * trace, int * max_used_color,
                            vertex_max_color, candidates->position);
       // Se indica la posición en la traza del vértice 
       // del cual se parte para hacer forward.
-      *current_vertex = candidates->position;
+      *current_vertex = candidates->vertex;
       *depth = candidates->position;
       free_tuple_list(candidates);
       return;
