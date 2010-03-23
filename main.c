@@ -50,6 +50,7 @@ int main() {
   printf("Cota inferior = %d \n", lower_bound);
 
   init_FC(graph, vertex_num, upper_bound);
+  graph_init(graph, vertex_num);
 
   if (lower_bound == upper_bound)
     printf("Número cromático = %d \n", upper_bound);
