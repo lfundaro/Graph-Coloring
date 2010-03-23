@@ -77,5 +77,10 @@ int compare_tuples(const void *, const void *);
 /*********************************************************/
 void degree(struct Graph *, int, struct tuple *);
 
+/**********************************************************/
+/* Función que libera los elementos de una lista enlazada */
+/**********************************************************/
+void free_tuple_list(tuple_list *);
+
 
 #endif
