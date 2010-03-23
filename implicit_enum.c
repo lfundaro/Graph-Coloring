@@ -87,20 +87,20 @@ void implicit_enum(int * upper_bound, int lower_bound,
   }
 
   // Se imprime el número cromático
-  printf("Numero cromatico: %d\n",max_used_color);
+  printf("Numero cromatico: %d\n",*max_used_color);
   printf("Vertice  Color\n");
   for (i=0; i<vertex_num; ++i){
     printf("%d - %d\n",i,coloring[i]);
   }
 
   free(trace);
-  free(max_used_color);
-  free(vertex_max_color);
-  free(current_vertex);
-  free(satur_degree);
-  free(popularity);
-  free(coloring);
-  free(depth);
+  /* free(max_used_color); */
+  /* free(vertex_max_color); */
+  /* free(current_vertex); */
+  /* free(satur_degree); */
+  /* //  free(popularity); */
+  /* free(coloring); */
+  /* free(depth); */
 }
 
 
