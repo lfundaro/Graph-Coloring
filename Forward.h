@@ -95,10 +95,11 @@ Funcion Forward
 //int* upper_bound,
 //int* trace,           <- Traza con el orden en que se han elegido
 //                         los nodos hasta el momento
+//int* depth,           <- Posicion de la traza hasta donde existen nodos validos
 //int* satur_degree,    <- Arreglo con los grados de saturacion de los nodos
 //int* popularity,      <- Arreglo con el numero de veces que se ha usado cada color
 //int* deg_vert,        <- Arreglo con los nodos ordenados por grado
 //Graph* graph,
 //int n_of_vertex,      <- Grado del grafo
 //int* coloring         <- Mejor coloracion encontrada hasta el momento
-void Forward(int*,int*,int*,int*,int*,int*,int*,int*,Graph*,int,int*);
+void Forward(int*,int*,int*,int*,int*,int*,int*,int*,int*,Graph*,int,int*);

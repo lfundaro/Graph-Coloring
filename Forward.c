@@ -13,12 +13,12 @@ int number_of_FCs(int* FC, int FC_size){
   int i = 0;
 
   while(i<FC_size){
-    if (FC[i]<1)
-      ++n;
+    if (FC[i]==1)
+      break;
     ++i;
   }
 
-  return n;
+  return FC[i];
 }
 
 
@@ -195,6 +195,7 @@ void Forward(int* start_vert,
 	     int* first_max_color,
 	     int* upper_bound,
 	     int* trace,
+	     int* depth,
 	     int* satur_degree,
 	     int* popularity,
 	     int* deg_vert,
@@ -206,6 +207,7 @@ void Forward(int* start_vert,
   int max_color = *max_used_color;
   int st_max_color = *first_max_color;
   int ub = *upper_bound;
+  int dth = *depth;
   
   int* FC = graph[current_vert].FC;
   int FC_size = mix((ub-1),max_color);
@@ -219,6 +221,8 @@ void Forward(int* start_vert,
     //Busco el siguiente color y coloreo el nodo
     nxt_col = nxt_color(FC,FC_size,popularity);
     graph[current_vert].color = nxt_col;
+    trace[dth] = current_vert;
+    ++dth;
     
     //Actualizo las estructuras auxiliares
     color_ca_and_satur(graph,satur_degree,current_vert,nxt_col);
@@ -245,6 +249,7 @@ void Forward(int* start_vert,
     *max_used_color = (max_color-1);
     *first_max_color = new_first_max_color( (max_color-1) ,trace,graph);
     *start_vert = st_max_color;
+    *depth = (dth-1);
     update_coloring(graph,n_of_vertex,coloring);
   }
   //Si tengo que hacer backtrack, lo hago desde donde estoy.
@@ -253,5 +258,6 @@ void Forward(int* start_vert,
     *max_used_color = max_color;
     *first_max_color = st_max_color;
     *start_vert = current_vert;
+    *depth = (dth-1);
   }
 }
