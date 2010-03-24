@@ -12,7 +12,7 @@
 /* actualizar estructuras como color_around, popularity, etc. */
 /**************************************************************/
 void backwards(int *, int *, int *, int *,  int *, Graph *, 
-               tuple *, int *, int *, int* , int);
+               tuple *, int *, int *, int* , int, int);
 
 /***************************************************************/
 /* Función que dado un vértice decoloreado, restablece su      */
@@ -26,7 +26,7 @@ void uncolor_satur(int *, Graph *, int);
 /* decoloreando está apuntado por base. De ser así  */
 /* se decrementa base.                              */
 /****************************************************/
-void update_base(int *, int, tuple *);
+//void update_base(int *, int, tuple *);
 
 /*********************************************************/
 /* Función que actualiza estructuras a medida que se va  */
@@ -50,7 +50,7 @@ int * is_adjacent(int *, int, Graph *);
 /**************************************/
 /* Función que etiqueta los vértices  */
 /**************************************/
-tuple_list * label(Graph *, int, int, int *);
+tuple_list * label(Graph *, int, int, int *, int);
 
 /*********************************************************/
 /* Función que determina el máximo color utilizado hasta */

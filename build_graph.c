@@ -28,6 +28,7 @@ Graph * create_graph(int vertex_num) {
   struct Graph * graph = (Graph *) malloc(sizeof(Graph) * vertex_num);
   int i;
   for (i = 0; i < vertex_num ; i++) {
+    graph[i].vertex = i;
     graph[i].adjacents = NULL;
     graph[i].adj_size = 0;
     graph[i].color = -1; // Color inicial

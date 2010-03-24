@@ -144,6 +144,23 @@ void degree(Graph * graph, int vertex_num, tuple deg_vert[]) {
   }
 }
 
+void degree_no_clique(Graph * graph, int * members, int size, tuple * deg_vert) {
+  int i;
+  int j=0;
+  for(i = 0; i < size; i++) {
+    if(!members[i]) {
+      tuple new_tuple = { i, graph[i].adj_size };
+      deg_vert[j] = new_tuple;
+      ++j;
+    }
+  }
+  tuple * base = deg_vert;
+  size_t nmemb = size; 
+  size_t msize = sizeof deg_vert[0]; 
+  qsort(base, nmemb, msize, compare_tuples);
+}
+
+
 void free_tuple_list(tuple_list * list) {
   tuple_list * back;
   tuple_list * forward;
@@ -155,6 +172,33 @@ void free_tuple_list(tuple_list * list) {
   }
 }
 
+int break_tie(tuple * base, struct Graph * graph, int vertex_num) {
+  int vertex;
+  int i;
+  for(i = 0; i < vertex_num; i++) {
+    if(graph[base[i].vertex].color == -1) {
+      vertex = base[i].vertex;
+      return vertex;
+    }
+  }
+  // Todos los vértices se han coloreado 
+  return -1;
+}
+
+/***********************************************************/
+/* Función que realiza búsqueda lineal sobre la traza para */
+/* encontrar el índica donde ocurre un vértice             */
+/***********************************************************/
+int lin_search(int * trace, int vertex, int depth) {
+  int i;
+  for(i = 0; i <= depth; i++) {
+    if (trace[i] == vertex) 
+      return i;
+  }
+  // Si no se consiguió el vértice en la traza
+  // significa que su FC no fue válido.
+  return -1;
+}
 
 
 

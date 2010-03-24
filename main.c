@@ -44,7 +44,9 @@ int main() {
   int * members = determine_max_clique(graph, vertex_num,
                                        deg_vert,&lower_bound);
   
-  
+  free(deg_vert);
+  deg_vert = (tuple *) malloc(sizeof(tuple)* (vertex_num - lower_bound));
+  degree_no_clique(graph, members,vertex_num - lower_bound, deg_vert);
   printf("Resultados de Brelaz+interchange \n");
   printf("Cota superior = %d \n", upper_bound);
   printf("Cota inferior = %d \n", lower_bound);
@@ -55,7 +57,7 @@ int main() {
   if (lower_bound == upper_bound)
     printf("Número cromático = %d \n", upper_bound);
   else {
-    implicit_enum(upper_bound, lower_bound, members, graph,
+    implicit_enum(&upper_bound, lower_bound, members, graph,
                   deg_vert, vertex_num);
   }
 

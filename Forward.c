@@ -91,7 +91,7 @@ void color_maxcolor(int* max_color, int* st_max_color, int depth, int v_i_color)
 
 /*Devuelve cual es el proximo vertice a colorear basado en el 
   grado de saturacion y en el grado de los vertices*/
-int nxt_vertex(int * satur, int vertex_num, Graph* graph, tuple* deg_vert){
+int nxt_vertex(int * satur, int vertex_num, Graph* graph, tuple* deg_vert, int lower_bound){
   int i;
   int max_satur_degree = -1;
   int nxt_vert;
@@ -104,7 +104,7 @@ int nxt_vertex(int * satur, int vertex_num, Graph* graph, tuple* deg_vert){
   }
 
   if (repeated(max_satur_degree, satur, vertex_num, nxt_vert))
-    nxt_vert = get_max_degree(deg_vert,graph,vertex_num);
+    nxt_vert = break_tie(deg_vert,graph,vertex_num-lower_bound);
 
   return nxt_vert;
 }
@@ -201,7 +201,8 @@ void Forward(int* start_vert,
 	     tuple* deg_vert,
 	     Graph* graph,
 	     int n_of_vertex,
-	     int* coloring){
+         int* coloring,
+         int lower_bound){
 
   int current_vert = *start_vert;
   int max_color = *max_used_color;
@@ -210,13 +211,15 @@ void Forward(int* start_vert,
   int dth = *depth;
   
   int* FC = graph[current_vert].FC;
-  int FC_size = mix((ub-1),(max_color+1));
+  int FC_size = mix((ub-1),max((max_color+1),lower_bound));
   int nxt_col = 0;
 
   //Mientras: el FC no sea vacio Y
   //          no tenga una coloracion completa
+  /* while (number_of_FCs(FC,FC_size)>0 && */
+  /*    ! complete_coloring(graph,n_of_vertex)){ */
   while (number_of_FCs(FC,FC_size)>0 &&
-	 ! complete_coloring(graph,n_of_vertex) ){
+         (current_vert != -1)) {
     
     //Busco el siguiente color y coloreo el nodo
     nxt_col = nxt_color(FC,FC_size,popularity);
@@ -231,8 +234,8 @@ void Forward(int* start_vert,
     
     //Busco el siguiente vertice a colorear y
     //calculo su FC
-    current_vert = nxt_vertex(satur_degree,n_of_vertex,graph,deg_vert);
-    FC_size = mix((ub-1),max_color);
+    current_vert = nxt_vertex(satur_degree,n_of_vertex-lower_bound,graph,deg_vert, lower_bound);
+    FC_size = mix((ub-1),max((max_color+1),lower_bound));
     FC = graph[current_vert].FC;
     genFC(current_vert,
 	  FC,
@@ -244,7 +247,8 @@ void Forward(int* start_vert,
   
   //Si tengo una coloracion completa, actualizo
   //el upper_bound y el maximo color usado
-  if (complete_coloring(graph,n_of_vertex)){
+  //  if (complete_coloring(graph,n_of_vertex)){
+  if (current_vert == -1) {
     *upper_bound = max_color;
     *max_used_color = (max_color-1);
     *first_max_color = new_first_max_color( (max_color-1) ,trace,graph);

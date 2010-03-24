@@ -43,13 +43,14 @@ void implicit_enum(int * upper_bound, int lower_bound,
 
   // Se comienza por colorear la clique máxima encontrada
   // por Brelaz+Interchange
-  color_clique(graph,satur_degree,popularity,members,lower_bound);
+  color_clique(graph,satur_degree,popularity,members,vertex_num);
 
   // Se aumenta la cota para hacer converger el algoritmo 
   // en caso de no encontrarse mejor coloracion que upper_bound
   *upper_bound += 1;
 
   // Se crea la traza que contiene la secuencia de vértices
+
   // coloreados cuando se hace backtracking
   int * trace = (int *) malloc(sizeof(int) * vertex_num);
 
@@ -59,32 +60,43 @@ void implicit_enum(int * upper_bound, int lower_bound,
 
   // Máximo color utilizado hasta el momento 
   int * max_used_color = (int *) malloc(sizeof(int));
-  *max_used_color = (lower_bound-1);
+  *max_used_color = 0;
 
   // Posición en la traza del vértice con máximo color
   int * vertex_max_color = (int *) malloc(sizeof(int));
   *vertex_max_color = 0;
 
-  // Vértice de partida para forwards
-  int * current_vertex = (int *) malloc(sizeof(int));
-  *current_vertex = nxt_vertex(satur_degree,vertex_num,graph,deg_vert);
-  
   // Apuntador a la primera casilla de arreglo vértice-grado
   tuple * base = deg_vert;
+
+  // Vértice de partida para forwards
+  int * current_vertex = (int *) malloc(sizeof(int));
+  *current_vertex = nxt_vertex(satur_degree,vertex_num,graph,base, lower_bound);
+  int FC_size = mix(((*upper_bound)-1),(*max_used_color+1));
+  int* FC = graph[*current_vertex].FC;
+  genFC(*current_vertex,
+        FC,
+        FC_size,
+        graph,
+        satur_degree,
+        *upper_bound);
+  
+  
   
   // Coloración conseguida hasta el momento
   int * coloring = (int *) malloc(sizeof(int) * vertex_num);
   
   while(1) {
     Forward(current_vertex,max_used_color,vertex_max_color,
-	    upper_bound,trace,depth,satur_degree,popularity,
-	    deg_vert,graph,vertex_num,coloring);
+	    upper_bound,trace, depth,satur_degree,popularity,
+            base,graph,vertex_num,coloring, lower_bound);
     if (*upper_bound == lower_bound)
       break;
     else {
       backwards(trace, max_used_color, vertex_max_color,
                 current_vertex, satur_degree, graph, base,
-                popularity, coloring, depth, *upper_bound);
+                popularity, coloring, depth, *upper_bound,
+                lower_bound);
       if (*current_vertex == -1)
         // Ya no hay vértices para hacer backtrack
         break;
@@ -99,13 +111,13 @@ void implicit_enum(int * upper_bound, int lower_bound,
   }
 
   free(trace);
-  free(max_used_color);
-  free(vertex_max_color);
-  free(current_vertex);
-  free(satur_degree);
-  free(popularity);
-  free(coloring);
-  free(depth);
+  /* free(max_used_color); */
+  /* free(vertex_max_color); */
+  /* free(current_vertex); */
+  /* free(satur_degree); */
+  /* //  free(popularity); */
+  /* free(coloring); */
+  /* free(depth); */
 }
 
 
