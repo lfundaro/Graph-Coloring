@@ -41,6 +41,7 @@ typedef struct tuple_list {
 /* de los vértices que tiene adyacentes.                              */
 /**********************************************************************/
 typedef struct Graph {
+  int vertex;
   int color;
   int * adjacents;
   int * color_around;
