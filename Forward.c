@@ -210,13 +210,13 @@ void Forward(int* start_vert,
   int dth = *depth;
   
   int* FC = graph[current_vert].FC;
-  int FC_size = mix((ub-1),max_color);
+  int FC_size = mix((ub-1),(max_color+1));
   int nxt_col = 0;
 
   //Mientras: el FC no sea vacio Y
   //          no tenga una coloracion completa
   while (number_of_FCs(FC,FC_size)>0 &&
-	 ! complete_coloring(graph,n_of_vertex)){
+	 ! complete_coloring(graph,n_of_vertex) ){
     
     //Busco el siguiente color y coloreo el nodo
     nxt_col = nxt_color(FC,FC_size,popularity);

@@ -11,7 +11,7 @@ void color_clique(Graph* graph,
   int j = 0;
 
   for (i=0; i<vertex_num; ++i){
-    if (clique[i]){
+    if (clique[i]) {
       color = j;
       current_vert = i; 
       
