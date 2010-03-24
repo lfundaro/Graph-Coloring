@@ -144,7 +144,7 @@ void degree(Graph * graph, int vertex_num, tuple deg_vert[]) {
   }
 }
 
-void degree_no_clique(Graph * graph, int * members, int size, tuple * deg_vert) {
+void degree_no_clique(Graph * graph, int * members, int size, tuple * deg_vert, int lower_bound) {
   int i;
   int j=0;
   for(i = 0; i < size; i++) {
@@ -155,7 +155,7 @@ void degree_no_clique(Graph * graph, int * members, int size, tuple * deg_vert) 
     }
   }
   tuple * base = deg_vert;
-  size_t nmemb = size; 
+  size_t nmemb = size-lower_bound; 
   size_t msize = sizeof deg_vert[0]; 
   qsort(base, nmemb, msize, compare_tuples);
 }

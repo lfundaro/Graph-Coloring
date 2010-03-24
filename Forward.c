@@ -1,3 +1,4 @@
+# include <stdio.h>
 # include "Forward.h"
 # include "utilities.h"
 
@@ -12,13 +13,13 @@ int number_of_FCs(int* FC, int FC_size){
   int n = 0;
   int i = 0;
 
-  while(i<FC_size){
+  while(i<=FC_size){
     if (FC[i]==1)
-      break;
+      return 1;
     ++i;
   }
 
-  return FC[i];
+  return 0;
 }
 
 
@@ -44,9 +45,11 @@ int nxt_color(int* FC, int FC_size, int* color_use_record){
   int nxt_color = 0;
   int max_use = 0;
 
-  while (i<FC_size){
-    if (FC[i]<1 && color_use_record[i] > max_use)
+  while (i<=FC_size){
+    if (FC[i]==1 && color_use_record[i] >= max_use){
       nxt_color=i;
+      max_use = color_use_record[i];
+    }
     ++i;
   }
 
@@ -120,11 +123,11 @@ void genFC(int vert,
   int i;
   int* color_around = graph[vert].color_around;
   
-  for(i=0; i < FC_size; ++i){
+  for(i=0; i <= FC_size; ++i){
     if (color_around[i]>0)
       FC[i]=0;
     else
-      FC[i]=lookahead(vert,i,upper_bound,graph,satur_degree);
+      FC[i]=1;//lookahead(vert,i,upper_bound,graph,satur_degree);
   }
 }
 
@@ -214,12 +217,14 @@ void Forward(int* start_vert,
   int FC_size = mix((ub-1),max((max_color+1),lower_bound));
   int nxt_col = 0;
 
+  int num_of_colored = 1;
+
   //Mientras: el FC no sea vacio Y
   //          no tenga una coloracion completa
   /* while (number_of_FCs(FC,FC_size)>0 && */
   /*    ! complete_coloring(graph,n_of_vertex)){ */
   while (number_of_FCs(FC,FC_size)>0 &&
-         (current_vert != -1)) {
+         (num_of_colored <= (n_of_vertex - lower_bound))) {
     
     //Busco el siguiente color y coloreo el nodo
     nxt_col = nxt_color(FC,FC_size,popularity);
@@ -227,6 +232,10 @@ void Forward(int* start_vert,
     trace[dth] = current_vert;
     ++dth;
     
+    ++num_of_colored;
+    if (num_of_colored > (n_of_vertex - lower_bound))
+      break;
+
     //Actualizo las estructuras auxiliares
     color_ca_and_satur(graph,satur_degree,current_vert,nxt_col);
     color_maxcolor(&max_color,&st_max_color,(dth-1),nxt_col);
@@ -234,7 +243,7 @@ void Forward(int* start_vert,
     
     //Busco el siguiente vertice a colorear y
     //calculo su FC
-    current_vert = nxt_vertex(satur_degree,n_of_vertex-lower_bound,graph,deg_vert, lower_bound);
+    current_vert = nxt_vertex(satur_degree,n_of_vertex,graph,deg_vert,lower_bound);
     FC_size = mix((ub-1),max((max_color+1),lower_bound));
     FC = graph[current_vert].FC;
     genFC(current_vert,
@@ -248,7 +257,7 @@ void Forward(int* start_vert,
   //Si tengo una coloracion completa, actualizo
   //el upper_bound y el maximo color usado
   //  if (complete_coloring(graph,n_of_vertex)){
-  if (current_vert == -1) {
+  if (num_of_colored > (n_of_vertex - lower_bound)) {
     *upper_bound = max_color;
     *max_used_color = (max_color-1);
     *first_max_color = new_first_max_color( (max_color-1) ,trace,graph);

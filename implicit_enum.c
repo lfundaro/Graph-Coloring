@@ -53,6 +53,8 @@ void implicit_enum(int * upper_bound, int lower_bound,
 
   // coloreados cuando se hace backtracking
   int * trace = (int *) malloc(sizeof(int) * vertex_num);
+  for(i = 0; i < vertex_num; i++) 
+    trace[i] = 0;
 
   // Profundidad alcanzada en el árbol de backtrack
   int * depth = (int *) malloc(sizeof(int));
@@ -72,7 +74,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
   // Vértice de partida para forwards
   int * current_vertex = (int *) malloc(sizeof(int));
   *current_vertex = nxt_vertex(satur_degree,vertex_num,graph,base, lower_bound);
-  int FC_size = mix(((*upper_bound)-1),(*max_used_color+1));
+  int FC_size = lower_bound+1;
   int* FC = graph[*current_vertex].FC;
   genFC(*current_vertex,
         FC,

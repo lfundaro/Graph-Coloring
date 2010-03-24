@@ -29,8 +29,8 @@ int main() {
   //Se activa la alarma que dará la señal de
   // terminación al programa si el algoritmo
   // excede los 5 minutos.
-  signal(SIGALRM, alarmHandler);
-  alarm(300);
+  //  signal(SIGALRM, alarmHandler);
+  //  alarm(300);
 
   // Se obtiene cota superior
   result = dsatur(graph, deg_vert, vertex_num, -1);
@@ -46,7 +46,7 @@ int main() {
   
   free(deg_vert);
   deg_vert = (tuple *) malloc(sizeof(tuple)* (vertex_num - lower_bound));
-  degree_no_clique(graph, members,vertex_num - lower_bound, deg_vert);
+  degree_no_clique(graph, members,vertex_num, deg_vert, lower_bound);
   printf("Resultados de Brelaz+interchange \n");
   printf("Cota superior = %d \n", upper_bound);
   printf("Cota inferior = %d \n", lower_bound);

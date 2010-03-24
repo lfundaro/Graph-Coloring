@@ -82,7 +82,7 @@ void degree(struct Graph *, int, struct tuple *);
 /**********************************************************/
 void free_tuple_list(tuple_list *);
 
-void degree_no_clique(Graph *, int *, int, tuple *);
+void degree_no_clique(Graph *, int *, int, tuple *, int);
 
 int lin_search(int *, int, int);
 
