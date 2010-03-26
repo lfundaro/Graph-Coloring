@@ -31,6 +31,18 @@ typedef struct tuple_list {
   struct tuple_list * next;
 } tuple_list;
 
+
+/************************************************************/
+/* Estructura etiqueta, indica si un vértice está           */
+/* marcado como etiquetado. Si está etiquetado entonces     */
+/* position indica la posición en la traza donde el vértice */
+/* está.                                                    */
+/************************************************************/
+typedef struct Label {
+  int flag;
+  int position;
+} Label;
+
 /**********************************************************************/
 /* Estructura que almacena el color de un vértice. El apuntador       */
 /* a adjacents permite saber cuáles son los vecinos de un vértice.    */
@@ -47,7 +59,9 @@ typedef struct Graph {
   int * color_around;
   int * FC;
   int adj_size;
+  struct Label label;
 } Graph;
+
 
 /************************************************************/
 /* Tupla que sirve para representar los vertices con su     */

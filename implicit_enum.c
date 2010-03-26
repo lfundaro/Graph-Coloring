@@ -96,7 +96,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
       backwards(trace, max_used_color, vertex_max_color,
                 current_vertex, satur_degree, graph, base,
                 popularity, coloring, depth, *upper_bound,
-                lower_bound);
+                lower_bound, vertex_num);
       if (*current_vertex == -1)
         // Ya no hay vértices para hacer backtrack
         break;
