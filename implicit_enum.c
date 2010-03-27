@@ -76,7 +76,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
 
   // Máximo color utilizado hasta el momento 
   int * max_used_color = (int *) malloc(sizeof(int));
-  *max_used_color = 0;
+  *max_used_color = lower_bound-1;
 
   // Posición en la traza del vértice con máximo color
   int * vertex_max_color = (int *) malloc(sizeof(int));

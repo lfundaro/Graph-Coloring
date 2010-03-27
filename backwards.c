@@ -106,7 +106,7 @@ void backwards(int * trace, int * max_used_color,
         
         // Se verifica que su FC no sea vacío
         // Al ser no vacío se retorna el algoritmo
-        if (valid_FC(graph, trace[i], max_used_color)) {
+        if (valid_FC(graph, trace[i], *max_used_color)) {
           // Se determina la posición en la traza
           // del vértice de mínimo rango que tiene
           // el color máximo utilizado
