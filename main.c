@@ -55,8 +55,9 @@ int main() {
   graph_init(graph, vertex_num);
 
   if (lower_bound == upper_bound)
-    printf("Número cromático = %d \n", upper_bound+1);
+    printf("Número cromático = %d \n", upper_bound);
   else {
+    upper_bound -= 1;
     implicit_enum(&upper_bound, lower_bound, members, graph,
                   deg_vert, vertex_num);
   }
