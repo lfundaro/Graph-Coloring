@@ -43,9 +43,9 @@ void backwards(int * trace, int * max_used_color,
       // Significa que el vértice donde quedó forward 
       // tuvo FC vació, por lo tanto no se encontró en 
       // la traza. Se llama directamente label
-      label(graph, *depth + 1,trace, *max_used_color,
+      label(graph, *depth,trace, *max_used_color,
             members);
-      vertex_position = *depth + 1;
+      vertex_position = *depth;
     }
     else {
       // Se quitan todos los labels a partir del vértice 
@@ -82,7 +82,7 @@ void backwards(int * trace, int * max_used_color,
     // no vacío.
     int aux = vertex_position;
 
-    for(i = vertex_position - 1; i >= 0; i--) {
+    for(i = vertex_position; i >= 0; i--) {
       // Se verifica si el nodo está etiquetado
       if (graph[trace[i]].label.flag) {
         int vertex_color = graph[trace[i]].color;
@@ -193,10 +193,10 @@ void label(Graph * graph, int vertex_position, int * trace, int max_used_color, 
   // Nótese que el etiquetado se hace comenzando desde
   // la raíz, en vez de partir desde el vértice hasta
   // la raíz.
-  for(i = 0; i < vertex_position; i++) {
+  for(i = 0; i <= vertex_position; i++) {
     if (is_adjacent(&trace[i],trace[vertex_position], graph)
         && !clique_member(members,trace[i])) {
-      int color_candidate = graph[i].color;
+      int color_candidate = graph[trace[i]].color;
       if (colors[color_candidate] == 0) {
         colors[color_candidate] = 1;
         // Buscamos el vértice en el grafo para
