@@ -195,9 +195,6 @@ int lin_search(int * trace, int vertex, int depth) {
     if (trace[i] == vertex) 
       return i;
   }
-  // Si no se consiguió el vértice en la traza
-  // significa que su FC no fue válido.
-  return -1;
 }
 
 

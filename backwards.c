@@ -38,14 +38,21 @@ void backwards(int * trace, int * max_used_color,
   }
   // Caso en el que el vértice no es raiz
   else {
-    
-    if (vertex_position == -1) {
+
+    // Variable aux que lleva el último vértice descoloreado en 
+    // mientras se busca un vértice entre todos los etiquetados
+    // que sea útil para el forward, es decir, que su U(x) sea 
+    // no vacío.
+    int aux;
+
+    if (vertex_position == *depth) {
       // Significa que el vértice donde quedó forward 
       // tuvo FC vació, por lo tanto no se encontró en 
       // la traza. Se llama directamente label
       label(graph, *depth,trace, *max_used_color,
             members);
-      vertex_position = *depth;
+      aux = *depth - 1;
+      vertex_position = *depth - 1;
     }
     else {
       // Se quitan todos los labels a partir del vértice 
@@ -69,18 +76,16 @@ void backwards(int * trace, int * max_used_color,
       // con coloración más alta y de rango mínimo.
       label(graph, vertex_position, trace, *max_used_color,
             members);
+      
+      aux = vertex_position;
     }
 
     // Se busca el vértice etiquetado con mayor rango
     // subiendo en el árbol tomando como punto de partida
     // el nodo padre del vértice con el mayor color utilizado
+    // O aquel cuyo FC se hizo vació
 
     int i;
-    // Variable aux que lleva el último vértice descoloreado en 
-    // mientras se busca un vértice entre todos los etiquetados
-    // que sea útil para el forward, es decir, que su U(x) sea 
-    // no vacío.
-    int aux = vertex_position;
 
     for(i = vertex_position; i >= 0; i--) {
       // Se verifica si el nodo está etiquetado
@@ -193,7 +198,7 @@ void label(Graph * graph, int vertex_position, int * trace, int max_used_color, 
   // Nótese que el etiquetado se hace comenzando desde
   // la raíz, en vez de partir desde el vértice hasta
   // la raíz.
-  for(i = 0; i <= vertex_position; i++) {
+  for(i = 0; i < vertex_position; i++) {
     if (is_adjacent(&trace[i],trace[vertex_position], graph)
         && !clique_member(members,trace[i])) {
       int color_candidate = graph[trace[i]].color;
