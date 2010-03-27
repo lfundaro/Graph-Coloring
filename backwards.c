@@ -6,7 +6,7 @@ void backwards(int * trace, int * max_used_color,
                int * satur_degree, Graph * graph, tuple * base,
                int * popularity, int * coloring,
                int * depth, int upper_bound, int lower_bound, 
-               int vertex_num) {
+               int vertex_num, int * members) {
   
   // Se determina la posición en la traza donde se encuentra
   // el vértice desde el cual se hace backtracking
@@ -43,7 +43,8 @@ void backwards(int * trace, int * max_used_color,
       // Significa que el vértice donde quedó forward 
       // tuvo FC vació, por lo tanto no se encontró en 
       // la traza. Se llama directamente label
-      label(graph, *depth + 1,trace, *max_used_color);
+      label(graph, *depth + 1,trace, *max_used_color,
+            members);
       vertex_position = *depth + 1;
     }
     else {
@@ -66,7 +67,8 @@ void backwards(int * trace, int * max_used_color,
 
       // Se procede a hacer el etiquetado partiendo del vértice
       // con coloración más alta y de rango mínimo.
-      label(graph, vertex_position, trace, *max_used_color);
+      label(graph, vertex_position, trace, *max_used_color,
+            members);
     }
 
     // Se busca el vértice etiquetado con mayor rango
@@ -106,7 +108,7 @@ void backwards(int * trace, int * max_used_color,
         
         // Se verifica que su FC no sea vacío
         // Al ser no vacío se retorna el algoritmo
-        if (valid_FC(graph, trace[i], max_used_color)) {
+        if (valid_FC(graph, trace[i], *max_used_color)) {
           // Se determina la posición en la traza
           // del vértice de mínimo rango que tiene
           // el color máximo utilizado
@@ -178,7 +180,7 @@ int valid_FC(Graph * graph, int vertex, int max_used_color) {
 /* e indicar con un flag que ha sido marcado como etiquetado  */
 /* y además se indica la posición que éste ocupa en la traza. */
 /**************************************************************/
-void label(Graph * graph, int vertex_position, int * trace, int max_used_color) {
+void label(Graph * graph, int vertex_position, int * trace, int max_used_color, int * members) {
   // Inicialización de estructura de control de los
   // colores que se encuentran mientras se asciende
   // en el arbol para hacer labeling
@@ -192,7 +194,8 @@ void label(Graph * graph, int vertex_position, int * trace, int max_used_color) 
   // la raíz, en vez de partir desde el vértice hasta
   // la raíz.
   for(i = 0; i < vertex_position; i++) {
-    if (is_adjacent(&trace[i],trace[vertex_position], graph)) {
+    if (is_adjacent(&trace[i],trace[vertex_position], graph)
+        && !clique_member(members,trace[i])) {
       int color_candidate = graph[i].color;
       if (colors[color_candidate] == 0) {
         colors[color_candidate] = 1;
@@ -286,7 +289,13 @@ void uncolor_satur(int * satur_degree, Graph * graph, int vertex) {
 }
 
 
-
+int clique_member(int * members, int vertex) {
+  if (members[vertex] == 1) {
+    return 1;
+  }
+  else 
+    return 0;
+}
 
 
 

@@ -44,7 +44,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
                    int * members, Graph * graph,
                    tuple * deg_vert, int vertex_num) {
   int i;
-  
+
   //Inicialización de arreglo de grados de saturación
   int * satur_degree = (int *) malloc(sizeof(int)*vertex_num);
   for(i = 0; i < vertex_num; i++) 
@@ -52,7 +52,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
 
   // Tabla de popularidad de un color
   int * popularity = (int *) malloc(sizeof(int) * (*upper_bound));
-  for(i = 0; i < vertex_num; i++) 
+  for(i = 0; i < *upper_bound; i++) 
     popularity[i] = 0;
 
   // Se comienza por colorear la clique máxima encontrada
@@ -112,7 +112,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
       backwards(trace, max_used_color, vertex_max_color,
                 current_vertex, satur_degree, graph, base,
                 popularity, coloring, depth, *upper_bound,
-                lower_bound, vertex_num);
+                lower_bound, vertex_num, members);
       if (*current_vertex == -1)
         // Ya no hay vértices para hacer backtrack
         break;
