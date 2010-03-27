@@ -98,7 +98,7 @@ void backwards(int * trace, int * max_used_color,
         // del cual se parte para hacer forward.
         *current_vertex = candidates->vertex;
         *depth = candidates->position;
-        free_tuple_list(candidates);
+        //free_tuple_list(candidates);
         return;
       }
       else {
