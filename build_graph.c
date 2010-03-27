@@ -28,6 +28,8 @@ Graph * create_graph(int vertex_num) {
   struct Graph * graph = (Graph *) malloc(sizeof(Graph) * vertex_num);
   int i;
   for (i = 0; i < vertex_num ; i++) {
+    graph[i].label.flag = 0;
+    graph[i].label.position = 0;
     graph[i].vertex = i;
     graph[i].adjacents = NULL;
     graph[i].adj_size = 0;
