@@ -18,6 +18,7 @@ void backwards(int * trace, int * max_used_color,
     int vertex_color = graph[trace[vertex_position]].color;
     update_all(trace, graph, base, popularity, *depth,
                vertex_position, satur_degree);
+
     // Quitamos su color del FC
     graph[trace[vertex_position]].FC[vertex_color] = 0;
 

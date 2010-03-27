@@ -66,8 +66,8 @@ void implicit_enum(int * upper_bound, int lower_bound,
   // Se crea la traza que contiene la secuencia de vértices
 
   // coloreados cuando se hace backtracking
-  int * trace = (int *) malloc(sizeof(int) * vertex_num);
-  for(i = 0; i < vertex_num; i++) 
+  int * trace = (int *) malloc(sizeof(int) * (vertex_num-lower_bound));
+  for(i = 0; i < (vertex_num-lower_bound); i++) 
     trace[i] = 0;
 
   // Profundidad alcanzada en el árbol de backtrack
