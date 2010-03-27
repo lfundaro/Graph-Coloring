@@ -217,7 +217,7 @@ void Forward(int* start_vert,
   int FC_size = mix((ub-2),max((max_color+1),lower_bound));
   int nxt_col = 0;
 
-  int num_of_colored = 1;
+  int num_of_colored = 0;
 
   //Mientras: el FC no sea vacio Y
   //          no tenga una coloracion completa
