@@ -143,7 +143,7 @@ void max_color(int * popularity, int * max_used_color, int upper_bound) {
   // upper_bound hasta el inicio de la tabla en busca del
   // primer color que tenga popularidad distinta de cero.
   int i;
-  for(i = upper_bound; i >= 0; i--) {
+  for(i = (upper_bound-1); i >= 0; i--) {
     if (popularity[i] > 0) 
       *max_used_color = i;
   } 
@@ -190,7 +190,7 @@ void label(Graph * graph, int vertex_position, int * trace, int max_used_color, 
   // colores que se encuentran mientras se asciende
   // en el arbol para hacer labeling
   int i;
-  int * colors = (int *) malloc(sizeof(int)* max_used_color);
+  int * colors = (int *) malloc(sizeof(int)* (max_used_color+1));
   for(i = 0; i < max_used_color; i++)
     colors[i] = 0;
 

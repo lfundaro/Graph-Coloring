@@ -224,7 +224,7 @@ void Forward(int* start_vert,
   /* while (number_of_FCs(FC,FC_size)>0 && */
   /*    ! complete_coloring(graph,n_of_vertex)){ */
   while (number_of_FCs(FC,FC_size)>0 &&
-         (num_of_colored <= (n_of_vertex - lower_bound))) {
+         (num_of_colored < (n_of_vertex - lower_bound - dth-1))) {
     
     //Busco el siguiente color y coloreo el nodo
     nxt_col = nxt_color(FC,FC_size,popularity);
@@ -257,7 +257,7 @@ void Forward(int* start_vert,
   //Si tengo una coloracion completa, actualizo
   //el upper_bound y el maximo color usado
   //  if (complete_coloring(graph,n_of_vertex)){
-  if (num_of_colored > (n_of_vertex - lower_bound)) {
+  if (num_of_colored >= (n_of_vertex - lower_bound - dth-1)) {
     *upper_bound = max_color+1;
     *max_used_color = (max_color-1);
     *first_max_color = new_first_max_color( (max_color-1) ,trace,graph);
