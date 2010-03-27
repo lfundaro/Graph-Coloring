@@ -1,0 +1,732 @@
+anna.col
+Resultados de Brelaz+interchange 
+Cota superior = 2 
+Cota inferior = 2 
+Número cromático = 2 
+Tiempo en segundos de ejecución del programa: 0.1171 
+
+
+david.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 3 
+Número cromático = 3 
+Tiempo en segundos de ejecución del programa: 0.0111 
+
+
+fpsol2.i.1.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 2.1240 
+
+
+fpsol2.i.2.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 1.6727 
+
+
+fpsol2.i.3.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 1.4829 
+
+
+games120.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 3 
+Número cromático = 3 
+Tiempo en segundos de ejecución del programa: 0.0284 
+
+
+grafo de 12 vertices; densidad 0,3; # 3.col
+Resultados de Brelaz+interchange 
+Cota superior = 4 
+Cota inferior = 3 
+Numero cromatico: 2
+Vertice  Color
+0 - 0
+1 - 0
+2 - 2
+3 - 3
+4 - 3
+5 - 1
+6 - 3
+7 - 2
+8 - 0
+9 - 3
+10 - 0
+11 - 3
+Tiempo en segundos de ejecución del programa: 0.0002 
+
+
+grafo de 14 vertices; densidad 0,5; # 2.col
+Resultados de Brelaz+interchange 
+Cota superior = 5 
+Cota inferior = 4 
+Numero cromatico: 3
+Vertice  Color
+0 - 3
+1 - 4
+2 - 2
+3 - 1
+4 - 3
+5 - 0
+6 - 2
+7 - 1
+8 - 2
+9 - 3
+10 - 1
+11 - 2
+12 - 4
+13 - 2
+Tiempo en segundos de ejecución del programa: 0.0004 
+
+
+grafo de 16 vertices; densidad 0,5; # 3.col
+Resultados de Brelaz+interchange 
+Cota superior = 6 
+Cota inferior = 5 
+Numero cromatico: 4
+Vertice  Color
+0 - 2
+1 - 0
+2 - 1
+3 - 5
+4 - 1
+5 - 5
+6 - 4
+7 - 0
+8 - 1
+9 - 4
+10 - 2
+11 - 3
+12 - 1
+13 - 4
+14 - 2
+15 - 2
+Tiempo en segundos de ejecución del programa: 0.0007 
+Aborted
+
+
+grafo de 18 vertices; densidad 0,5; # 1.col
+Resultados de Brelaz+interchange 
+Cota superior = 5 
+Cota inferior = 4 
+Numero cromatico: 0
+Vertice  Color
+0 - 6343744
+1 - 0
+2 - 0
+3 - 0
+4 - 1
+5 - 1
+6 - 0
+7 - 0
+8 - 0
+9 - 0
+10 - 0
+11 - 0
+12 - 1
+13 - 0
+14 - 0
+15 - 0
+16 - 1
+17 - 0
+Tiempo en segundos de ejecución del programa: 0.0008 
+
+
+grafo de 20 vertices; densidad 0,1; # 2.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 2 
+Numero cromatico: 1
+Vertice  Color
+0 - 0
+1 - 1
+2 - 0
+3 - 0
+4 - 0
+5 - 1
+6 - 0
+7 - 2
+8 - 0
+9 - 0
+10 - 1
+11 - 0
+12 - 0
+13 - 1
+14 - 0
+15 - 1
+16 - 0
+17 - 1
+18 - 2
+19 - 0
+Tiempo en segundos de ejecución del programa: 0.0003 
+Aborted
+
+
+grafo de 20 vertices; densidad 0,5; # 2.col
+Resultados de Brelaz+interchange 
+Cota superior = 6 
+Cota inferior = 5 
+Numero cromatico: 4
+Vertice  Color
+0 - 4
+1 - 0
+2 - 5
+3 - 1
+4 - 3
+5 - 4
+6 - 1
+7 - 1
+8 - 1
+9 - 2
+10 - 3
+11 - 0
+12 - 2
+13 - 3
+14 - 4
+15 - 4
+16 - 0
+17 - 5
+18 - 1
+19 - 0
+Tiempo en segundos de ejecución del programa: 0.0011 
+Aborted
+
+
+grafo de 20 vertices; densidad 0,7; # 1.col
+Resultados de Brelaz+interchange 
+Cota superior = 9 
+Cota inferior = 8 
+Aborted
+
+
+homer.col
+Resultados de Brelaz+interchange 
+Cota superior = 2 
+Cota inferior = 2 
+Número cromático = 2 
+Tiempo en segundos de ejecución del programa: 2.5127 
+
+
+huck.col
+Resultados de Brelaz+interchange 
+Cota superior = 4 
+Cota inferior = 4 
+Número cromático = 4 
+Tiempo en segundos de ejecución del programa: 0.0084 
+
+
+inithx.i.2.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 5.2052 
+
+
+inithx.i.3.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 4.7564 
+
+
+jean.col
+Resultados de Brelaz+interchange 
+Cota superior = 4 
+Cota inferior = 4 
+Número cromático = 4 
+Tiempo en segundos de ejecución del programa: 0.0094 
+
+
+le450_15a.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 3 
+Número cromático = 3 
+Tiempo en segundos de ejecución del programa: 1.2739 
+
+
+le450_15b.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 3 
+Número cromático = 3 
+Tiempo en segundos de ejecución del programa: 1.2610 
+
+
+le450_15c.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 3 
+Número cromático = 3 
+Tiempo en segundos de ejecución del programa: 1.2587 
+
+
+le450_15d.col
+Resultados de Brelaz+interchange 
+Cota superior = 4 
+Cota inferior = 4 
+Número cromático = 4 
+Tiempo en segundos de ejecución del programa: 1.3134 
+
+
+le450_25a.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 3 
+Número cromático = 3 
+Tiempo en segundos de ejecución del programa: 1.2685 
+
+
+le450_25b.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 3 
+Número cromático = 3 
+Tiempo en segundos de ejecución del programa: 1.3180 
+
+
+le450_25c.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 3 
+Número cromático = 3 
+Tiempo en segundos de ejecución del programa: 1.2656 
+
+
+le450_25d.col
+Resultados de Brelaz+interchange 
+Cota superior = 4 
+Cota inferior = 4 
+Número cromático = 4 
+Tiempo en segundos de ejecución del programa: 1.2993 
+
+
+le450_5a.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 3 
+Número cromático = 3 
+Tiempo en segundos de ejecución del programa: 1.3022 
+
+
+le450_5b.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 3 
+Número cromático = 3 
+Tiempo en segundos de ejecución del programa: 1.3004 
+
+
+le450_5c.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 3 
+Número cromático = 3 
+Tiempo en segundos de ejecución del programa: 1.3113 
+
+
+le450_5d.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 3 
+Número cromático = 3 
+Tiempo en segundos de ejecución del programa: 1.2617 
+
+
+miles1000.col
+Resultados de Brelaz+interchange 
+Cota superior = 5 
+Cota inferior = 5 
+Número cromático = 5 
+Tiempo en segundos de ejecución del programa: 0.0413 
+
+
+miles1500.col
+Resultados de Brelaz+interchange 
+Cota superior = 6 
+Cota inferior = 6 
+Número cromático = 6 
+Tiempo en segundos de ejecución del programa: 0.0566 
+
+
+miles250.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 3 
+Número cromático = 3 
+Tiempo en segundos de ejecución del programa: 0.0407 
+
+
+miles500.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 3 
+Número cromático = 3 
+Tiempo en segundos de ejecución del programa: 0.0503 
+
+
+miles750.col
+Resultados de Brelaz+interchange 
+Cota superior = 5 
+Cota inferior = 5 
+Número cromático = 5 
+Tiempo en segundos de ejecución del programa: 0.0592 
+
+
+mulsol.i.1.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.2814 
+
+
+mulsol.i.2.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.2349 
+
+
+mulsol.i.3.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.2137 
+
+
+mulsol.i.4.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.2250 
+
+
+mulsol.i.5.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.2463 
+
+
+myciel2.col
+Segmentation fault
+
+
+myciel3.col
+Segmentation fault
+
+
+myciel4.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 2 
+Numero cromatico: 1
+Vertice  Color
+0 - 0
+1 - 1
+2 - 0
+3 - 1
+4 - 2
+5 - 0
+6 - 1
+7 - 0
+8 - 1
+9 - 2
+10 - 2
+11 - 0
+12 - 1
+13 - 0
+14 - 1
+15 - 2
+16 - 0
+17 - 1
+18 - 0
+19 - 1
+20 - 2
+21 - 2
+22 - 1
+Tiempo en segundos de ejecución del programa: 0.0005 
+Aborted
+
+
+myciel5.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 2 
+Aborted
+
+
+myciel6.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 2 
+Numero cromatico: 1
+Vertice  Color
+0 - 0
+1 - 1
+2 - 0
+3 - 1
+4 - 2
+5 - 0
+6 - 1
+7 - 0
+8 - 1
+9 - 2
+10 - 2
+11 - 0
+12 - 1
+13 - 0
+14 - 1
+15 - 2
+16 - 2
+17 - 2
+18 - 0
+19 - 1
+20 - 2
+21 - 2
+22 - 2
+23 - 0
+24 - 1
+25 - 0
+26 - 1
+27 - 2
+28 - 2
+29 - 2
+30 - 0
+31 - 1
+32 - 2
+33 - 2
+34 - 2
+35 - 2
+36 - 0
+37 - 1
+38 - 2
+39 - 2
+40 - 2
+41 - 0
+42 - 1
+43 - 2
+44 - 2
+45 - 2
+46 - 2
+47 - 2
+48 - 2
+49 - 0
+50 - 1
+51 - 2
+52 - 2
+53 - 2
+54 - 0
+55 - 1
+56 - 2
+57 - 2
+58 - 2
+59 - 2
+60 - 0
+61 - 1
+62 - 2
+63 - 2
+64 - 2
+65 - 0
+66 - 1
+67 - 2
+68 - 2
+69 - 2
+70 - 2
+71 - 2
+72 - 0
+73 - 1
+74 - 2
+75 - 2
+76 - 2
+77 - 0
+78 - 1
+79 - 2
+80 - 2
+81 - 2
+82 - 2
+83 - 0
+84 - 1
+85 - 2
+86 - 2
+87 - 2
+88 - 0
+89 - 1
+90 - 2
+91 - 2
+92 - 2
+93 - 2
+94 - 2
+Tiempo en segundos de ejecución del programa: 0.0188 
+Aborted
+
+
+myciel7.col
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 2 
+Aborted
+
+
+queen10_10.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.0567 
+
+
+queen11_11.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.0828 
+
+
+queen12_12.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.1133 
+
+
+queen13_13.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.1438 
+
+
+queen14_14.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.2239 
+
+
+queen15_15.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.3063 
+
+
+queen16_16.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.3789 
+
+
+queen5_5.col
+Resultados de Brelaz+interchange 
+Cota superior = 5 
+Cota inferior = 5 
+Número cromático = 5 
+Tiempo en segundos de ejecución del programa: 0.0016 
+
+
+queen6_6.col
+Resultados de Brelaz+interchange 
+Cota superior = 6 
+Cota inferior = 6 
+Número cromático = 6 
+Tiempo en segundos de ejecución del programa: 0.0031 
+
+
+queen7_7.col
+Resultados de Brelaz+interchange 
+Cota superior = 7 
+Cota inferior = 7 
+Número cromático = 7 
+Tiempo en segundos de ejecución del programa: 0.0070 
+
+
+queen8_12.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.0469 
+
+
+queen8_8.col
+Resultados de Brelaz+interchange 
+Cota superior = 8 
+Cota inferior = 8 
+Número cromático = 8 
+Tiempo en segundos de ejecución del programa: 0.0156 
+
+
+queen9_9.col
+Resultados de Brelaz+interchange 
+Cota superior = 9 
+Cota inferior = 9 
+Número cromático = 9 
+Tiempo en segundos de ejecución del programa: 0.0297 
+
+
+school1.col
+Resultados de Brelaz+interchange 
+Cota superior = 8 
+Cota inferior = 8 
+Número cromático = 8 
+Tiempo en segundos de ejecución del programa: 0.9377 
+
+
+school1_nsh.col
+Resultados de Brelaz+interchange 
+Cota superior = 8 
+Cota inferior = 8 
+Número cromático = 8 
+Tiempo en segundos de ejecución del programa: 0.7217 
+
+
+zeroin.i.1.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.3043 
+
+
+zeroin.i.2.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.3435 
+
+
+zeroin.i.3.col
+Resultados de Brelaz+interchange 
+Cota superior = 10 
+Cota inferior = 10 
+Número cromático = 10 
+Tiempo en segundos de ejecución del programa: 0.3450 
+
+

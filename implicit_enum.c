@@ -74,7 +74,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
   // Vértice de partida para forwards
   int * current_vertex = (int *) malloc(sizeof(int));
   *current_vertex = nxt_vertex(satur_degree,vertex_num,graph,base, lower_bound);
-  int FC_size = lower_bound+1;
+  int FC_size = lower_bound;
   int* FC = graph[*current_vertex].FC;
   genFC(*current_vertex,
         FC,
