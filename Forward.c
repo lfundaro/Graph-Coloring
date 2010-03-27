@@ -258,7 +258,8 @@ void Forward(int* start_vert,
   //el upper_bound y el maximo color usado
   //  if (complete_coloring(graph,n_of_vertex)){
   if (num_of_colored > (n_of_vertex - lower_bound)) {
-    *upper_bound = max_color;
+    *upper_bound = max_color+1;
+    printf("ub: %d\n",*upper_bound);
     *max_used_color = (max_color-1);
     *first_max_color = new_first_max_color( (max_color-1) ,trace,graph);
     *start_vert = st_max_color;

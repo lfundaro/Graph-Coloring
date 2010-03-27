@@ -2,6 +2,20 @@
 # include "Forward.h"
 # include "backwards.h"
 
+int coloringCheck(Graph* graph, int vertex_num, int* coloring){
+  int i;
+  int j;
+  
+  for (i=0 ; i<vertex_num ; ++i){
+    for (j=0; j<graph[i].adj_size;++j){
+      if (coloring[i] == coloring[graph[i].adjacents[j]])
+	return 0;
+    }
+  }
+
+  return 1;
+}
+
 void color_clique(Graph* graph, 
 		  int* satur_degree, int* popularity,
 		  int* clique, int vertex_num){
@@ -106,11 +120,17 @@ void implicit_enum(int * upper_bound, int lower_bound,
   }
 
   // Se imprime el número cromático
-  printf("Numero cromatico: %d\n",*max_used_color);
+  printf("Numero cromatico: %d\n",*upper_bound);
   printf("Vertice  Color\n");
   for (i=0; i<vertex_num; ++i){
     printf("%d - %d\n",i,coloring[i]);
   }
+
+  if (coloringCheck(graph,vertex_num,coloring))
+    printf("Yeeeeeeeeeei\n");
+  else
+    printf("Inutil\n");
+
 
   free(trace);
   /* free(max_used_color); */

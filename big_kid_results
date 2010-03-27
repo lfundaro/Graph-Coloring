@@ -3,7 +3,7 @@ Resultados de Brelaz+interchange
 Cota superior = 2 
 Cota inferior = 2 
 Número cromático = 2 
-Tiempo en segundos de ejecución del programa: 0.1171 
+Tiempo en segundos de ejecución del programa: 0.0967 
 
 
 david.col
@@ -11,7 +11,7 @@ Resultados de Brelaz+interchange
 Cota superior = 3 
 Cota inferior = 3 
 Número cromático = 3 
-Tiempo en segundos de ejecución del programa: 0.0111 
+Tiempo en segundos de ejecución del programa: 0.0114 
 
 
 fpsol2.i.1.col
@@ -19,7 +19,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 2.1240 
+Tiempo en segundos de ejecución del programa: 2.1053 
 
 
 fpsol2.i.2.col
@@ -27,7 +27,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 1.6727 
+Tiempo en segundos de ejecución del programa: 1.7013 
 
 
 fpsol2.i.3.col
@@ -35,7 +35,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 1.4829 
+Tiempo en segundos de ejecución del programa: 1.4734 
 
 
 games120.col
@@ -43,7 +43,7 @@ Resultados de Brelaz+interchange
 Cota superior = 3 
 Cota inferior = 3 
 Número cromático = 3 
-Tiempo en segundos de ejecución del programa: 0.0284 
+Tiempo en segundos de ejecución del programa: 0.0287 
 
 
 grafo de 12 vertices; densidad 0,3; # 3.col
@@ -140,7 +140,7 @@ Vertice  Color
 15 - 0
 16 - 1
 17 - 0
-Tiempo en segundos de ejecución del programa: 0.0008 
+Tiempo en segundos de ejecución del programa: 0.0009 
 
 
 grafo de 20 vertices; densidad 0,1; # 2.col
@@ -169,7 +169,7 @@ Vertice  Color
 17 - 1
 18 - 2
 19 - 0
-Tiempo en segundos de ejecución del programa: 0.0003 
+Tiempo en segundos de ejecución del programa: 0.0004 
 Aborted
 
 
@@ -199,7 +199,7 @@ Vertice  Color
 17 - 5
 18 - 1
 19 - 0
-Tiempo en segundos de ejecución del programa: 0.0011 
+Tiempo en segundos de ejecución del programa: 0.0012 
 Aborted
 
 
@@ -215,7 +215,7 @@ Resultados de Brelaz+interchange
 Cota superior = 2 
 Cota inferior = 2 
 Número cromático = 2 
-Tiempo en segundos de ejecución del programa: 2.5127 
+Tiempo en segundos de ejecución del programa: 2.4543 
 
 
 huck.col
@@ -223,7 +223,7 @@ Resultados de Brelaz+interchange
 Cota superior = 4 
 Cota inferior = 4 
 Número cromático = 4 
-Tiempo en segundos de ejecución del programa: 0.0084 
+Tiempo en segundos de ejecución del programa: 0.0083 
 
 
 inithx.i.2.col
@@ -231,7 +231,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 5.2052 
+Tiempo en segundos de ejecución del programa: 5.1657 
 
 
 inithx.i.3.col
@@ -239,7 +239,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 4.7564 
+Tiempo en segundos de ejecución del programa: 4.6598 
 
 
 jean.col
@@ -247,7 +247,7 @@ Resultados de Brelaz+interchange
 Cota superior = 4 
 Cota inferior = 4 
 Número cromático = 4 
-Tiempo en segundos de ejecución del programa: 0.0094 
+Tiempo en segundos de ejecución del programa: 0.0095 
 
 
 le450_15a.col
@@ -255,7 +255,7 @@ Resultados de Brelaz+interchange
 Cota superior = 3 
 Cota inferior = 3 
 Número cromático = 3 
-Tiempo en segundos de ejecución del programa: 1.2739 
+Tiempo en segundos de ejecución del programa: 1.2541 
 
 
 le450_15b.col
@@ -263,7 +263,7 @@ Resultados de Brelaz+interchange
 Cota superior = 3 
 Cota inferior = 3 
 Número cromático = 3 
-Tiempo en segundos de ejecución del programa: 1.2610 
+Tiempo en segundos de ejecución del programa: 1.2843 
 
 
 le450_15c.col
@@ -271,7 +271,7 @@ Resultados de Brelaz+interchange
 Cota superior = 3 
 Cota inferior = 3 
 Número cromático = 3 
-Tiempo en segundos de ejecución del programa: 1.2587 
+Tiempo en segundos de ejecución del programa: 1.2571 
 
 
 le450_15d.col
@@ -279,7 +279,7 @@ Resultados de Brelaz+interchange
 Cota superior = 4 
 Cota inferior = 4 
 Número cromático = 4 
-Tiempo en segundos de ejecución del programa: 1.3134 
+Tiempo en segundos de ejecución del programa: 1.3083 
 
 
 le450_25a.col
@@ -287,7 +287,7 @@ Resultados de Brelaz+interchange
 Cota superior = 3 
 Cota inferior = 3 
 Número cromático = 3 
-Tiempo en segundos de ejecución del programa: 1.2685 
+Tiempo en segundos de ejecución del programa: 1.2513 
 
 
 le450_25b.col
@@ -295,7 +295,7 @@ Resultados de Brelaz+interchange
 Cota superior = 3 
 Cota inferior = 3 
 Número cromático = 3 
-Tiempo en segundos de ejecución del programa: 1.3180 
+Tiempo en segundos de ejecución del programa: 1.2558 
 
 
 le450_25c.col
@@ -303,7 +303,7 @@ Resultados de Brelaz+interchange
 Cota superior = 3 
 Cota inferior = 3 
 Número cromático = 3 
-Tiempo en segundos de ejecución del programa: 1.2656 
+Tiempo en segundos de ejecución del programa: 1.2772 
 
 
 le450_25d.col
@@ -311,7 +311,7 @@ Resultados de Brelaz+interchange
 Cota superior = 4 
 Cota inferior = 4 
 Número cromático = 4 
-Tiempo en segundos de ejecución del programa: 1.2993 
+Tiempo en segundos de ejecución del programa: 1.2734 
 
 
 le450_5a.col
@@ -319,7 +319,7 @@ Resultados de Brelaz+interchange
 Cota superior = 3 
 Cota inferior = 3 
 Número cromático = 3 
-Tiempo en segundos de ejecución del programa: 1.3022 
+Tiempo en segundos de ejecución del programa: 1.2806 
 
 
 le450_5b.col
@@ -327,7 +327,7 @@ Resultados de Brelaz+interchange
 Cota superior = 3 
 Cota inferior = 3 
 Número cromático = 3 
-Tiempo en segundos de ejecución del programa: 1.3004 
+Tiempo en segundos de ejecución del programa: 1.2620 
 
 
 le450_5c.col
@@ -335,7 +335,7 @@ Resultados de Brelaz+interchange
 Cota superior = 3 
 Cota inferior = 3 
 Número cromático = 3 
-Tiempo en segundos de ejecución del programa: 1.3113 
+Tiempo en segundos de ejecución del programa: 1.2889 
 
 
 le450_5d.col
@@ -343,7 +343,7 @@ Resultados de Brelaz+interchange
 Cota superior = 3 
 Cota inferior = 3 
 Número cromático = 3 
-Tiempo en segundos de ejecución del programa: 1.2617 
+Tiempo en segundos de ejecución del programa: 1.2670 
 
 
 miles1000.col
@@ -351,7 +351,7 @@ Resultados de Brelaz+interchange
 Cota superior = 5 
 Cota inferior = 5 
 Número cromático = 5 
-Tiempo en segundos de ejecución del programa: 0.0413 
+Tiempo en segundos de ejecución del programa: 0.0389 
 
 
 miles1500.col
@@ -359,7 +359,7 @@ Resultados de Brelaz+interchange
 Cota superior = 6 
 Cota inferior = 6 
 Número cromático = 6 
-Tiempo en segundos de ejecución del programa: 0.0566 
+Tiempo en segundos de ejecución del programa: 0.0503 
 
 
 miles250.col
@@ -367,7 +367,7 @@ Resultados de Brelaz+interchange
 Cota superior = 3 
 Cota inferior = 3 
 Número cromático = 3 
-Tiempo en segundos de ejecución del programa: 0.0407 
+Tiempo en segundos de ejecución del programa: 0.0325 
 
 
 miles500.col
@@ -375,7 +375,7 @@ Resultados de Brelaz+interchange
 Cota superior = 3 
 Cota inferior = 3 
 Número cromático = 3 
-Tiempo en segundos de ejecución del programa: 0.0503 
+Tiempo en segundos de ejecución del programa: 0.0334 
 
 
 miles750.col
@@ -383,7 +383,7 @@ Resultados de Brelaz+interchange
 Cota superior = 5 
 Cota inferior = 5 
 Número cromático = 5 
-Tiempo en segundos de ejecución del programa: 0.0592 
+Tiempo en segundos de ejecución del programa: 0.0418 
 
 
 mulsol.i.1.col
@@ -391,7 +391,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.2814 
+Tiempo en segundos de ejecución del programa: 0.2576 
 
 
 mulsol.i.2.col
@@ -399,7 +399,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.2349 
+Tiempo en segundos de ejecución del programa: 0.2390 
 
 
 mulsol.i.3.col
@@ -407,7 +407,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.2137 
+Tiempo en segundos de ejecución del programa: 0.2290 
 
 
 mulsol.i.4.col
@@ -415,7 +415,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.2250 
+Tiempo en segundos de ejecución del programa: 0.2313 
 
 
 mulsol.i.5.col
@@ -423,7 +423,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.2463 
+Tiempo en segundos de ejecución del programa: 0.2390 
 
 
 myciel2.col
@@ -575,7 +575,7 @@ Vertice  Color
 92 - 2
 93 - 2
 94 - 2
-Tiempo en segundos de ejecución del programa: 0.0188 
+Tiempo en segundos de ejecución del programa: 0.0153 
 Aborted
 
 
@@ -591,7 +591,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.0567 
+Tiempo en segundos de ejecución del programa: 0.0625 
 
 
 queen11_11.col
@@ -599,7 +599,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.0828 
+Tiempo en segundos de ejecución del programa: 0.0710 
 
 
 queen12_12.col
@@ -607,7 +607,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.1133 
+Tiempo en segundos de ejecución del programa: 0.1026 
 
 
 queen13_13.col
@@ -615,7 +615,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.1438 
+Tiempo en segundos de ejecución del programa: 0.1518 
 
 
 queen14_14.col
@@ -623,7 +623,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.2239 
+Tiempo en segundos de ejecución del programa: 0.2006 
 
 
 queen15_15.col
@@ -631,7 +631,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.3063 
+Tiempo en segundos de ejecución del programa: 0.2752 
 
 
 queen16_16.col
@@ -639,7 +639,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.3789 
+Tiempo en segundos de ejecución del programa: 0.3849 
 
 
 queen5_5.col
@@ -647,7 +647,7 @@ Resultados de Brelaz+interchange
 Cota superior = 5 
 Cota inferior = 5 
 Número cromático = 5 
-Tiempo en segundos de ejecución del programa: 0.0016 
+Tiempo en segundos de ejecución del programa: 0.0015 
 
 
 queen6_6.col
@@ -671,7 +671,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.0469 
+Tiempo en segundos de ejecución del programa: 0.0471 
 
 
 queen8_8.col
@@ -679,7 +679,7 @@ Resultados de Brelaz+interchange
 Cota superior = 8 
 Cota inferior = 8 
 Número cromático = 8 
-Tiempo en segundos de ejecución del programa: 0.0156 
+Tiempo en segundos de ejecución del programa: 0.0145 
 
 
 queen9_9.col
@@ -687,7 +687,7 @@ Resultados de Brelaz+interchange
 Cota superior = 9 
 Cota inferior = 9 
 Número cromático = 9 
-Tiempo en segundos de ejecución del programa: 0.0297 
+Tiempo en segundos de ejecución del programa: 0.0284 
 
 
 school1.col
@@ -695,7 +695,7 @@ Resultados de Brelaz+interchange
 Cota superior = 8 
 Cota inferior = 8 
 Número cromático = 8 
-Tiempo en segundos de ejecución del programa: 0.9377 
+Tiempo en segundos de ejecución del programa: 0.9266 
 
 
 school1_nsh.col
@@ -703,7 +703,7 @@ Resultados de Brelaz+interchange
 Cota superior = 8 
 Cota inferior = 8 
 Número cromático = 8 
-Tiempo en segundos de ejecución del programa: 0.7217 
+Tiempo en segundos de ejecución del programa: 0.7205 
 
 
 zeroin.i.1.col
@@ -711,7 +711,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.3043 
+Tiempo en segundos de ejecución del programa: 0.3080 
 
 
 zeroin.i.2.col
@@ -719,7 +719,7 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.3435 
+Tiempo en segundos de ejecución del programa: 0.3379 
 
 
 zeroin.i.3.col
@@ -727,6 +727,6 @@ Resultados de Brelaz+interchange
 Cota superior = 10 
 Cota inferior = 10 
 Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.3450 
+Tiempo en segundos de ejecución del programa: 0.3292 
 
 
