@@ -59,7 +59,7 @@ void backwards(int * trace, int * max_used_color,
     else {
       // Se quitan todos los labels a partir del vértice 
       // de máximo color
-      unlabel(graph, trace, vertex_position, vertex_num);
+      unlabel(graph, trace, vertex_position, *depth);
 
       // Se logró una coloración completa. Por lo tanto:
       // Se decolorean todos los vértices subiendo en el 
@@ -224,7 +224,7 @@ void label(Graph * graph, int vertex_position, int * trace, int max_used_color, 
 void unlabel(Graph * graph, int * trace, int start_vertex,
              int vertex_num) {
   int i;
-  for(i = start_vertex; i < vertex_num; i++)
+  for(i = start_vertex; i <= vertex_num; i++)
     graph[trace[i]].label.flag = 0;
 }
 

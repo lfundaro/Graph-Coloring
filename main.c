@@ -68,9 +68,9 @@ int main() {
   
   printf("Tiempo en segundos de ejecución del programa: %1.4f \n", (tiempo_inicial - tiempo_final)*-1);
 
-  free_graph(graph, vertex_num);
-  free(deg_vert);
-  free(members);
+  /* free_graph(graph, vertex_num); */
+  /* free(deg_vert); */
+  /* free(members); */
   return EXIT_SUCCESS;
 }
 
