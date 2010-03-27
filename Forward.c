@@ -271,6 +271,7 @@ void Forward(int* start_vert,
     *max_used_color = max_color;
     *first_max_color = st_max_color;
     *start_vert = current_vert;
-    *depth = (dth-1);
+    *depth = dth;
+    trace[dth] = current_vert;
   }
 }
