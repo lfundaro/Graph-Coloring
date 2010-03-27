@@ -12,7 +12,7 @@
 /* actualizar estructuras como color_around, popularity, etc. */
 /**************************************************************/
 void backwards(int *, int *, int *, int *,  int *, Graph *, 
-               tuple *, int *, int *, int* , int, int, int);
+               tuple *, int *, int *, int* , int, int, int, int*);
 
 /***************************************************************/
 /* Función que dado un vértice decoloreado, restablece su      */
@@ -50,7 +50,7 @@ int * is_adjacent(int *, int, Graph *);
 /**************************************/
 /* Función que etiqueta los vértices  */
 /**************************************/
-void label(Graph *, int, int *, int);
+void label(Graph *, int, int *, int, int*);
 
 /*********************************************************/
 /* Función que determina el máximo color utilizado hasta */
@@ -70,4 +70,10 @@ void unlabel(Graph *, int *, int, int);
 /**********************************************************/
 void det_vertex_max_color(Graph *, int *, int, int *, int);
 
+/*************************************************************/
+/* Función que verifica si un vértice a etiquetar es miembro */
+/* de la clique, en cuyo caso devuelve 1, de lo contrario    */
+/* retorna 0                                                 */
+/*************************************************************/
+int clique_member(int *, int);
 
