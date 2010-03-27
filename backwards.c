@@ -27,6 +27,7 @@ void backwards(int * trace, int * max_used_color,
     if (valid_FC(graph, trace[vertex_position],lower_bound+1)) {
       *current_vertex = trace[vertex_position];
       *vertex_max_color = 0;
+      *depth=0;
       return;
     }
     else {

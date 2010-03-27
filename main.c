@@ -58,6 +58,7 @@ int main() {
     printf("Número cromático = %d \n", upper_bound);
   else {
     upper_bound -= 1;
+    lower_bound -= 1;
     implicit_enum(&upper_bound, lower_bound, members, graph,
                   deg_vert, vertex_num);
   }
