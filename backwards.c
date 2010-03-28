@@ -48,7 +48,7 @@ void backwards(int * trace, int * max_used_color,
     // no vacío.
     int aux;
 
-    if (*depth == (vertex_num - (lower_bound+1))&&
+    if ((*depth+1) == (vertex_num - (lower_bound+1))&&
 	graph[trace[*depth]].color != -1) {
       // Se quitan todos los labels a partir del vértice 
       // de máximo color
@@ -153,8 +153,10 @@ void max_color(int * popularity, int * max_used_color) {
   int bound = *max_used_color;
 
   for(i = bound; i >= 0; i--) {
-    if (popularity[i] > 0) 
+    if (popularity[i] > 0) {
       *max_used_color = i;
+      return;
+    }
   } 
 }
 
@@ -221,7 +223,7 @@ void label(Graph * graph, int vertex_position, int * trace, int max_used_color, 
       }
     }
   }
-  free(colors);
+  //  free(colors);
 }
 
 /********************************************************/
@@ -276,13 +278,13 @@ void update_all(int * trace, Graph * graph,
     //Actualización de tabla de popularidad
     popularity[graph[trace[i]].color]--;
 
-    // Decoloreamos el vértice
-    graph[trace[i]].color = -1;    
-    
     // Bajamos grado de saturación a los vecinos
     // y restablecemos el grado de saturación a 0 
     // para el vértice decoloreado.F
-    uncolor_satur(satur_degree, graph, trace[i]);
+    uncolor_satur(satur_degree, graph, trace[i], graph[trace[i]].color);
+
+    // Decoloreamos el vértice
+    graph[trace[i]].color = -1;    
     
     i--;
   }
@@ -293,13 +295,15 @@ void update_all(int * trace, Graph * graph,
 /* Esta función se utiliza para bajar el grado de saturación  */
 /* de los vécinos de un vértice que está siendo decoloreado   */
 /**************************************************************/
-void uncolor_satur(int * satur_degree, Graph * graph, int vertex) {
+void uncolor_satur(int * satur_degree, Graph * graph, int vertex, int color) {
   int * adj = graph[vertex].adjacents;
   int adj_size = graph[vertex].adj_size;
   int i;
   satur_degree[vertex] = 0;
-  for(i = 0; i < adj_size; i++) 
-    satur_degree[graph[vertex].adjacents[i]]--;
+  for(i = 0; i < adj_size; i++) {
+    if (graph[adj[i]].color_around[color]==0)
+      satur_degree[graph[vertex].adjacents[i]]--;
+  }
 }
 
 
