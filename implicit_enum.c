@@ -20,9 +20,8 @@ void color_clique(Graph* graph,
 		  int* satur_degree, int* popularity,
 		  int* clique, int vertex_num){
   int current_vert;
-  int color;
-  int i;
   int color=0;
+  int i;
 
   for (i=0; i<vertex_num; ++i){
     if (clique[i]) {

@@ -2,7 +2,7 @@
 
 
 void backwards(int * trace, int * max_used_color,
-               int * vertex_max_color, int * current_vertex,
+               int * first_max_color, int * current_vertex,
                int * satur_degree, Graph * graph, tuple * base,
                int * popularity, int * coloring,
                int * depth, int upper_bound, int lower_bound, 
@@ -23,11 +23,12 @@ void backwards(int * trace, int * max_used_color,
     graph[trace[vertex_position]].FC[vertex_color] = 0;
 
     // Se determina el máximo color utilizado hasta ahora
-    max_color(popularity, max_used_color, upper_bound);
+    *max_used_color = lower_bound;
+    //max_color(popularity, max_used_color, upper_bound);
     
-    if (valid_FC(graph, trace[vertex_position],lower_bound+1)) {
-      *current_vertex = trace[vertex_position];
-      *vertex_max_color = 0;
+    if (valid_FC(graph, trace[vertex_position],lower_bound)) {
+      //*current_vertex = trace[vertex_position];
+      *first_max_color = 0;
       *depth = 0;
       return;
     }
@@ -40,23 +41,15 @@ void backwards(int * trace, int * max_used_color,
   }
   // Caso en el que el vértice no es raiz
   else {
-
+    
     // Variable aux que lleva el último vértice descoloreado en 
     // mientras se busca un vértice entre todos los etiquetados
     // que sea útil para el forward, es decir, que su U(x) sea 
     // no vacío.
     int aux;
 
-    if (vertex_position == *depth) {
-      // Significa que el vértice donde quedó forward 
-      // tuvo FC vació, por lo tanto no se encontró en 
-      // la traza. Se llama directamente label
-      label(graph, *depth,trace, *max_used_color,
-            members);
-      aux = *depth - 1;
-      vertex_position = *depth - 1;
-    }
-    else {
+    if (*depth == (vertex_num - (lower_bound+1))&&
+	graph[trace[*depth]].color != -1) {
       // Se quitan todos los labels a partir del vértice 
       // de máximo color
       unlabel(graph, trace, vertex_position, *depth);
@@ -68,18 +61,30 @@ void backwards(int * trace, int * max_used_color,
       update_all(trace, graph, base, popularity, *depth,
                  vertex_position, satur_degree);
       
-      // Se determina el nuevo máximo color utilizado 
-      // ya que se decolorearon vértices que estaban 
-      // entre el último vértice del árbol y el que tiene 
-      // el color q de rango mínimo.
-      max_color(popularity, max_used_color, upper_bound);
-
       // Se procede a hacer el etiquetado partiendo del vértice
       // con coloración más alta y de rango mínimo.
       label(graph, vertex_position, trace, *max_used_color,
             members);
-      
+
+      // Se determina el nuevo máximo color utilizado 
+      // ya que se decolorearon vértices que estaban 
+      // entre el último vértice del árbol y el que tiene 
+      // el color q de rango mínimo.
+      //max_color(popularity, max_used_color, upper_bound);
+      *max_used_color -= 1;
+
+      vertex_position -= 1;
+
       aux = vertex_position;
+    }
+    else {
+      // Significa que el vértice donde quedó forward 
+      // tuvo FC vació, por lo tanto no se encontró en 
+      // la traza. Se llama directamente label
+      label(graph, *depth,trace, *max_used_color,
+            members);
+      aux = *depth - 1;
+      vertex_position = aux;
     }
 
     // Se busca el vértice etiquetado con mayor rango
@@ -108,7 +113,7 @@ void backwards(int * trace, int * max_used_color,
         graph[trace[i]].FC[vertex_color] = 0;
       
         // Se determina el máximo color
-        max_color(popularity, max_used_color, upper_bound);
+        max_color(popularity, max_used_color);
 
         // Se elimina la etiqueta del vértice
         graph[trace[i]].label.flag = 0;
@@ -119,8 +124,8 @@ void backwards(int * trace, int * max_used_color,
           // Se determina la posición en la traza
           // del vértice de mínimo rango que tiene
           // el color máximo utilizado
-          det_vertex_max_color(graph, trace,*max_used_color,
-                               vertex_max_color, i);
+          det_first_max_color(graph, trace,*max_used_color,
+                               first_max_color, i);
           // Se indica el vértice del cual se parte
           // y su posición en la traza (depth)
           *current_vertex = trace[i];
@@ -140,12 +145,14 @@ void backwards(int * trace, int * max_used_color,
 
 
 
-void max_color(int * popularity, int * max_used_color, int upper_bound) {
+void max_color(int * popularity, int * max_used_color) {
   // Se recorre la tabla de popularidad desde el color 
   // upper_bound hasta el inicio de la tabla en busca del
   // primer color que tenga popularidad distinta de cero.
   int i;
-  for(i = (upper_bound-1); i >= 0; i--) {
+  int bound = *max_used_color;
+
+  for(i = bound; i >= 0; i--) {
     if (popularity[i] > 0) 
       *max_used_color = i;
   } 
@@ -155,13 +162,13 @@ void max_color(int * popularity, int * max_used_color, int upper_bound) {
 /* Procedimiento que determina el vértice de mínimo rango  */
 /* con el máximo color utilizado hasta el momomento.       */
 /***********************************************************/
-void det_vertex_max_color(Graph * graph, int * trace,
+void det_first_max_color(Graph * graph, int * trace,
                           int max_used_color, 
-                          int * vertex_max_color, int bound) {
+                          int * first_max_color, int bound) {
   int i;
   for(i = 0; i < bound; i++) {
     if (graph[trace[i]].color == max_used_color) 
-      *vertex_max_color = trace[i];
+      *first_max_color = trace[i];
   } 
 }
 
@@ -171,7 +178,7 @@ void det_vertex_max_color(Graph * graph, int * trace,
 int valid_FC(Graph * graph, int vertex, int max_used_color) {
   int i;
   int is_valid = 0;
-  for(i = 0; i <= max_used_color + 1; i++)
+  for(i = 0; i <= (max_used_color+1); i++)
     is_valid = is_valid | graph[vertex].FC[i];
   return is_valid;
 }
@@ -192,7 +199,7 @@ void label(Graph * graph, int vertex_position, int * trace, int max_used_color, 
   // colores que se encuentran mientras se asciende
   // en el arbol para hacer labeling
   int i;
-  int * colors = (int *) malloc(sizeof(int)* (max_used_color+1));
+  int * colors = (int *) malloc(sizeof(int)* max_used_color);
   for(i = 0; i < max_used_color; i++)
     colors[i] = 0;
 
@@ -222,9 +229,9 @@ void label(Graph * graph, int vertex_position, int * trace, int max_used_color, 
 /* el vértice X_k hasta el vértice X_n.                 */
 /********************************************************/
 void unlabel(Graph * graph, int * trace, int start_vertex,
-             int vertex_num) {
+             int depth) {
   int i;
-  for(i = start_vertex; i <= vertex_num; i++)
+  for(i = start_vertex; i <= depth; i++)
     graph[trace[i]].label.flag = 0;
 }
 
@@ -274,7 +281,7 @@ void update_all(int * trace, Graph * graph,
     
     // Bajamos grado de saturación a los vecinos
     // y restablecemos el grado de saturación a 0 
-    // para el vértice decoloreado.
+    // para el vértice decoloreado.F
     uncolor_satur(satur_degree, graph, trace[i]);
     
     i--;
@@ -297,11 +304,7 @@ void uncolor_satur(int * satur_degree, Graph * graph, int vertex) {
 
 
 int clique_member(int * members, int vertex) {
-  if (members[vertex] == 1) {
-    return 1;
-  }
-  else 
-    return 0;
+  return members[vertex];
 }
 
 
@@ -323,7 +326,7 @@ int clique_member(int * members, int vertex) {
 
 /* // Se procede a hacer el etiquetado partiendo del vértice  */
 /* // con coloración más alta y de rango mínimo. */
-/* label(graph,*vertex_max_color, *max_used_color, trace); */
+/* label(graph,*first_max_color, *max_used_color, trace); */
 
 
 
@@ -401,8 +404,8 @@ int clique_member(int * members, int vertex) {
 /*         // Se determina la posición en la traza */
 /*         // del vértice de mínimo rango que tiene */
 /*         // el color máximo utilizado */
-/*         det_vertex_max_color(graph, trace,*max_used_color, */
-/*                              vertex_max_color, candidates->position); */
+/*         det_first_max_color(graph, trace,*max_used_color, */
+/*                              first_max_color, candidates->position); */
 /*         // Se indica la posición en la traza del vértice  */
 /*         // del cual se parte para hacer forward. */
 /*         *current_vertex = candidates->vertex; */

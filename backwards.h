@@ -56,7 +56,7 @@ void label(Graph *, int, int *, int, int*);
 /* Función que determina el máximo color utilizado hasta */
 /* ahora.                                                */
 /*********************************************************/
-void max_color(int *, int *, int);
+void max_color(int *, int *);
 
 /********************************************************/
 /* Procedimiento utilizado para quitar etiquetas desde  */
@@ -68,7 +68,7 @@ void unlabel(Graph *, int *, int, int);
 /* Procedimiento que determina el vértice de mínimo rango */
 /* que tiene el máximo color utilizado hasta el momento.  */
 /**********************************************************/
-void det_vertex_max_color(Graph *, int *, int, int *, int);
+void det_first_max_color(Graph *, int *, int, int *, int);
 
 /*************************************************************/
 /* Función que verifica si un vértice a etiquetar es miembro */
