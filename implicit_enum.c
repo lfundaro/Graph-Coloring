@@ -22,11 +22,10 @@ void color_clique(Graph* graph,
   int current_vert;
   int color;
   int i;
-  int j = 0;
+  int color=0;
 
   for (i=0; i<vertex_num; ++i){
     if (clique[i]) {
-      color = j;
       current_vert = i; 
       
       graph[current_vert].color = color;    
@@ -34,7 +33,7 @@ void color_clique(Graph* graph,
       color_ca_and_satur(graph,satur_degree,current_vert,color);
       popularity[color] += 1;
       
-      ++j;
+      ++color;
     }
   }
 }
@@ -51,8 +50,8 @@ void implicit_enum(int * upper_bound, int lower_bound,
     satur_degree[i] = 0;
 
   // Tabla de popularidad de un color
-  int * popularity = (int *) malloc(sizeof(int) * (*upper_bound));
-  for(i = 0; i < *upper_bound; i++) 
+  int * popularity = (int *) malloc(sizeof(int) * (*upper_bound+1));
+  for(i = 0; i < *(upper_bound+1); i++) 
     popularity[i] = 0;
 
   // Se comienza por colorear la clique máxima encontrada
@@ -64,10 +63,9 @@ void implicit_enum(int * upper_bound, int lower_bound,
   *upper_bound += 1;
 
   // Se crea la traza que contiene la secuencia de vértices
-
   // coloreados cuando se hace backtracking
-  int * trace = (int *) malloc(sizeof(int) * (vertex_num-lower_bound));
-  for(i = 0; i < (vertex_num-lower_bound); i++) 
+  int * trace = (int *) malloc(sizeof(int) * (vertex_num-(lower_bound+1)));
+  for(i = 0; i < (vertex_num-(lower_bound+1)); i++) 
     trace[i] = 0;
 
   // Profundidad alcanzada en el árbol de backtrack
@@ -76,7 +74,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
 
   // Máximo color utilizado hasta el momento 
   int * max_used_color = (int *) malloc(sizeof(int));
-  *max_used_color = lower_bound-1;
+  *max_used_color = lower_bound;
 
   // Posición en la traza del vértice con máximo color
   int * vertex_max_color = (int *) malloc(sizeof(int));
@@ -88,7 +86,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
   // Vértice de partida para forwards
   int * current_vertex = (int *) malloc(sizeof(int));
   *current_vertex = nxt_vertex(satur_degree,vertex_num,graph,base, lower_bound);
-  int FC_size = lower_bound;
+  int FC_size = (lower_bound+1);
   int* FC = graph[*current_vertex].FC;
   genFC(*current_vertex,
         FC,
