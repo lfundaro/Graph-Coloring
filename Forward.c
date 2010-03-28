@@ -86,7 +86,7 @@ void color_ca_and_satur(Graph * graph, int* satur_degree, int v_i, int color){
       // Quiero saber si el vértice adyacente a v_i tiene en su
       // arreglo de colores adyacentes el color "color".
       if (graph[adjacents[i]].color_around[color] == 0)
-        satur_degree[adjacents[i]] = 1;
+        satur_degree[adjacents[i]] += 1;
       graph[adjacents[i]].color_around[color]++;
     }
   }

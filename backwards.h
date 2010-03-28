@@ -19,7 +19,7 @@ void backwards(int *, int *, int *, int *,  int *, Graph *,
 /* grado de saturación a 0 y decrementa el grado de saturación */
 /* de todos sus vecinos.                                       */
 /***************************************************************/
-void uncolor_satur(int *, Graph *, int);
+void uncolor_satur(int *, Graph *, int, int);
 
 /****************************************************/
 /* Función que verifica si el elemento que se está  */
