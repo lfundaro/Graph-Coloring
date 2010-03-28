@@ -223,7 +223,7 @@ void label(Graph * graph, int vertex_position, int * trace, int max_used_color, 
       }
     }
   }
-  //  free(colors);
+  //free(colors);
 }
 
 /********************************************************/

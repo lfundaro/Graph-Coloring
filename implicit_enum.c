@@ -8,8 +8,9 @@ int coloringCheck(Graph* graph, int vertex_num, int* coloring){
   
   for (i=0 ; i<vertex_num ; ++i){
     for (j=0; j<graph[i].adj_size;++j){
-      if (coloring[i] == coloring[graph[i].adjacents[j]])
-	return 0;
+      if ((coloring[i] == coloring[graph[i].adjacents[j]])||
+          coloring[i] == -1)
+          exit(1);
     }
   }
 
@@ -129,12 +130,12 @@ void implicit_enum(int * upper_bound, int lower_bound,
     printf("Inutil\n");
 
 
-  free(trace);
+  /* free(trace); */
   /* free(max_used_color); */
   /* free(vertex_max_color); */
   /* free(current_vertex); */
   /* free(satur_degree); */
-  /* //  free(popularity); */
+  /* free(popularity); */
   /* free(coloring); */
   /* free(depth); */
 }
