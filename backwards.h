@@ -33,7 +33,7 @@ void uncolor_satur(int *, Graph *, int, int);
 /* decoloreando.                                         */
 /*********************************************************/
 void update_all(int *, Graph *, tuple *, int *, 
-                int, int, int *);
+                int, int, int *, int);
 
 /********************************************************/
 /* Función que arregla el FC del vértice donde forwards */
@@ -77,3 +77,4 @@ void det_first_max_color(Graph *, int *, int, int *, int);
 /*************************************************************/
 int clique_member(int *, int);
 
+void calculate_satur_degree(int *, int, Graph *, int); 

@@ -48,18 +48,18 @@ void implicit_enum(int * upper_bound, int lower_bound,
   for(i = 0; i < vertex_num; i++) 
     satur_degree[i] = 0;
 
+  // Se aumenta la cota para hacer converger el algoritmo 
+  // en caso de no encontrarse mejor coloracion que upper_bound
+  *upper_bound += 1;
+
   // Tabla de popularidad de un color
   int * popularity = (int *) malloc(sizeof(int) * (*upper_bound+1));
-  for(i = 0; i < *(upper_bound+1); i++) 
+  for(i = 0; i < *upper_bound+1; i++) 
     popularity[i] = 0;
 
   // Se comienza por colorear la clique máxima encontrada
   // por Brelaz+Interchange
   color_clique(graph,satur_degree,popularity,members,vertex_num);
-
-  // Se aumenta la cota para hacer converger el algoritmo 
-  // en caso de no encontrarse mejor coloracion que upper_bound
-  *upper_bound += 1;
 
   // Se crea la traza que contiene la secuencia de vértices
   // coloreados cuando se hace backtracking
@@ -84,7 +84,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
 
   // Vértice de partida para forwards
   int * current_vertex = (int *) malloc(sizeof(int));
-  *current_vertex = nxt_vertex(satur_degree,vertex_num,graph,base, lower_bound);
+  *current_vertex = nxt_vertex(satur_degree,members,vertex_num,graph,base, lower_bound);
   int FC_size = (lower_bound+1);
   int* FC = graph[*current_vertex].FC;
   genFC(*current_vertex,
@@ -101,7 +101,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
   
   while(1) {
     Forward(current_vertex,max_used_color,vertex_max_color,
-	    upper_bound,trace, depth,satur_degree,popularity,
+	    upper_bound,trace, depth,members,satur_degree,popularity,
             base,graph,vertex_num,coloring, lower_bound);
     if (*upper_bound == lower_bound)
       break;
@@ -117,7 +117,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
   }
 
   // Se imprime el número cromático
-  printf("Numero cromatico: %d\n",*upper_bound);
+  printf("Numero cromatico: %d\n",*upper_bound+1);
   printf("Vertice  Color\n");
   for (i=0; i<vertex_num; ++i){
     printf("%d - %d\n",i,coloring[i]);

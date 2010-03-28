@@ -49,7 +49,7 @@ void color_maxcolor(int*,int*,int,int);
   grado de saturacion y en el grado de los vertices
 */
 //int* satur, int vertex_num, Graph graph, int* base
-int nxt_vertex(int*,int,Graph*,tuple*, int);
+int nxt_vertex(int*,int*,int,Graph*,tuple*, int);
 
 
 /*
@@ -102,4 +102,4 @@ Funcion Forward
 //Graph* graph,
 //int n_of_vertex,      <- Grado del grafo
 //int* coloring         <- Mejor coloracion encontrada hasta el momento
-void Forward(int*,int*,int*,int*,int*,int*,int*,int*,tuple*,Graph*,int,int*, int);
+void Forward(int*,int*,int*,int*,int*,int*,int*,int*,int*,tuple*,Graph*,int,int*, int);

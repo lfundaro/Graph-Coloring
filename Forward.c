@@ -16,6 +16,22 @@ int colorCheck(Graph* graph, int vertex_num, int vertex){
   return 1;
 }
 
+int caCheck(Graph* graph, int vertex_num, int vertex, int color){
+  int j;
+  int* p = NULL;
+
+  if (graph[vertex].color_around[color] <= 0 && color != -1){
+    for (j=0; j<graph[vertex].adj_size;++j){
+      if (graph[graph[vertex].adjacents[j]].color == color){
+	j = *p;
+	return 0;
+      }
+    }
+  }
+
+  return 1;
+}
+
 /*Funcion que calcula la cantidad de colores posibles
   para un vertice*/
 /*
@@ -82,13 +98,14 @@ void color_ca_and_satur(Graph * graph, int* satur_degree, int v_i, int color){
   satur_degree[v_i] = -1; //Por ya estoy coloreando v_i
 
   for(i = 0; i < graph[v_i].adj_size; i++) {
-    if (satur_degree[adjacents[i]] >= 0) {
+    //if (graph[adjacents[i]].color == -1) {
       // Quiero saber si el vértice adyacente a v_i tiene en su
       // arreglo de colores adyacentes el color "color".
       if (graph[adjacents[i]].color_around[color] == 0)
         satur_degree[adjacents[i]] += 1;
       graph[adjacents[i]].color_around[color]++;
-    }
+      //caCheck(graph,20,adjacents[i],color);
+      //}
   }
 }
 
@@ -107,13 +124,13 @@ void color_maxcolor(int* max_color, int* st_max_color, int depth, int v_i_color)
 
 /*Devuelve cual es el proximo vertice a colorear basado en el
   grado de saturacion y en el grado de los vertices*/
-int nxt_vertex(int * satur, int vertex_num, Graph* graph, tuple* deg_vert, int lower_bound){
+int nxt_vertex(int * satur, int* clique, int vertex_num, Graph* graph, tuple* deg_vert, int lower_bound){
   int i;
   int max_satur_degree = -1;
   int nxt_vert;
 
   for(i = 0; i < vertex_num; i++) {
-    if (max_satur_degree < satur[i]) {
+    if ((max_satur_degree < satur[i])&&(!clique[i])) {
       max_satur_degree = satur[i];
       nxt_vert = i;
     }
@@ -212,6 +229,7 @@ void Forward(int* start_vert,
 	     int* upper_bound,
 	     int* trace,
 	     int* depth,
+	     int* clique,
 	     int* satur_degree,
 	     int* popularity,
 	     tuple* deg_vert,
@@ -260,7 +278,7 @@ void Forward(int* start_vert,
 
     //Busco el siguiente vertice a colorear y
     //calculo su FC
-    current_vert = nxt_vertex(satur_degree,n_of_vertex,graph,deg_vert,lower_bound);
+    current_vert = nxt_vertex(satur_degree,clique,n_of_vertex,graph,deg_vert,lower_bound);
     FC_size = mix((ub-1),(max_color+1));
     FC = graph[current_vert].FC;
     genFC(current_vert,
