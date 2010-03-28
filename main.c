@@ -19,6 +19,8 @@ int main() {
   tuple * deg_vert = (tuple *) malloc(sizeof(tuple)*vertex_num);
   degree(graph, vertex_num, deg_vert);
   
+  
+
   // Par clique-coloración
   pair result;
 
