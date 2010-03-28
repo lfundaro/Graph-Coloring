@@ -209,7 +209,7 @@ void uncolor(struct Graph * graph, int v_i, int color) {
   int * adjacents = graph[v_i].adjacents;
   int i;
   for(i = 0; i < graph[v_i].adj_size; i++) {
-    graph[adjacents[i]].color_around[color] = 0;
+    graph[adjacents[i]].color_around[color]--;
   }
 }
 

@@ -18,6 +18,7 @@ void backwards(int * trace, int * max_used_color,
     int vertex_color = graph[trace[vertex_position]].color;
     update_all(trace, graph, base, popularity, *depth,
                vertex_position, satur_degree);
+
     // Quitamos su color del FC
     graph[trace[vertex_position]].FC[vertex_color] = 0;
 
@@ -27,7 +28,7 @@ void backwards(int * trace, int * max_used_color,
     if (valid_FC(graph, trace[vertex_position],lower_bound+1)) {
       *current_vertex = trace[vertex_position];
       *vertex_max_color = 0;
-      *depth=0;
+      *depth = 0;
       return;
     }
     else {
@@ -58,7 +59,7 @@ void backwards(int * trace, int * max_used_color,
     else {
       // Se quitan todos los labels a partir del vértice 
       // de máximo color
-      unlabel(graph, trace, vertex_position, vertex_num);
+      unlabel(graph, trace, vertex_position, *depth);
 
       // Se logró una coloración completa. Por lo tanto:
       // Se decolorean todos los vértices subiendo en el 
@@ -223,7 +224,7 @@ void label(Graph * graph, int vertex_position, int * trace, int max_used_color, 
 void unlabel(Graph * graph, int * trace, int start_vertex,
              int vertex_num) {
   int i;
-  for(i = start_vertex; i < vertex_num; i++)
+  for(i = start_vertex; i <= vertex_num; i++)
     graph[trace[i]].label.flag = 0;
 }
 
