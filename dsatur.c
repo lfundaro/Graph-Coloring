@@ -1,4 +1,5 @@
 # include "dsatur.h"
+# include "Forward.h"
 
 pair dsatur(Graph graph[], tuple deg_vert[], int vertex_num, int start_point) {
   // Ordenamiento decreciente de grados de vertices
@@ -209,7 +210,10 @@ void uncolor(struct Graph * graph, int v_i, int color) {
   int * adjacents = graph[v_i].adjacents;
   int i;
   for(i = 0; i < graph[v_i].adj_size; i++) {
-    graph[adjacents[i]].color_around[color]--;
+    //if (graph[i].color == -1){
+      graph[adjacents[i]].color_around[color]--;
+      //caCheck(graph,20,adjacents[i],color);
+      //}
   }
 }
 

@@ -17,7 +17,7 @@ void backwards(int * trace, int * max_used_color,
   if (vertex_position == 0) {
     int vertex_color = graph[trace[vertex_position]].color;
     update_all(trace, graph, base, popularity, *depth,
-               vertex_position, satur_degree);
+               vertex_position, satur_degree, *max_used_color);
 
     // Quitamos su color del FC
     graph[trace[vertex_position]].FC[vertex_color] = 0;
@@ -27,7 +27,7 @@ void backwards(int * trace, int * max_used_color,
     //max_color(popularity, max_used_color, upper_bound);
     
     if (valid_FC(graph, trace[vertex_position],lower_bound)) {
-      //*current_vertex = trace[vertex_position];
+      *current_vertex = trace[vertex_position];
       *first_max_color = 0;
       *depth = 0;
       return;
@@ -59,7 +59,7 @@ void backwards(int * trace, int * max_used_color,
       // árbol hasta llegar al vértice de mínimo rango 
       // con el mayor color usado en la coloración parcial actual
       update_all(trace, graph, base, popularity, *depth,
-                 vertex_position, satur_degree);
+                 vertex_position, satur_degree, *max_used_color);
       
       // Se procede a hacer el etiquetado partiendo del vértice
       // con coloración más alta y de rango mínimo.
@@ -102,7 +102,7 @@ void backwards(int * trace, int * max_used_color,
         // Se decolorea desde el vértice aux hasta el 
         // vértice candidato etiquetado.
         update_all(trace, graph, base, popularity,
-                   aux, i, satur_degree);
+                   aux, i, satur_degree, *max_used_color);
 
         // Se pone aux a un nivel arriba del vértice candidato 
         // en caso de que el vértice resulte no tener un FC 
@@ -264,7 +264,8 @@ int * is_adjacent(int * v_1, int v_2,
 void update_all(int * trace, Graph * graph, 
                 tuple * base, int * popularity, 
                 int depth, int start_point, 
-                int * satur_degree) {
+                int * satur_degree,
+		int max_used_color) {
 
   // Actualizamos todos los vértices desde el nivel 
   // de más profundo del árbol (depth) donde se detuvo 
@@ -285,6 +286,11 @@ void update_all(int * trace, Graph * graph,
 
     // Decoloreamos el vértice
     graph[trace[i]].color = -1;    
+
+    calculate_satur_degree(satur_degree, trace[i], graph, 
+			   max_used_color);
+    
+    max_color(popularity, &max_used_color);
     
     i--;
   }
@@ -309,6 +315,15 @@ void uncolor_satur(int * satur_degree, Graph * graph, int vertex, int color) {
 
 int clique_member(int * members, int vertex) {
   return members[vertex];
+}
+
+void calculate_satur_degree(int * satur_degree, int vertex, 
+			    Graph * graph, int max_used_color) { 
+  int i;
+  for(i = 0; i <= max_used_color; i++) {
+    if (graph[vertex].color_around[i]) 
+      satur_degree[vertex]++;
+  }
 }
 
 
