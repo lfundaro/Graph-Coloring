@@ -93,13 +93,17 @@ void implicit_enum(int * upper_bound, int lower_bound,
         FC_size,
         graph,
         satur_degree,
-        *upper_bound);
+        *upper_bound,
+	*depth,
+	trace,
+	*max_used_color,
+	members);
   
   
   
   // Coloración conseguida hasta el momento
   int * coloring = (int *) malloc(sizeof(int) * vertex_num);
-  
+  int backtracks = 0;
   while(1) {
     Forward(current_vertex,max_used_color,vertex_max_color,
 	    upper_bound,trace, depth,members,satur_degree,popularity,
@@ -107,6 +111,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
     if (*upper_bound == lower_bound)
       break;
     else {
+      backtracks++;
       backwards(trace, max_used_color, vertex_max_color,
                 current_vertex, satur_degree, graph, base,
                 popularity, coloring, depth, *upper_bound,
@@ -119,6 +124,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
 
   // Se imprime el número cromático
   printf("Numero cromatico: %d\n",*upper_bound+1);
+  printf("Backtracks: %d\n",backtracks);
   printf("Vertice  Color\n");
   for (i=0; i<vertex_num; ++i){
     printf("%d - %d\n",i,coloring[i]);

@@ -4,13 +4,13 @@
  C myciel5.col
  C myciel6.col
  C myciel7.col
-NC 12-0,3-3.col
+ C 12-0,3-3.col
  C 12-0,5-3.col
 NC  14-0,5-2.col
 NC  14-0,5-3.col
  C 16-0,5-3.col
  C 18-0,3-3.col
  C 18-0,5-1.col
-NC  20-0,1-2.col
+ C 20-0,1-2.col
  C 20-0,5-2.col
  C 20-0,7-1.col

@@ -60,14 +60,14 @@ int nxt_vertex(int*,int*,int,Graph*,tuple*, int);
   FC
 */
 //int vert, int* FC,int FC_size,Graph* graph,int* satur_degree,int upper_bound
-void genFC(int,int*,int,Graph*,int*,int);
+void genFC(int,int*,int,Graph*,int*,int,int,int*,int,int*);
 
 
 /*
   Procedimiento de lookahead para reducir el tamano del FC
 */
 //int vert,int color,int upper_bound,int upper_bound,Graph* graph,int* satur_degree
-int lookahead(int,int,int,Graph*,int*);
+int lookahead(int,int,int,Graph*,int*,int,int*,int,int*);
 
 
 /*

@@ -1,6 +1,7 @@
 # include <stdio.h>
 # include "Forward.h"
 # include "utilities.h"
+# include "backwards.h"
 
 int colorCheck(Graph* graph, int vertex_num, int vertex){
   int j;
@@ -149,7 +150,11 @@ void genFC(int vert,
 	   int FC_size,
 	   Graph* graph,
 	   int* satur_degree,
-	   int upper_bound){
+	   int upper_bound,
+	   int depth,
+	   int* trace,
+	   int max_color,
+	   int* clique){
   int i;
   int* color_around = graph[vert].color_around;
 
@@ -157,7 +162,7 @@ void genFC(int vert,
     if (color_around[i]>0)
       FC[i]=0;
     else
-      FC[i]=1;//lookahead(vert,i,upper_bound,graph,satur_degree);
+      FC[i]=lookahead(vert,i,upper_bound,graph,satur_degree,depth,trace,max_color,clique);
   }
 }
 
@@ -167,7 +172,11 @@ int lookahead(int vert,
 	      int color,
 	      int upper_bound,
 	      Graph* graph,
-	      int* satur_degree){
+	      int* satur_degree,
+	      int depth,
+	      int* trace,
+	      int max_color,
+	      int* clique){
   int i;
   int adj_satur;
 
@@ -186,9 +195,11 @@ int lookahead(int vert,
       adj_satur += 1;
 
     //Si su saturacion es igual la cota superior
-    //menos uno, su FC sera vacio, devuelvo falso.
-    if (adj_satur == (upper_bound-1))
+    //su FC sera vacio, etiqueto y devuelvo falso.
+    if (adj_satur == upper_bound){
+      label(graph, depth, trace, max_color,clique);
       return 0;
+    }
   }
 
   //Si ningun vecino devolvio falso,
@@ -286,7 +297,11 @@ void Forward(int* start_vert,
 	  FC_size,
 	  graph,
 	  satur_degree,
-	  ub);
+	  ub,
+	  dth,
+	  trace,
+	  max_color,
+	  clique);
   }
 
   //Si tengo una coloracion completa, actualizo
