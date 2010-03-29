@@ -204,8 +204,8 @@ void label(Graph * graph, int vertex_position, int * trace, int max_used_color, 
   // colores que se encuentran mientras se asciende
   // en el arbol para hacer labeling
   int i;
-  int * colors = (int *) malloc(sizeof(int)* max_used_color);
-  for(i = 0; i < max_used_color; i++)
+  int * colors = (int *) malloc(sizeof(int) * (max_used_color+1));
+  for(i = 0; i <= max_used_color; i++)
     colors[i] = 0;
 
   // Se comienza a etiquetar los vértices
@@ -226,7 +226,7 @@ void label(Graph * graph, int vertex_position, int * trace, int max_used_color, 
       }
     }
   }
-  //free(colors);
+  free(colors);
 }
 
 /********************************************************/
@@ -290,11 +290,14 @@ void update_all(int * trace, Graph * graph,
     // Decoloreamos el vértice
     graph[trace[i]].color = -1;    
 
+    // Se recalculan los grados de saturación del vértice 
+    // que ha sido coloreado.
     calculate_satur_degree(satur_degree, trace[i], graph, 
 			   max_used_color);
-    
+
+    // Se determina el nuevo máximo color
     max_color(popularity, &max_used_color);
-    
+
     i--;
   }
 }

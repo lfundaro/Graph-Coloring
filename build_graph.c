@@ -17,6 +17,7 @@ int get_vertex_num() {
       // ahora vertex_num contiene numero de vertices en grafo
     }
   }
+  regfree(compiled_num);
   free(compiled_num);
   free(dump);
   if (line != NULL) 
@@ -44,7 +45,7 @@ Graph * create_graph(int vertex_num) {
 }
   
 struct linked_list ** fill_tmp_graph(int vertex_num) {
-  linked_list ** tmp_graph = (linked_list **) malloc(sizeof(linked_list *) * vertex_num);
+  linked_list ** tmp_graph = (linked_list **) malloc(sizeof(linked_list *) * vertex_num); 
   init_tmp_graph(tmp_graph, vertex_num);
   regex_t * __restrict compiled_edge = (regex_t *) malloc(sizeof (regex_t));
   (void) regcomp(compiled_edge,"^e (.) (.)", REG_EXTENDED);   // Compilacion de RegEx para vertices  
@@ -76,6 +77,8 @@ struct linked_list ** fill_tmp_graph(int vertex_num) {
       }
     }
   }
+  regfree(compiled_edge);
+  free(line);
   free(compiled_edge);
   free(dump);
   return tmp_graph;
@@ -103,8 +106,8 @@ void init_FC(Graph * graph, int vertex_num, int upper_bound) {
   int i;
   int j;
   for(i = 0; i < vertex_num; i++) {
-    graph[i].FC = (int *) malloc(sizeof(int) * upper_bound);
-    for(j = 0; j < upper_bound; j++) 
+    graph[i].FC = (int *) malloc(sizeof(int) * (upper_bound+1));
+    for(j = 0; j <= upper_bound; j++) 
       graph[i].FC[j] = 0;
     }
 }

@@ -136,14 +136,14 @@ void implicit_enum(int * upper_bound, int lower_bound,
     printf("Inutil\n");
 
 
-  /* free(trace); */
-  /* free(max_used_color); */
-  /* free(vertex_max_color); */
-  /* free(current_vertex); */
-  /* free(satur_degree); */
-  /* free(popularity); */
-  /* free(coloring); */
-  /* free(depth); */
+  free(trace);
+  free(max_used_color);
+  free(vertex_max_color);
+  free(current_vertex);
+  free(satur_degree);
+  free(popularity);
+  free(coloring);
+  free(depth);
 }
 
 
