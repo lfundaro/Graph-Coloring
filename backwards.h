@@ -1,3 +1,7 @@
+# ifndef BACKWARDS
+# define BACKWARDS
+
+
 # include "structs.h"
 # include "utilities.h"
 # include <stdlib.h>
@@ -21,25 +25,12 @@ void backwards(int *, int *, int *, int *,  int *, Graph *,
 /***************************************************************/
 void uncolor_satur(int *, Graph *, int, int);
 
-/****************************************************/
-/* Función que verifica si el elemento que se está  */
-/* decoloreando está apuntado por base. De ser así  */
-/* se decrementa base.                              */
-/****************************************************/
-//void update_base(int *, int, tuple *);
-
 /*********************************************************/
 /* Función que actualiza estructuras a medida que se va  */
 /* decoloreando.                                         */
 /*********************************************************/
 void update_all(int *, Graph *, tuple *, int *, 
                 int, int, int *, int);
-
-/********************************************************/
-/* Función que arregla el FC del vértice donde forwards */
-/* comenzará a colorear de nuevo.                       */
-/********************************************************/
-//void set_new_FC(Graph *,int,int, int);
 
 /*************************************************************/
 /* Función que determina si un elemento es adyacente a otro. */
@@ -70,11 +61,25 @@ void unlabel(Graph *, int *, int, int);
 /**********************************************************/
 void det_first_max_color(Graph *, int *, int, int *, int);
 
-/*************************************************************/
-/* Función que verifica si un vértice a etiquetar es miembro */
-/* de la clique, en cuyo caso devuelve 1, de lo contrario    */
-/* retorna 0                                                 */
-/*************************************************************/
+
+
+
+/*********************************************************/
+/* Función que determina si un vértice es miembro        */
+/* de la clique. Esta función es necesaria porque        */
+/* como partimos del nodo donde existe una coloración    */
+/* parcial que incluye a la clique, entonces no queremos */
+/* que en ningún momento el algoritmo de Forward         */
+/* recoloree alguno de los miembros de la clique.        */
+/*********************************************************/
 int clique_member(int *, int);
 
+
+/*************************************************************/
+/* Función que se utiliza para recalcular los grados de      */
+/* saturación de un vértice una vez que éste es decoloreado. */
+/*************************************************************/
 void calculate_satur_degree(int *, int, Graph *, int); 
+
+
+#endif

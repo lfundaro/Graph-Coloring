@@ -256,7 +256,7 @@ void Forward(int* start_vert,
   int dth = *depth;
 
   int* FC = graph[current_vert].FC;
-  int FC_size = mix((ub-1),(max_color+1));
+  int FC_size = min((ub-1),(max_color+1));
   int nxt_col = 0;
 
   int num_of_colored = 0;
@@ -290,7 +290,7 @@ void Forward(int* start_vert,
     //Busco el siguiente vertice a colorear y
     //calculo su FC
     current_vert = nxt_vertex(satur_degree,clique,n_of_vertex,graph,deg_vert,lower_bound);
-    FC_size = mix((ub-1),(max_color+1));
+    FC_size = min((ub-1),(max_color+1));
     FC = graph[current_vert].FC;
     genFC(current_vert,
 	  FC,
