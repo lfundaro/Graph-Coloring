@@ -24,7 +24,7 @@ int list_length(linked_list * list){
   return len;
 }
 
-// Utilidad para inicializar un arreglo en ceros
+// Utilidad para inicializar un arreglo en 0
 void initialize(int* array,int N) {
   int i;
   for(i=0;i<N;i++) {

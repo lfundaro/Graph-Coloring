@@ -15,6 +15,9 @@ void backwards(int * trace, int * max_used_color,
   // Se averigua si el vértice de donde se parte
   // el backtracking es la raiz
   if (vertex_position == 0) {
+    // Se verifica que la raiz no tenga el color -1. 
+    // Si tiene el color menos uno entonces se han agotado 
+    // todos los backtracks y el algoritmo debe terminar
     if (graph[trace[vertex_position]].color != -1) { 
       int vertex_color = graph[trace[vertex_position]].color;
       update_all(trace, graph, base, popularity, *depth,
