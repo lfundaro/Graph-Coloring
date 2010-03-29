@@ -263,15 +263,25 @@ int * determine_max_clique(Graph * graph, int vertex_num,
   int i;
   pair result;
   int * members;
+  pair result_set[vertex_num];
+  int chosen;
   for(i = 0; i < vertex_num; i++) {
     graph_init(graph, vertex_num);
-    result = dsatur(graph, deg_vert, vertex_num, i);
-    if (result.clique > *lower_bound) {
-      *lower_bound = result.clique;
-      members = result.members;
-      continue;
-    }
-    free(result.members);
+    result_set[i] = dsatur(graph, deg_vert, vertex_num, i);
   }
+  for(i = 0; i < vertex_num; i++) {
+    if (result_set[i].clique > *lower_bound) {
+      *lower_bound = result_set[i].clique;
+      members = result_set[i].members;
+      chosen = i;
+    }
+  }
+  // Se libera memoria de las cliques candidatas que 
+  // fueron descartadas
+  for(i = 0; i < chosen; i++)
+    free(result_set[i].members);
+  for(i = chosen + 1; i < vertex_num; i++) 
+    free(result_set[i].members);
+
   return members;
 }

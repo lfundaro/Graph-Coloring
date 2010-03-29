@@ -82,8 +82,35 @@ void degree(struct Graph *, int, struct tuple *);
 /**********************************************************/
 void free_tuple_list(tuple_list *);
 
+/*************************************************************/
+/* Función que construye el arreglo de tuplas grado-vértice  */
+/* y los ordena de forma decreciente. En este arreglo están  */
+/* excluidos los miembros de la clique máxima encontrada     */
+/* por Brelaz+Interchange.                                   */
+/*************************************************************/
 void degree_no_clique(Graph *, int *, int, tuple *, int);
 
+/*********************************************************/
+/* Búsqueda lineal sobre la traza. Es útil para saber    */
+/* la posición del vértice desde donde se parte a hacer  */
+/* el labeling.                                          */
+/*********************************************************/
 int lin_search(int *, int, int);
+
+
+/******************************************************/
+/* Función que sirve para romper los empates cuando   */
+/* no se puede decidir el próximo vértice a colorear  */
+/* según los grados de saturación.                    */
+/******************************************************/
+int break_tie(tuple *, struct Graph *, int);
+
+
+/*******************************************************/
+/* Ordena los vértices adyacentes a un vértice v_i     */
+/* en orden creciente, de manera tal que los vértices  */
+/* puedan encontrarse haciendo búsqueda binaria.       */
+/*******************************************************/
+void order_graph(int, Graph *);
 
 #endif

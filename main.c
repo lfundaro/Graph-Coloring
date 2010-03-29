@@ -70,40 +70,10 @@ int main() {
   
   printf("Tiempo en segundos de ejecución del programa: %1.4f \n", (tiempo_inicial - tiempo_final)*-1);
 
-  /* free_graph(graph, vertex_num); */
-  /* free(deg_vert); */
-  /* free(members); */
+  free_graph(graph, vertex_num);
+  free(deg_vert);
+  free(members);
   return EXIT_SUCCESS;
 }
-
-/* CEMENTERIO */
-
-
-/*   int i; */
-/*   linked_list * aux; */
-/*   for(i = 0; i < vertex_num; i++) { */
-/*     printf("vértice %d \n",i+1); */
-/*     printf("-------------\n"); */
-/*     aux = tmp_graph[i]; */
-/*     while(aux != NULL) { */
-/*       printf("%d \n", aux->vertex+1); */
-/*       aux = aux->next; */
-/*     } */
-/*     printf("-------------\n"); */
-/*   } */
-
-
-
-  /* int i; */
-  /* int j; */
-  /* int * k; */
-  /* for(i = 0; i < vertex_num; i++) { */
-  /*   printf("vértice %d \n",i+1); */
-  /*   printf("-------------\n"); */
-  /*   k = graph[i].adjacents; */
-  /*   for(j = 0; j < graph[i].adj_size; j++) */
-  /*     printf("%d \n", k[j]+1); */
-  /*   printf("-------------\n"); */
-  /* } */
 
 

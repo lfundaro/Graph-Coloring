@@ -123,11 +123,13 @@ void implicit_enum(int * upper_bound, int lower_bound,
   }
 
   // Se imprime el número cromático
+  printf("------------------\n");
+  printf("Enumeración implícita \n");
   printf("Numero cromatico: %d\n",*upper_bound+1);
   printf("Backtracks: %d\n",backtracks);
-  printf("Vertice  Color\n");
+  printf("Vertice --> Color\n");
   for (i=0; i<vertex_num; ++i){
-    printf("%d - %d\n",i,coloring[i]);
+    printf("%d --> %d\n",i+1,coloring[i]+1);
   }
 
   if (coloringCheck(graph,vertex_num,coloring))
@@ -136,14 +138,14 @@ void implicit_enum(int * upper_bound, int lower_bound,
     printf("Inutil\n");
 
 
-  /* free(trace); */
-  /* free(max_used_color); */
-  /* free(vertex_max_color); */
-  /* free(current_vertex); */
-  /* free(satur_degree); */
-  /* free(popularity); */
-  /* free(coloring); */
-  /* free(depth); */
+  free(trace);
+  free(max_used_color);
+  free(vertex_max_color);
+  free(current_vertex);
+  free(satur_degree);
+  free(popularity);
+  free(coloring);
+  free(depth);
 }
 
 
