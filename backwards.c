@@ -15,22 +15,24 @@ void backwards(int * trace, int * max_used_color,
   // Se averigua si el vértice de donde se parte
   // el backtracking es la raiz
   if (vertex_position == 0) {
-    int vertex_color = graph[trace[vertex_position]].color;
-    update_all(trace, graph, base, popularity, *depth,
-               vertex_position, satur_degree, *max_used_color);
+    if (graph[trace[vertex_position]].color != -1) { 
+      int vertex_color = graph[trace[vertex_position]].color;
+      update_all(trace, graph, base, popularity, *depth,
+                 vertex_position, satur_degree, *max_used_color);
 
-    // Quitamos su color del FC
-    graph[trace[vertex_position]].FC[vertex_color] = 0;
+      // Quitamos su color del FC
+      graph[trace[vertex_position]].FC[vertex_color] = 0;
 
-    // Se determina el máximo color utilizado hasta ahora
-    *max_used_color = lower_bound;
-    //max_color(popularity, max_used_color, upper_bound);
+      // Se determina el máximo color utilizado hasta ahora
+      *max_used_color = lower_bound;
+      //max_color(popularity, max_used_color, upper_bound);
     
-    if (valid_FC(graph, trace[vertex_position],lower_bound)) {
-      *current_vertex = trace[vertex_position];
-      *first_max_color = 0;
-      *depth = 0;
-      return;
+      if (valid_FC(graph, trace[vertex_position],lower_bound)) {
+        *current_vertex = trace[vertex_position];
+        *first_max_color = 0;
+        *depth = 0;
+        return;
+      }
     }
     else {
       // Se ha llegado a la raiz y no hay mas colores 
@@ -211,7 +213,7 @@ void label(Graph * graph, int vertex_position, int * trace, int max_used_color, 
   // Se comienza a etiquetar los vértices
   // Nótese que el etiquetado se hace comenzando desde
   // la raíz, en vez de partir desde el vértice hasta
-  // la raíz.
+  // la raíz. Ver informe para más explicación.
   for(i = 0; i < vertex_position; i++) {
     if (is_adjacent(&trace[i],trace[vertex_position], graph)
         && !clique_member(members,trace[i])) {
