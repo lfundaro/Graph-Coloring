@@ -48,7 +48,7 @@ void backwards(int * trace, int * max_used_color,
     // no vacío.
     int aux;
 
-    if ((*depth+1) == (vertex_num - (lower_bound+1))&&
+    if ((*depth)+1 == (vertex_num - (lower_bound+1))&&
 	graph[trace[*depth]].color != -1) {
       // Se quitan todos los labels a partir del vértice 
       // de máximo color
@@ -201,8 +201,8 @@ void label(Graph * graph, int vertex_position, int * trace, int max_used_color, 
   // colores que se encuentran mientras se asciende
   // en el arbol para hacer labeling
   int i;
-  int * colors = (int *) malloc(sizeof(int)* max_used_color);
-  for(i = 0; i < max_used_color; i++)
+  int * colors = (int *) malloc(sizeof(int)* (max_used_color+1));
+  for(i = 0; i <= max_used_color; i++)
     colors[i] = 0;
 
   // Se comienza a etiquetar los vértices
