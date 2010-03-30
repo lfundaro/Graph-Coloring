@@ -80,6 +80,10 @@ void implicit_enum(int * upper_bound, int lower_bound,
   // Coloración conseguida hasta el momento
   int * coloring = (int *) malloc(sizeof(int) * vertex_num);
   int backtracks = 0;
+
+  printf("------------------\n");
+  printf("Enumeración implícita \n");
+
   while(1) {
     Forward(current_vertex,max_used_color,vertex_max_color,
 	    upper_bound,trace, depth,members,satur_degree,popularity,
@@ -99,8 +103,6 @@ void implicit_enum(int * upper_bound, int lower_bound,
   }
 
   // Se imprime el número cromático
-  printf("------------------\n");
-  printf("Enumeración implícita \n");
   printf("Numero cromatico: %d\n",*upper_bound);
   printf("Backtracks: %d\n",backtracks);
   printf("Vertice --> Color\n");

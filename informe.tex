@@ -65,8 +65,8 @@ rule'' propuesto por Peemoller, tambi\'en se tomaron ideas del algoritmo
 de Brelaz.
 Brelaz+Interchante es usado para encontrar un cota superior y una
 cota inferior, luego el algoritmo de Enumeración Implícita usa estas
-cotas para podar el \'arbol de explorado, reducir su profundidad
-y detectar cuando se ha llegado a una coloraci\'on m\'inima durante la
+cotas para podar el \'arbol en su exploració, reducir su profundidad
+y detectar cuando se ha llegado a una coloración mínima durante la
 busqueda de soluciones.
 
 \subsection{Descripción del contenido del informe}
@@ -101,13 +101,15 @@ instrucciones de operación, estado actual, conclusiones y referencias bibliogr�
   inutilizar el cache del procesador, mientras que el arreglo no.\\
 
   \indent No se decidi\'o hacer una matriz de NxN porque en ese caso, para recorrer los
-  adyacentes a un nodo, se deben recorrer invariablemente N casillas, lo
+  adyacentes a un nodo, se deben recorrer inevitablemente N casillas, lo
   cual representa tiempo gastado in\'utilmente, sobre todo para grafos
   poco densos, ya que es necesario recorrer las casillas de los nodos que
   no son adyacente y las de los que son adyacentes. Debido a esto vemos
   que la estructura de arreglos de adyacencias se comporta mejor que la
   matriz de NxN para grafos poco densos e igual de bien para grafos muy
-  densos.
+  densos. Además añadiendo un ordenamiento a los arreglos de adyacencias, cada vez que 
+se necesita saber si un vértice es vecino de otro, simplemente se busca ese vértice en log(n)
+utilizando búsqueda binaria.
 
 \subsection{Estructuras de datos y algoritmos involucrados en la aplicación}
 
