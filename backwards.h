@@ -61,9 +61,6 @@ void unlabel(Graph *, int *, int, int);
 /**********************************************************/
 void det_first_max_color(Graph *, int *, int, int *, int);
 
-
-
-
 /*********************************************************/
 /* Función que determina si un vértice es miembro        */
 /* de la clique. Esta función es necesaria porque        */
@@ -85,7 +82,8 @@ void calculate_satur_degree(int *, int, Graph *, int);
 // Labeling cuando se aplica lookahead
 void label_ahead(Graph *, int, int, int *, int, int *);
 
-
+// Función que elimina las etiquetas desde el vértice donde 
+// se partió a hacer el etiquetado hasta el comienzo de la traza
 void undo_label(Graph *, int,int *);
 
 #endif

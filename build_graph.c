@@ -1,5 +1,8 @@
 # include "build_graph.h"
 
+/*************************************************************/
+/* Obtiene del archivo el número de vértices de la instancia */
+/*************************************************************/
 int get_vertex_num() {
   char * line = NULL;
   size_t len = 0;
@@ -25,6 +28,9 @@ int get_vertex_num() {
   return vertex_num;
 }
 
+/*************************************/
+/* Construcción de estructura graph. */
+/*************************************/
 Graph * create_graph(int vertex_num) {
   struct Graph * graph = (Graph *) malloc(sizeof(Graph) * vertex_num);
   int i;
@@ -44,11 +50,17 @@ Graph * create_graph(int vertex_num) {
   return graph;
 }
   
+/*************************************************************/
+/* Crea la estructura temporal que contiene los vértices     */
+/* del grafo. Esta estructura será utilizada para construir  */
+/* el grafo definitivo.                                      */
+/*************************************************************/
 struct linked_list ** fill_tmp_graph(int vertex_num) {
   linked_list ** tmp_graph = (linked_list **) malloc(sizeof(linked_list *) * vertex_num); 
   init_tmp_graph(tmp_graph, vertex_num);
   regex_t * __restrict compiled_edge = (regex_t *) malloc(sizeof (regex_t));
-  (void) regcomp(compiled_edge,"^e (.*) (.*)", REG_EXTENDED);   // Compilacion de RegEx para vertices  
+  // Compilacion de RegEx para vertices  
+  (void) regcomp(compiled_edge,"^e (.*) (.*)", REG_EXTENDED); 
   char * line = NULL;
   size_t len = 0;
   ssize_t read;
@@ -85,6 +97,10 @@ struct linked_list ** fill_tmp_graph(int vertex_num) {
   return tmp_graph;
 }
 
+/***************************************************************/
+/* Función que se encarga del llenado de vértices usando como  */
+/* fuente a tmp_graph y como destino a graph.                  */
+/***************************************************************/
 void fill_graph(int vertex_num, struct linked_list ** tmp_graph, Graph * graph) {
   int i;
   int j;
@@ -103,6 +119,9 @@ void fill_graph(int vertex_num, struct linked_list ** tmp_graph, Graph * graph) 
   free_tmp_graph(vertex_num, tmp_graph);
 }
 
+/******************************************/
+/* Inicialización de la estructura grafo. */
+/******************************************/
 void init_FC(Graph * graph, int vertex_num, int upper_bound) {
   int i;
   int j;

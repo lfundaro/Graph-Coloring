@@ -281,9 +281,8 @@ void Forward(int* start_vert,
   //el upper_bound y el maximo color usado
   if (num_of_colored == num_of_uncolored) {
     *upper_bound = max_color;
-    printf("Mejor coloración actual --> %d \n", *upper_bound);
+    printf("Mejor coloración actual --> %d \n", *upper_bound + 1);
     *max_used_color = (max_color-1);
-    //*first_max_color = new_first_max_color( (max_color-1) ,trace,graph);
     *start_vert = trace[st_max_color];
     *depth = dth;
     update_coloring(graph,n_of_vertex,coloring);
@@ -299,6 +298,10 @@ void Forward(int* start_vert,
   }
 }
 
+/****************************************************/
+/* Función que permite saber el nuevo máximo color  */
+/* utilizado hasta el momento.                      */
+/****************************************************/
 void new_max_color(int * popularity, int upper_bound,
                    int * max_used_color) {
   int i;

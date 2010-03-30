@@ -178,18 +178,6 @@ void degree_no_clique(Graph * graph, int * members, int size, tuple * deg_vert, 
 }
 
 
-// Utilidad para liberar listas enlazadas de tuplas
-void free_tuple_list(tuple_list * list) {
-  tuple_list * back;
-  tuple_list * forward;
-  back = list;
-  forward = list;
-  while (forward != NULL) {
-    forward = back->next;
-    free(back);
-  }
-}
-
 //Funcioń que sirve para romper empates de grado de saturación.
 int break_tie(tuple * base, struct Graph * graph, int vertex_num) {
   int vertex;

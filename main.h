@@ -4,6 +4,8 @@
 # include <stdlib.h>
 # include <stdio.h>
 
+// Cliente del programa
+int main();
 
 
 

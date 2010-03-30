@@ -39,4 +39,4 @@ Forwad_star.o: Forward_star.c
 	gcc -c Forward_star.c Forward.h
 
 clean:
-	rm -rf *.o *.out semantic.cache *.gch *~  main
+	rm -rf *.o *.out semantic.cache *.gch *~  main *.tex.backup

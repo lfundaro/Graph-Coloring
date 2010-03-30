@@ -17,20 +17,6 @@ typedef struct linked_array_list {
   struct linked_array_list * next;
 } linked_array_list;
 
-/***************************************************************/
-/* Estructura que se utiliza para generar la cadena de         */
-/* vértices que quedan marcados con una etiqueta partiendo     */
-/* desde un vértice dado. Esta cadena, consta de tuplas que    */
-/* contienen el vértice etiquetado, su posición en la traza    */
-/* y un apuntador a la próxima estructura tupla que sería el   */
-/* próximo vértice de menor rango entre todos los etiquetados  */
-/***************************************************************/
-typedef struct tuple_list {
-  int vertex;
-  int position;
-  struct tuple_list * next;
-} tuple_list;
-
 
 /************************************************************/
 /* Estructura etiqueta, indica si un vértice está           */
