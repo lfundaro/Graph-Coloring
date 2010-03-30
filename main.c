@@ -43,7 +43,7 @@ int main() {
   // clique encontrada por Brelaz+Interchange
   int * members = determine_max_clique(graph, vertex_num,
                                        deg_vert,&lower_bound);
-  
+
   free(deg_vert);
   deg_vert = (tuple *) malloc(sizeof(tuple)* (vertex_num - lower_bound));
   degree_no_clique(graph, members,vertex_num, deg_vert, lower_bound);

@@ -251,6 +251,7 @@ void Forward(int* start_vert,
     color_ca_and_satur(graph,satur_degree,current_vert,nxt_col);
     color_maxcolor(&max_color,&st_max_color,dth,nxt_col);
     popularity[nxt_col] += 1;
+    new_max_color(popularity, *upper_bound, &max_color);
 
     //Checkeo si la coloracion es completa
     ++num_of_colored;
@@ -264,7 +265,6 @@ void Forward(int* start_vert,
     current_vert = nxt_vertex(satur_degree,clique,n_of_vertex,graph,deg_vert,lower_bound);
     FC_size = min((ub-1),(max_color+1));
     FC = graph[current_vert].FC;
-    new_max_color(popularity, *upper_bound, &max_color);
     genFC(current_vert,
 	  FC,
 	  FC_size,

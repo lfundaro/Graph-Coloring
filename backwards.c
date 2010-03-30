@@ -62,7 +62,6 @@ void backwards(int * trace, int * max_used_color,
       // Se decolorean todos los vértices subiendo en el 
       // árbol hasta llegar al vértice de mínimo rango 
       // con el mayor color usado en la coloración parcial actual
-
       update_all(trace, graph, base, popularity, *depth,
                  vertex_position, satur_degree, max_used_color);
 

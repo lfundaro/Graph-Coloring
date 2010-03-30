@@ -101,6 +101,7 @@ pair dsatur(Graph graph[], tuple deg_vert[], int vertex_num, int start_point) {
         }
       }
     }
+
     //Se marca el color usado como usado solo cuando 
     //corremos DSATUR para encontrar 
     used_colors[last_color] = 1;

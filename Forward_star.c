@@ -1,5 +1,5 @@
 # include <stdio.h>
-# include "Forward_prime.h"
+# include "Forward.h"
 # include "utilities.h"
 # include "backwards.h"
 
@@ -104,11 +104,12 @@ void color_ca_and_satur(Graph * graph, int* satur_degree, int v_i, int color){
     //if (graph[adjacents[i]].color == -1) {
       // Quiero saber si el vértice adyacente a v_i tiene en su
       // arreglo de colores adyacentes el color "color".
-      if (graph[adjacents[i]].color_around[color] == 0)
+    if (graph[adjacents[i]].color_around[color] == 0) {
+      if (satur_degree[adjacents[i]] != -1) {
         satur_degree[adjacents[i]] += 1;
-      graph[adjacents[i]].color_around[color]++;
-      //caCheck(graph,20,adjacents[i],color);
-      //}
+      }
+    }
+    graph[adjacents[i]].color_around[color]++;
   }
 }
 
