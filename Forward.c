@@ -264,7 +264,7 @@ void Forward(int* start_vert,
 
   int num_of_colored = 0;
   int num_of_uncolored = (n_of_vertex - (lower_bound+1) - dth);
-
+  
   //Mientras: el FC no sea vacio Y
   //          no tenga una coloracion completa
   /* while (number_of_FCs(FC,FC_size)>0 && */
