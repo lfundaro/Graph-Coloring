@@ -113,6 +113,12 @@ Funcion Forward
 void Forward(int*,int*,int*,int*,int*,int*,int*,int*,int*,tuple*,Graph*,int,int*, int);
 
 
+/***********************************************************/
+/* Función para determinar nuevo máximo color usado hasta  */
+/* el momento. Consiste en iterar desde el final de la     */
+/* tabla de popularidad hasta llegar al primer color cuya  */
+/* popularidad sea mayor estricta que uno.                 */
+/***********************************************************/
 void new_max_color(int *, int,int *);
 
 void color_clique(Graph*, int*, int*, int*, int);
