@@ -25,7 +25,7 @@ int complete_coloring(Graph*,int);
   uso que tiene cada color hasta el momento
 */
 //int* FC, int FC_size, int* color_use_record
-int nxt_color(int*,int,int,int*);
+int nxt_color_star(int*,int,int,int*);
 
 
 /*

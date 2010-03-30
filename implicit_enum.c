@@ -109,7 +109,6 @@ void implicit_enum(int * upper_bound, int lower_bound,
     if (*upper_bound == lower_bound)
       break;
     else {
-      backtracks++;
       backwards(trace, max_used_color, vertex_max_color,
                 current_vertex, satur_degree, graph, base,
                 popularity, coloring, depth, *upper_bound,
@@ -117,6 +116,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
       if (*current_vertex == -1)
         // Ya no hay vértices para hacer backtrack
         break;
+      backtracks++;
     }
   }
 
@@ -130,11 +130,7 @@ void implicit_enum(int * upper_bound, int lower_bound,
     printf("%d --> %d\n",i+1,coloring[i]+1);
   }
 
-  if (coloringCheck(graph,vertex_num,coloring))
-    printf("Yeeeeeeeeeei\n");
-  else
-    printf("Inutil\n");
-
+  (coloringCheck(graph,vertex_num,coloring));
 
   free(trace);
   free(max_used_color);
