@@ -44,15 +44,15 @@
 \section{Introducción}
 
 \subsection{Motivación del Proyecto}
-Encontrar la coloración mínima es un problema de complejidad NP. 
+Encontrar la coloración mínima es un problema de comoplejidad NP. 
 Sus soluciones son ampliamente aplicadas en casos de la vida real, a nombrar:
 \begin{itemize}
  \item Problema de planificación de horarios
  \item Asignación de frecuencia a radios móviles.
  \item Ubicación de registros en la computadora.
- \item Análisis de datos arqueológicos y biológicos.
+ \item Análisis de datos arqueológicos y biológicos
 \end{itemize}
-Por estas razones el problema de coloración mínima en un grafo se hace 
+Por éstas razones el problema de coloración mínima en un grafo se hace 
 interesante hasta el punto de tratar de resolver dicho problema con 
 algoritmos optimizados.
 

@@ -1,5 +1,22 @@
 # include "implicit_enum.h"
 
+
+int coloringCheck(Graph* graph, int vertex_num, int* coloring){
+  int i;
+  int j;
+  
+  for (i=0 ; i<vertex_num ; ++i){
+    for (j=0; j<graph[i].adj_size;++j){
+      if ((coloring[i] == coloring[graph[i].adjacents[j]])||
+          coloring[i] == -1)
+          exit(1);
+    }
+  }
+
+  return 1;
+}
+
+
 void implicit_enum(int * upper_bound, int lower_bound,
                    int * members, Graph * graph,
                    tuple * deg_vert, int vertex_num) {
@@ -84,12 +101,19 @@ void implicit_enum(int * upper_bound, int lower_bound,
   // Se imprime el número cromático
   printf("------------------\n");
   printf("Enumeración implícita \n");
-  printf("Numero cromatico: %d\n",*upper_bound+1);
+  printf("Numero cromatico: %d\n",*upper_bound);
   printf("Backtracks: %d\n",backtracks);
   printf("Vertice --> Color\n");
   for (i=0; i<vertex_num; ++i){
     printf("%d --> %d\n",i+1,coloring[i]+1);
   }
+
+
+  if (coloringCheck(graph,vertex_num,coloring))
+    printf("Yeeeeeeeeeei\n");
+  else
+    printf("Inutil\n");
+
 
   free(trace);
   free(max_used_color);

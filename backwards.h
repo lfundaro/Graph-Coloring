@@ -85,4 +85,7 @@ void calculate_satur_degree(int *, int, Graph *, int);
 // Labeling cuando se aplica lookahead
 void label_ahead(Graph *, int, int, int *, int, int *);
 
+
+void undo_label(Graph *, int,int *);
+
 #endif

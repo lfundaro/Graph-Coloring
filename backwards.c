@@ -133,6 +133,7 @@ void backwards(int * trace, int * max_used_color,
           // y su posición en la traza (depth)
           *current_vertex = trace[i];
           *depth = i;
+          undo_label(graph, vertex_position, trace);
           return;
         }
         // Si su FC es vacío se busca el próximo vértice
@@ -374,3 +375,10 @@ void label_ahead(Graph * graph, int depth,int vertex,
   }
   free(colors);
 } 
+
+void undo_label(Graph * graph, int vertex_position,
+                int * trace) {
+  int i;
+  for(i = vertex_position; i >= 0; i--) 
+    graph[trace[i]].label.flag = 0;
+}
