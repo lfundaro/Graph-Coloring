@@ -30,7 +30,7 @@ void uncolor_satur(int *, Graph *, int, int);
 /* decoloreando.                                         */
 /*********************************************************/
 void update_all(int *, Graph *, tuple *, int *, 
-                int, int, int *, int);
+                int, int, int *, int *);
 
 /*************************************************************/
 /* Función que determina si un elemento es adyacente a otro. */

@@ -211,9 +211,9 @@ void uncolor(struct Graph * graph, int v_i, int color) {
   int i;
   for(i = 0; i < graph[v_i].adj_size; i++) {
     //if (graph[i].color == -1){
-      graph[adjacents[i]].color_around[color]--;
-      //caCheck(graph,20,adjacents[i],color);
-      //}
+    graph[adjacents[i]].color_around[color]--;
+    //caCheck(graph,20,adjacents[i],color);
+    //}
   }
 }
 

@@ -102,9 +102,12 @@ void color_ca_and_satur(Graph * graph, int* satur_degree, int v_i, int color){
     //if (graph[adjacents[i]].color == -1) {
       // Quiero saber si el vértice adyacente a v_i tiene en su
       // arreglo de colores adyacentes el color "color".
-      if (graph[adjacents[i]].color_around[color] == 0)
+    if (graph[adjacents[i]].color_around[color] == 0) {
+      if (satur_degree[adjacents[i]] != -1) {
         satur_degree[adjacents[i]] += 1;
-      graph[adjacents[i]].color_around[color]++;
+      }
+    }
+    graph[adjacents[i]].color_around[color]++;
       //caCheck(graph,20,adjacents[i],color);
       //}
   }
@@ -272,7 +275,7 @@ void Forward(int* start_vert,
     //Busco el siguiente color y coloreo el nodo
     nxt_col = nxt_color(FC,FC_size,popularity);
     graph[current_vert].color = nxt_col;
-    colorCheck(graph,n_of_vertex,current_vert);
+    //    colorCheck(graph,n_of_vertex,current_vert);
     trace[dth] = current_vert;
 
     //Actualizo las estructuras auxiliares
