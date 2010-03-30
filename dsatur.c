@@ -137,6 +137,7 @@ pair dsatur(Graph graph[], tuple deg_vert[], int vertex_num, int start_point) {
   pair result;
   result.clique = lower_bound;
   result.coloring = upper_bound;
+
   return result;
 }
 

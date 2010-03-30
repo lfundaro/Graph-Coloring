@@ -5,3 +5,7 @@ leftovers
 *.o
 *~
 \#*\#
+*.out
+*.toc
+*.log
+*.aux

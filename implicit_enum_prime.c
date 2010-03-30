@@ -1,4 +1,42 @@
-# include "implicit_enum.h"
+# include "implicit_enum_prime.h"
+# include "backwards.h"
+
+int coloringCheck(Graph* graph, int vertex_num, int* coloring){
+  int i;
+  int j;
+  
+  for (i=0 ; i<vertex_num ; ++i){
+    for (j=0; j<graph[i].adj_size;++j){
+      if ((coloring[i] == coloring[graph[i].adjacents[j]])||
+          coloring[i] == -1)
+          exit(1);
+    }
+  }
+
+  return 1;
+}
+
+void color_clique(Graph* graph, 
+		  int* satur_degree, int* popularity,
+		  int* clique, int vertex_num){
+  int current_vert;
+  int color=0;
+  int i;
+
+  for (i=0; i<vertex_num; ++i){
+    if (clique[i]) {
+      current_vert = i; 
+      
+      graph[current_vert].color = color;    
+      
+      color_ca_and_satur(graph,satur_degree,current_vert,color);
+      popularity[color] += 1;
+      
+      ++color;
+    }
+  }
+}
+
 
 void implicit_enum(int * upper_bound, int lower_bound,
                    int * members, Graph * graph,
@@ -60,6 +98,8 @@ void implicit_enum(int * upper_bound, int lower_bound,
 	*max_used_color,
 	members);
   
+  
+  
   // Coloración conseguida hasta el momento
   int * coloring = (int *) malloc(sizeof(int) * vertex_num);
   int backtracks = 0;
@@ -91,6 +131,12 @@ void implicit_enum(int * upper_bound, int lower_bound,
     printf("%d --> %d\n",i+1,coloring[i]+1);
   }
 
+  if (coloringCheck(graph,vertex_num,coloring))
+    printf("Yeeeeeeeeeei\n");
+  else
+    printf("Inutil\n");
+
+
   free(trace);
   free(max_used_color);
   free(vertex_max_color);
@@ -99,28 +145,6 @@ void implicit_enum(int * upper_bound, int lower_bound,
   free(popularity);
   free(coloring);
   free(depth);
-}
-
-
-void color_clique(Graph* graph, 
-		  int* satur_degree, int* popularity,
-		  int* clique, int vertex_num){
-  int current_vert;
-  int color=0;
-  int i;
-
-  for (i=0; i<vertex_num; ++i){
-    if (clique[i]) {
-      current_vert = i; 
-      
-      graph[current_vert].color = color;    
-      
-      color_ca_and_satur(graph,satur_degree,current_vert,color);
-      popularity[color] += 1;
-      
-      ++color;
-    }
-  }
 }
 
 

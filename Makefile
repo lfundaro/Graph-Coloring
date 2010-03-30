@@ -3,6 +3,15 @@ all: main
 main: main.o dsatur.o implicit_enum.o backwards.o interchange.o twoOnN.o build_graph.o utilities.o Forward.o
 	gcc main.o dsatur.o build_graph.o backwards.o implicit_enum.o twoOnN.o interchange.o utilities.o Forward.o -o main
 
+prime: main.o dsatur.o implicit_enum_prime.o backwards.o interchange.o twoOnN.o build_graph.o utilities.o Forward_prime.o
+	gcc main.o dsatur.o build_graph.o backwards.o implicit_enum_prime.o twoOnN.o interchange.o utilities.o Forward_prime.o -o main
+
+Forwad_prime.o: Forward_prime.c
+	gcc -c -g Forward_prime.c Forward_prime.h
+
+implicit_enum_prime.o: implicit_enum_prime.c
+	gcc -c -g implicit_enum_prime.c implicit_enum_prime.h
+
 main.o: main.c
 	gcc -c -g main.c main.h 
 

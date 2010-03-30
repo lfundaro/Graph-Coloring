@@ -33,7 +33,7 @@ int main() {
 
   // Se obtiene cota superior
   result = dsatur(graph, deg_vert, vertex_num, -1);
-  
+
   int upper_bound = result.coloring;
   // Se obtiene cota inferior corriendo
   // Brelaz+Interchange N veces
@@ -55,8 +55,9 @@ int main() {
   graph_init(graph, vertex_num);
   
 
-  if (lower_bound == upper_bound)
+  if (lower_bound == upper_bound){    
     printf("Número cromático = %d \n", upper_bound);
+  }
   else {
     upper_bound -= 1;
     lower_bound -= 1;
@@ -74,6 +75,3 @@ int main() {
   free(members);
   return EXIT_SUCCESS;
 }
-
-
-

@@ -1,7 +1,37 @@
 # include <stdio.h>
-# include "Forward.h"
+# include "Forward_prime.h"
 # include "utilities.h"
 # include "backwards.h"
+
+int colorCheck(Graph* graph, int vertex_num, int vertex){
+  int j;
+  int* p = NULL;
+
+  for (j=0; j<graph[vertex].adj_size;++j){
+    if (graph[vertex].color == graph[graph[vertex].adjacents[j]].color){
+      j = *p;
+      return 0;
+    }
+  }
+
+  return 1;
+}
+
+int caCheck(Graph* graph, int vertex_num, int vertex, int color){
+  int j;
+  int* p = NULL;
+
+  if (graph[vertex].color_around[color] <= 0 && color != -1){
+    for (j=0; j<graph[vertex].adj_size;++j){
+      if (graph[graph[vertex].adjacents[j]].color == color){
+	j = *p;
+	return 0;
+      }
+    }
+  }
+
+  return 1;
+}
 
 /*Funcion que calcula la cantidad de colores posibles
   para un vertice*/
@@ -34,26 +64,6 @@ int complete_coloring(Graph* g, int n_of_vertex){
       return 0;
 
   return 1;
-}
-
-
-/*Funcion que calcula el proximo color a utilizar*/
-/*Recibe el conjunto de colores posibles y el registro con el
-  uso que tiene cada color hasta el momento*/
-int nxt_color(int* FC, int FC_size, int* color_use_record){
-  int i = 0;
-  int nxt_color = 0;
-  int max_use = 0;
-
-  while (i<=FC_size){
-    if (FC[i]==1 && color_use_record[i] >= max_use){
-      nxt_color=i;
-      max_use = color_use_record[i];
-    }
-    ++i;
-  }
-
-  return nxt_color;
 }
 
 /*Funcion que calcula el proximo color a utilizar*/
@@ -94,12 +104,11 @@ void color_ca_and_satur(Graph * graph, int* satur_degree, int v_i, int color){
     //if (graph[adjacents[i]].color == -1) {
       // Quiero saber si el vértice adyacente a v_i tiene en su
       // arreglo de colores adyacentes el color "color".
-    if (graph[adjacents[i]].color_around[color] == 0) {
-      if (satur_degree[adjacents[i]] != -1) {
+      if (graph[adjacents[i]].color_around[color] == 0)
         satur_degree[adjacents[i]] += 1;
-      }
-    }
-    graph[adjacents[i]].color_around[color]++;
+      graph[adjacents[i]].color_around[color]++;
+      //caCheck(graph,20,adjacents[i],color);
+      //}
   }
 }
 
@@ -157,7 +166,6 @@ void genFC(int vert,
     else
       FC[i]=lookahead(vert,i,upper_bound,graph,satur_degree,depth,trace,max_color,clique);
   }
-  return;
 }
 
 
@@ -191,8 +199,7 @@ int lookahead(int vert,
     //Si su saturacion es igual la cota superior
     //su FC sera vacio, etiqueto y devuelvo falso.
     if (adj_satur == upper_bound){
-      label_ahead(graph, depth, adjs[i], trace, 
-            max_color,clique);
+      label(graph, depth, trace, max_color,clique);
       return 0;
     }
   }
@@ -265,8 +272,9 @@ void Forward(int* start_vert,
          (num_of_colored < num_of_uncolored)) {
 
     //Busco el siguiente color y coloreo el nodo
-    nxt_col = nxt_color(FC,FC_size,popularity);
+    nxt_col = nxt_color_prime(FC,FC_size,n_of_vertex,popularity);
     graph[current_vert].color = nxt_col;
+    colorCheck(graph,n_of_vertex,current_vert);
     trace[dth] = current_vert;
 
     //Actualizo las estructuras auxiliares
@@ -286,7 +294,6 @@ void Forward(int* start_vert,
     current_vert = nxt_vertex(satur_degree,clique,n_of_vertex,graph,deg_vert,lower_bound);
     FC_size = min((ub-1),(max_color+1));
     FC = graph[current_vert].FC;
-    new_max_color(popularity, *upper_bound, &max_color);
     genFC(current_vert,
 	  FC,
 	  FC_size,
@@ -317,16 +324,5 @@ void Forward(int* start_vert,
     *start_vert = current_vert;
     *depth = dth;
     trace[dth] = current_vert;
-  }
-}
-
-void new_max_color(int * popularity, int upper_bound,
-                   int * max_used_color) {
-  int i;
-  for(i = upper_bound; i >= 0; i--) {
-    if (popularity[i] > 0) {
-      *max_used_color = i;
-      return;
-    }
   }
 }
