@@ -17,21 +17,21 @@ int colorCheck(Graph* graph, int vertex_num, int vertex){
   return 1;
 }
 
-int caCheck(Graph* graph, int vertex_num, int vertex, int color){
-  int j;
-  int* p = NULL;
+/* int caCheck(Graph* graph, int vertex_num, int vertex, int color){ */
+/*   int j; */
+/*   int* p = NULL; */
 
-  if (graph[vertex].color_around[color] <= 0 && color != -1){
-    for (j=0; j<graph[vertex].adj_size;++j){
-      if (graph[graph[vertex].adjacents[j]].color == color){
-	j = *p;
-	return 0;
-      }
-    }
-  }
+/*   if (graph[vertex].color_around[color] <= 0 && color != -1){ */
+/*     for (j=0; j<graph[vertex].adj_size;++j){ */
+/*       if (graph[graph[vertex].adjacents[j]].color == color){ */
+/* 	j = *p; */
+/* 	return 0; */
+/*       } */
+/*     } */
+/*   } */
 
-  return 1;
-}
+/*   return 1; */
+/* } */
 
 /*Funcion que calcula la cantidad de colores posibles
   para un vertice*/

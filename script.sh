@@ -14,7 +14,7 @@ for i in `grep -v '^NC' $file_instances`
 do
 i=${i// C /}
 echo ---- $i -----
-if ./main < instances/$i
+if ./main < instancias/$i
 then
 	echo --------- Exitosa ---------
 else

@@ -27,6 +27,14 @@ int complete_coloring(Graph*,int);
 //int* FC, int FC_size, int* color_use_record
 int nxt_color(int*,int,int*);
 
+/*
+  Funcion que calcula el proximo color a utilizar
+
+  Recibe el conjunto de colores posibles y el registro con el
+  uso que tiene cada color hasta el momento
+*/
+//int* FC, int FC_size, int* color_use_record
+int nxt_color_star(int*,int,int,int*);
 
 /*
   Actualiza el color around de los vertices cuando
