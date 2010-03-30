@@ -303,7 +303,7 @@ void Forward(int* start_vert,
   //el upper_bound y el maximo color usado
   if (num_of_colored == num_of_uncolored) {
     *upper_bound = max_color;
-    printf("upper bound %d \n", *upper_bound);
+    printf("Mejor coloración actual --> %d \n", *upper_bound);
     *max_used_color = (max_color-1);
     //*first_max_color = new_first_max_color( (max_color-1) ,trace,graph);
     *start_vert = trace[st_max_color];
