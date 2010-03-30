@@ -4,3 +4,7 @@ main
 *.o
 *~
 \#*\#
+*.out
+*.toc
+*.log
+*.aux

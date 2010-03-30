@@ -1,4 +1,5 @@
-# include "implicit_enum.h"
+# include "implicit_enum_prime.h"
+# include "backwards.h"
 
 int coloringCheck(Graph* graph, int vertex_num, int* coloring){
   int i;

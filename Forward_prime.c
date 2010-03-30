@@ -1,5 +1,5 @@
 # include <stdio.h>
-# include "Forward.h"
+# include "Forward_prime.h"
 # include "utilities.h"
 # include "backwards.h"
 
@@ -64,26 +64,6 @@ int complete_coloring(Graph* g, int n_of_vertex){
       return 0;
 
   return 1;
-}
-
-
-/*Funcion que calcula el proximo color a utilizar*/
-/*Recibe el conjunto de colores posibles y el registro con el
-  uso que tiene cada color hasta el momento*/
-int nxt_color(int* FC, int FC_size, int* color_use_record){
-  int i = 0;
-  int nxt_color = 0;
-  int max_use = 0;
-
-  while (i<=FC_size){
-    if (FC[i]==1 && color_use_record[i] >= max_use){
-      nxt_color=i;
-      max_use = color_use_record[i];
-    }
-    ++i;
-  }
-
-  return nxt_color;
 }
 
 /*Funcion que calcula el proximo color a utilizar*/
@@ -292,7 +272,7 @@ void Forward(int* start_vert,
          (num_of_colored < num_of_uncolored)) {
 
     //Busco el siguiente color y coloreo el nodo
-    nxt_col = nxt_color(FC,FC_size,popularity);
+    nxt_col = nxt_color_prime(FC,FC_size,n_of_vertex,popularity);
     graph[current_vert].color = nxt_col;
     colorCheck(graph,n_of_vertex,current_vert);
     trace[dth] = current_vert;

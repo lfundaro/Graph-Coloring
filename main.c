@@ -32,10 +32,13 @@ int main() {
   // terminación al programa si el algoritmo
   // excede los 5 minutos.
   //  signal(SIGALRM, alarmHandler);
-  //  alarm(300);
+  // alarm(300);
 
   // Se obtiene cota superior
   result = dsatur(graph, deg_vert, vertex_num, -1);
+
+  dsaturCheck(graph,vertex_num);
+  
   int upper_bound = result.coloring;
   // Se obtiene cota inferior corriendo
   // Brelaz+Interchange N veces
@@ -56,8 +59,9 @@ int main() {
   init_FC(graph, vertex_num, upper_bound);
   graph_init(graph, vertex_num);
 
-  if (lower_bound == upper_bound)
+  if (lower_bound == upper_bound){    
     printf("Número cromático = %d \n", upper_bound);
+  }
   else {
     upper_bound -= 1;
     lower_bound -= 1;
@@ -76,4 +80,20 @@ int main() {
   return EXIT_SUCCESS;
 }
 
+int dsaturCheck(Graph* graph, int vertex_num){
+  int i;
+  int j;
+  
+  for (i=0 ; i<vertex_num ; ++i){
+    for (j=0; j<graph[i].adj_size;++j){
+      if ((graph[i].color == graph[graph[i].adjacents[j]].color)||
+          graph[i].color == -1){
+	printf("problema: %d:%d vs %d:%d\n",i,graph[i].color,graph[i].adjacents[j],graph[graph[i].adjacents[j]].color);
+	exit(1);
+      }
+    }
+  }
+
+  return 1;
+}
 
