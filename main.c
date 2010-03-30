@@ -49,8 +49,8 @@ int main() {
   //Se activa la alarma que dará la señal de
   // terminación al programa si el algoritmo
   // excede los 5 minutos.
-   signal(SIGALRM, alarmHandler);
-   alarm(300);
+  //   signal(SIGALRM, alarmHandler);
+  //  alarm(300);
 
   // Se obtiene cota superior
   result = dsatur(graph, deg_vert, vertex_num, -1);

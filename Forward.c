@@ -75,7 +75,7 @@ int nxt_color(int* FC, int FC_size, int* color_use_record){
   int nxt_color = 0;
   int max_use = 0;
 
-  while (i<=(FC_size+1)){
+  while (i<=(FC_size)){
     if (FC[i]==1 && color_use_record[i] >= max_use){
       nxt_color=i;
       max_use = color_use_record[i];
@@ -167,6 +167,7 @@ void genFC(int vert,
     else
       FC[i]=lookahead(vert,i,upper_bound,graph,satur_degree,depth,trace,max_color,clique);
   }
+  return;
 }
 
 
@@ -200,7 +201,8 @@ int lookahead(int vert,
     //Si su saturacion es igual la cota superior
     //su FC sera vacio, etiqueto y devuelvo falso.
     if (adj_satur == upper_bound){
-      label(graph, depth, trace, max_color,clique);
+      label_ahead(graph, depth, adjs[i], trace, 
+            max_color,clique);
       return 0;
     }
   }
@@ -275,7 +277,7 @@ void Forward(int* start_vert,
     //Busco el siguiente color y coloreo el nodo
     nxt_col = nxt_color(FC,FC_size,popularity);
     graph[current_vert].color = nxt_col;
-    //    colorCheck(graph,n_of_vertex,current_vert);
+    colorCheck(graph,n_of_vertex,current_vert);
     trace[dth] = current_vert;
 
     //Actualizo las estructuras auxiliares

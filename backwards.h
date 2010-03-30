@@ -82,4 +82,7 @@ int clique_member(int *, int);
 void calculate_satur_degree(int *, int, Graph *, int); 
 
 
+// Labeling cuando se aplica lookahead
+void label_ahead(Graph *, int, int, int *, int, int *);
+
 #endif

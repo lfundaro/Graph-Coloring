@@ -76,8 +76,6 @@ void backwards(int * trace, int * max_used_color,
       // ya que se decolorearon vértices que estaban 
       // entre el último vértice del árbol y el que tiene 
       // el color q de rango mínimo.
-      //max_color(popularity, max_used_color, upper_bound);
-      //      *max_used_color -= 1;
 
       vertex_position -= 1;
 
@@ -119,7 +117,7 @@ void backwards(int * trace, int * max_used_color,
         graph[trace[i]].FC[vertex_color] = 0;
       
         // Se determina el máximo color
-        max_color(popularity, max_used_color);
+        //        max_color(popularity, max_used_color);
 
         // Se elimina la etiqueta del vértice
         graph[trace[i]].label.flag = 0;
@@ -179,7 +177,7 @@ void det_first_max_color(Graph * graph, int * trace,
   int i;
   for(i = 0; i < bound; i++) {
     if (graph[trace[i]].color == max_used_color) 
-      *first_max_color = trace[i];
+      *first_max_color = i;
   } 
 }
 
@@ -275,7 +273,7 @@ void update_all(int * trace, Graph * graph,
                 tuple * base, int * popularity, 
                 int depth, int start_point, 
                 int * satur_degree,
-		int * max_used_color) {
+                int * max_used_color) {
 
   // Actualizamos todos los vértices desde el nivel 
   // de más profundo del árbol (depth) donde se detuvo 
@@ -301,7 +299,7 @@ void update_all(int * trace, Graph * graph,
     max_color(popularity, max_used_color);
 
     // Se recalculan los grados de saturación del vértice 
-    // que ha sido coloreado.
+    // que ha sido decoloreado.
     calculate_satur_degree(satur_degree, trace[i], graph, 
 			   *max_used_color);
 
@@ -309,11 +307,6 @@ void update_all(int * trace, Graph * graph,
   }
 }
                 
-
-/* void updata_satur_around(satur_degree, graph, trace[i],  */
-/*                    graph[trace[i]].color) { */
-
-/* } */
 
 /**************************************************************/
 /* Esta función se utiliza para bajar el grado de saturación  */
@@ -340,6 +333,7 @@ int clique_member(int * members, int vertex) {
   return members[vertex];
 }
 
+// Recalcula grados de saturacion para un vértice dado
 void calculate_satur_degree(int * satur_degree, int vertex, 
 			    Graph * graph, int max_used_color) { 
   int i;
@@ -348,3 +342,36 @@ void calculate_satur_degree(int * satur_degree, int vertex,
       satur_degree[vertex]++;
   }
 }
+
+void label_ahead(Graph * graph, int depth,int vertex, 
+                 int * trace, int max_color, int * clique) {
+  // Inicialización de estructura de control de los
+  // colores que se encuentran mientras se asciende
+  // en el arbol para hacer labeling
+  int i;
+  int * colors = (int *) malloc(sizeof(int) * (max_color+1));
+  for(i = 0; i <= max_color; i++)
+    colors[i] = 0;
+  
+
+    int color_candidate;
+  // Se comienza a etiquetar los vértices
+  // Nótese que el etiquetado se hace comenzando desde
+  // la raíz, en vez de partir desde el vértice hasta
+  // la raíz. Ver informe para más explicación.
+  for(i = 0; i < depth; i++) {
+    if (is_adjacent(&trace[i],vertex, graph)
+        && !clique_member(clique,trace[i])) {
+      color_candidate = graph[trace[i]].color;
+      if (colors[color_candidate] == 0) {
+        colors[color_candidate] = 1;
+        // Buscamos el vértice en el grafo para
+        // marcarlo como etiquetado e indicar la
+        // posición en la traza donde fue encontrado
+        graph[trace[i]].label.flag = 1;
+        graph[trace[i]].label.position = i;
+      }
+    }
+  }
+  free(colors);
+} 
