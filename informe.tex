@@ -79,7 +79,8 @@ instrucciones de operación, estado actual, conclusiones y referencias bibliogr�
 \subsection{Descripción y justificación del modelo utilizado para
   representar el problema}
 
-  Para representar el grafo en el computador se utilizar\'on arreglos de
+\subsubsection{Representación de Grafo }
+Para representar el grafo en el computador se utilizar\'on arreglos de
   adyacencias, estos estan formados por un arreglo de igual tamaño al número de
   vértices del grafo, cada posici\'on del arreglo contiene la
   informaci\'on del vertice numerado con esa posici\'on, as\'i, la
@@ -91,7 +92,9 @@ instrucciones de operación, estado actual, conclusiones y referencias bibliogr�
   adelante en la secci\'on de estructuras de datos. Se decidió utilizar
   un arreglo ya que proporciona acceso constante a sus elementos.\\
 
-  \indent Para las adyacencias se podr\'ia haber utilizado una lista enlazada ya
+\subsubsection{Vértices adyacentes}
+
+ Para las adyacencias se podr\'ia haber utilizado una lista enlazada ya
   que cada vez que se requiere saber los adyancentes a un vértice dado
   siempre es necesario recorrerlos todos, y generar una lista de
   enlazada con los adyacentes es m\'as f\'acil y r\'apido que hacer un
@@ -110,6 +113,66 @@ instrucciones de operación, estado actual, conclusiones y referencias bibliogr�
   densos. Además añadiendo un ordenamiento a los arreglos de adyacencias, cada vez que 
 se necesita saber si un vértice es vecino de otro, simplemente se busca ese vértice en log(n)
 utilizando búsqueda binaria.
+
+\subsubsection{Historial de backtracks: Trace}
+
+Debido a que el algoritmo de backtracking es iterativo no se cuenta con la pila 
+para mantener un rastro del backtrack que se ha ido haciendo. Por lo tanto se decidió
+utilizar un arreglo de tamaño n (número de vértices) llamado \textbf{trace} en donde 
+se van poniendo los vértices coloreados a medida que el procedimiento Forward avanza en
+la coloración. La traza siempre tendrá un cota hasta donde es posible leer datos confiables, 
+y esta cota es la profundidad en el arbol de backtrack, es decir cuantos niveles se ha descendido 
+en el árbol. La profundida se representa con la variable \textbf{depth}. Cualquier índice en la 
+traza que esté después de la posición depth contendrá basura o datos que no son útiles para el 
+algoritmo. 
+
+\subsubsection{Estructura Popularity}
+Esta estructura es un arreglo de tamaño ``Cota superior de Brelaz+Interchange'' y cada índice 
+se corresponde a un color. En cada casilla se encuentra la popularidad de un color, es decir, 
+si tenemos dos vértices coloreados con el color 4, la casilla 4 de popularity contendrá el número 2.
+
+\subsubsection{Máximo color utilizado}
+
+Se determina iterando desde la última casilla del arreglo Popularity hasta llegar al primer 
+elemento que contenga una popularidad mayor estricta a cero. Se determina de esta manera ya que 
+como popularity es de tamaño Cota Superior de Brelaz+Interchange entonces si la última casilla 
+tiene un número mayor estricto que cero entonces dicho número representa el mayor color utilizado. 
+Sino se busca en la penúltima casilla y así sucesivamente hasta llegar a la casilla 0.
+
+\subsubsection{Vértice de partida para Forward y de entrada para Backwards}
+
+La variable current_vertex se comparte entre los procedimientos Forward y Backwards. 
+Ésta es la variable "r`` que se utiliza en el algoritmo de Kubale y Jackowski. 
+
+\subsubsection{Mejor coloración obtenida hasta el momento}
+
+Se denota por el arreglo \textbf{coloring} una asignación de colores a cada índice 
+el cual representa un vértice del grafo.
+
+\subsubsection{Procedimiento de Etiquetado}
+
+Para que un vértice $x_{k}$ sea candidato a etiquetarse, debe cumplir con tres propiedades:
+
+\begin{enumerate}
+ \item Ser adyacente a $x_{k}$
+ \item Ser de menor rango que $x_{k}$
+ \item Ser el de menor rango entre todos los candidatos que cumplen 
+       las dos propiedades anteriores y que tengan el mismo color 
+	que el vértice en cuestión.
+\end{enumerate}
+
+Una manera rápida de encontrar éste vértice candidato. Se hace de la siguiente manera: 
+
+\begin{itemize}
+ \item Se prepara un arreglo llamado colors inicializado en ceros. 
+ \item Se comienza a iterar desde el principio de la traza hasta una posición  anterior al vértice
+	desde donde se llama el procedimiento label. Se verifica que cumpla la propiedad 1. Luego 
+	se obtiene su color, y se verifica si ese color ya se ha encontrado antes durante este proceso 
+	con otro vértice. Si para tal color el arrecho colors está en cero, entonces estamos habremos 
+	elegido un candidato a ser etiquetado porque es aquel que cumple con las propiedades 1,2 y 3.
+\item   Seguimos el procedimiento hasta llegar a una posición anterior al vértice desde donde se llama label.
+\end{itemize}
+ 
 
 \subsection{Estructuras de datos y algoritmos involucrados en la aplicación}
 
@@ -291,6 +354,15 @@ se generan los nodos del \'arbol es la que sigue:
 
 \subsection{Reseña de los elementos implementados, problemas encontrados y solución}
 
+\subsubsection{Modificaciones al algoritmo de Peemoller}
+
+El algoritmo de Peemoller siempre conserva las etiquetas. Esto introduce dos 
+posibilidades que pueden ser positivas o negativas. El hecho de mantener etiquetas 
+puede llevar a conseguir la solución más rápido sin embargo introduce más posibilidades 
+de backtracks. En la práctica nos dimos cuenta que habían problemas, que al mantener las 
+etiquetas, el algoritmo no convergía. Sin embargo quitando las etiquetas el algoritmo 
+llegaba a la solución de una manera más rápida y utilizando menos backtracks.
+
 \subsubsection{Representación y Actualización Del Grafo para Brelaz+Interchange}
 
 Para la representación del grafo el principal desafío fue poder
@@ -422,6 +494,15 @@ Peemoller. Se agrego a la estructura Graph un atributo Label que indica
 si el nodo est\'a etiquetado o no y cual es su profundidad en la rama
 explorada actualmente. Con esto se puede buscar f\'acilmente el
 etiquetado de menor rango.
+
+\subsubsection{Bugs encontrados}
+La fase de debuggin fue bastante larga ya que se cometió el error de diseño 
+de hacer dos funciones Backwards y Forwads que compartiesen datos muy delicados 
+para la obtención de resultados. Ambas funciones propiciaban efectos de borde a estos 
+datos compartidos, y cualquier error cometido en la modificación de estos datos hacía 
+que el algoritmo simplemente nunca llegara a una solución o fallara en el intento. 
+Luego de solucionar todos estos problemas de dependencia de datos, se arreglaron 
+algunos "leaks`` de memoria (memoria no liberada). 
 \newpage
 
 \section{Instrucciones de Operación}
@@ -542,9 +623,10 @@ entonces el algoritmo de enumeración implícita no se ejecuta.
 
 \section{Estado Actual}
 \subsection{Indicación del estado final de la aplicación}
-
+La aplicación en estos momentos está totalmente funcional. Las tablas 
+reflejan que el algoritmo DSATUR+ es mucho más efectivo que DSATUR* debido 
+a la heurística utilizada para elegir el próximo color a utilizar.
 \subsection{Errores}
-
 
 \section{Otros}
 \subsection{Demostración formal de Enumeración Implícita}

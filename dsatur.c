@@ -218,6 +218,10 @@ void uncolor(struct Graph * graph, int v_i, int color) {
   }
 }
 
+/**************************************************************/
+/* Función que decide si un vértice hace clique con el resto  */
+/* de los vértices que ya se saben pertenecen a una clique.   */
+/**************************************************************/
 int makes_clique(struct Graph * graph, int v_i, int * members, int vertex_num) {
   int i;
   int j;
@@ -240,6 +244,7 @@ int makes_clique(struct Graph * graph, int v_i, int * members, int vertex_num) {
   return decision;
 }
 
+/* Chequea que sea posible hacer un intercambio. */
 void check_interchange(int * last_color, int * highest_color, int * used_colors,
                        Graph * graph, int num_colored, int * satur_degree,
                        int vertex_num, int v_i) {

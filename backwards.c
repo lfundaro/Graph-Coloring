@@ -52,6 +52,9 @@ void backwards(int * trace, int * max_used_color,
     // no vacío.
     int aux;
 
+    
+      // La formula abajo refleja que se ha llegado 
+      // a una coloración completa.
     if ((*depth)+1 == (vertex_num - (lower_bound+1))&&
 	graph[trace[*depth]].color != -1) {
       // Se quitan todos los labels a partir del vértice 
@@ -133,6 +136,9 @@ void backwards(int * trace, int * max_used_color,
           // y su posición en la traza (depth)
           *current_vertex = trace[i];
           *depth = i;
+	   // Se quitan todas las etiquetas desde la posición
+	   // donde se comenzó a hacer labeling hasta el comienzo
+	   // de la traza.
           undo_label(graph, vertex_position, trace);
           return;
         }
@@ -343,6 +349,7 @@ void calculate_satur_degree(int * satur_degree, int vertex,
   }
 }
 
+// Procedimiento de etiquetado para el algoritmo de lookahead
 void label_ahead(Graph * graph, int depth,int vertex, 
                  int * trace, int max_color, int * clique) {
   // Inicialización de estructura de control de los
@@ -376,6 +383,8 @@ void label_ahead(Graph * graph, int depth,int vertex,
   free(colors);
 } 
 
+// Quita las etiquetas desde el comienzo de la traza
+// hasta el vértice donde se comenzó a hacer etiquetado.
 void undo_label(Graph * graph, int vertex_position,
                 int * trace) {
   int i;

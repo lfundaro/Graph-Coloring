@@ -4,6 +4,14 @@
 # include <stdlib.h>
 # include <stdio.h>
 
+
+/*************************************************/
+/* Algoritmo de enumeración implícita basado en  */
+/* el paper de Kubake y Jackowski.               */
+/*************************************************/
+void implicit_enum(int *, int,int *, Graph *,tuple *, int);
+
+
 /*
   Funcion que colorea una clique. Lo que hace es
   simplemente asignarle un color distinto a cada
