@@ -3,36 +3,6 @@
 # include "utilities.h"
 # include "backwards.h"
 
-int colorCheck(Graph* graph, int vertex_num, int vertex){
-  int j;
-  int* p = NULL;
-
-  for (j=0; j<graph[vertex].adj_size;++j){
-    if (graph[vertex].color == graph[graph[vertex].adjacents[j]].color){
-      j = *p;
-      return 0;
-    }
-  }
-
-  return 1;
-}
-
-int caCheck(Graph* graph, int vertex_num, int vertex, int color){
-  int j;
-  int* p = NULL;
-
-  if (graph[vertex].color_around[color] <= 0 && color != -1){
-    for (j=0; j<graph[vertex].adj_size;++j){
-      if (graph[graph[vertex].adjacents[j]].color == color){
-	j = *p;
-	return 0;
-      }
-    }
-  }
-
-  return 1;
-}
-
 /*Funcion que calcula la cantidad de colores posibles
   para un vertice*/
 /*
@@ -108,8 +78,6 @@ void color_ca_and_satur(Graph * graph, int* satur_degree, int v_i, int color){
       }
     }
     graph[adjacents[i]].color_around[color]++;
-      //caCheck(graph,20,adjacents[i],color);
-      //}
   }
 }
 
@@ -277,7 +245,6 @@ void Forward(int* start_vert,
     //Busco el siguiente color y coloreo el nodo
     nxt_col = nxt_color(FC,FC_size,popularity);
     graph[current_vert].color = nxt_col;
-    colorCheck(graph,n_of_vertex,current_vert);
     trace[dth] = current_vert;
 
     //Actualizo las estructuras auxiliares
