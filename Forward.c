@@ -56,28 +56,6 @@ int nxt_color(int* FC, int FC_size, int* color_use_record){
   return nxt_color;
 }
 
-/*Funcion que calcula el proximo color a utilizar*/
-/*Recibe el conjunto de colores posibles y el registro con el
-  uso que tiene cada color hasta el momento*/
-int nxt_color_prime(int* FC, int FC_size, int vertex_num, int* color_use_record){
-  int i = 0;
-  int nxt_color = 0;
-  int min_use = vertex_num;
-
-  while (i<=(FC_size-1)){
-    if (FC[i]==1 && color_use_record[i] <= min_use){
-      nxt_color=i;
-      min_use = color_use_record[i];
-    }
-    ++i;
-  }
-  
-  if (min_use == vertex_num)
-    nxt_color = i;
-
-  return nxt_color;
-}
-
 
 /*Actualiza el color around de los vertices cuando se colorea un vertice
   y su grado de saturacion tambien*/
