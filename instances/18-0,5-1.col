@@ -1,0 +1,143 @@
+c Grafo creado por el generador de grafos aleatorios
+c en formato del desafío DIMACS de Fernando Torre.
+c Grafo generado con densidad 0.500000
+
+p edge 18 83
+
+n    1 -98
+n    2 12
+n    3 -60
+n    4 61
+n    5 16
+n    6 -3
+n    7 -29
+n    8 78
+n    9 63
+n   10 48
+n   11 -64
+n   12 71
+n   13 41
+n   14  2
+n   15 -38
+n   16 -96
+n   17 -80
+n   18 -26
+
+c Aristas que parten del vértice    1
+e    1    1
+e    1    2
+e    1    4
+e    1    5
+e    1    6
+e    1    7
+e    1    8
+e    1   13
+e    1   15
+e    1   16
+e    1   17
+
+c Aristas que parten del vértice    2
+e    2    5
+e    2   11
+e    2   12
+e    2   13
+e    2   15
+
+c Aristas que parten del vértice    3
+e    3    5
+e    3    6
+e    3    7
+e    3    9
+e    3   10
+e    3   11
+e    3   13
+e    3   14
+e    3   16
+e    3   17
+
+c Aristas que parten del vértice    4
+e    4    7
+e    4    8
+e    4   10
+e    4   11
+e    4   14
+e    4   16
+
+c Aristas que parten del vértice    5
+e    5    6
+e    5    7
+e    5    8
+e    5    9
+e    5   14
+e    5   15
+e    5   17
+e    5   18
+
+c Aristas que parten del vértice    6
+e    6    8
+e    6   10
+e    6   13
+e    6   14
+e    6   15
+e    6   18
+
+c Aristas que parten del vértice    7
+e    7   10
+e    7   11
+e    7   13
+e    7   14
+e    7   17
+e    7   18
+
+c Aristas que parten del vértice    8
+e    8   12
+e    8   13
+e    8   14
+e    8   16
+
+c Aristas que parten del vértice    9
+e    9    9
+e    9   10
+e    9   14
+e    9   15
+e    9   16
+e    9   18
+
+c Aristas que parten del vértice   10
+e   10   10
+e   10   11
+e   10   13
+e   10   16
+
+c Aristas que parten del vértice   11
+e   11   11
+e   11   14
+e   11   17
+
+c Aristas que parten del vértice   12
+e   12   12
+e   12   16
+e   12   18
+
+c Aristas que parten del vértice   13
+e   13   13
+e   13   15
+e   13   17
+e   13   18
+
+c Aristas que parten del vértice   14
+e   14   14
+
+c Aristas que parten del vértice   15
+e   15   16
+e   15   17
+e   15   18
+
+c Aristas que parten del vértice   16
+e   16   16
+
+c Aristas que parten del vértice   17
+e   17   17
+e   17   18
+
+c Aristas que parten del vértice   18

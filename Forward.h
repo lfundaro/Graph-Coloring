@@ -19,7 +19,8 @@ int complete_coloring(Graph*,int);
 
 
 /*
-  Funcion que calcula el proximo color a utilizar
+  Funcion que calcula el proximo color a utilizar.
+  Elige el color con mayor popularidad
 
   Recibe el conjunto de colores posibles y el registro con el
   uso que tiene cada color hasta el momento
@@ -28,7 +29,10 @@ int complete_coloring(Graph*,int);
 int nxt_color(int*,int,int*);
 
 /*
-  Funcion que calcula el proximo color a utilizar
+  Funcion que calcula el proximo color a utilizar.
+  Elige el color con menor popularidad, sin embargo,
+  siempre considera introducir un nuevo color como ultima
+  opcion.
 
   Recibe el conjunto de colores posibles y el registro con el
   uso que tiene cada color hasta el momento
@@ -56,7 +60,7 @@ void color_maxcolor(int*,int*,int,int);
   Devuelve cual es el proximo vertice a colorear basado en el 
   grado de saturacion y en el grado de los vertices
 */
-//int* satur, int vertex_num, Graph graph, int* base
+//int * satur, int* clique, int vertex_num, Graph* graph, tuple* deg_vert, int lower_bound
 int nxt_vertex(int*,int*,int,Graph*,tuple*, int);
 
 
@@ -67,14 +71,33 @@ int nxt_vertex(int*,int*,int,Graph*,tuple*, int);
   del nodo y lo reescribe con un nuevo conjunto
   FC
 */
-//int vert, int* FC,int FC_size,Graph* graph,int* satur_degree,int upper_bound
+//int vert,
+//int* FC,
+//int FC_size,
+//Graph* graph,
+//int* satur_degree,
+//int upper_bound,
+//int depth,
+//int* trace,
+//int max_color,
+//int* clique
 void genFC(int,int*,int,Graph*,int*,int,int,int*,int,int*);
 
 
 /*
   Procedimiento de lookahead para reducir el tamano del FC
 */
-//int vert,int color,int upper_bound,int upper_bound,Graph* graph,int* satur_degree
+//int vert,
+//int* FC,
+//int FC_size,
+//Graph* graph,
+//int* satur_degree,
+//int upper_bound,
+//int depth,
+//int* trace,
+//int max_color,
+//int* clique
+//int
 int lookahead(int,int,int,Graph*,int*,int,int*,int,int*);
 
 
@@ -104,14 +127,15 @@ Funcion Forward
 //int* trace,           <- Traza con el orden en que se han elegido
 //                         los nodos hasta el momento
 //int* depth,           <- Posicion de la traza hasta donde existen nodos validos
+//int* clique,          <- Clique ya coloreada del grafo
 //int* satur_degree,    <- Arreglo con los grados de saturacion de los nodos
 //int* popularity,      <- Arreglo con el numero de veces que se ha usado cada color
-//tuple* deg_vert,        <- Arreglo con los nodos ordenados por grado
+//tuple* deg_vert,      <- Arreglo con los nodos ordenados por grado
 //Graph* graph,
 //int n_of_vertex,      <- Grado del grafo
 //int* coloring         <- Mejor coloracion encontrada hasta el momento
+//lower_bound           <- Cota inferior, tamano de la clique ya coloreada  
 void Forward(int*,int*,int*,int*,int*,int*,int*,int*,int*,tuple*,Graph*,int,int*, int);
-
 
 /***********************************************************/
 /* Función para determinar nuevo máximo color usado hasta  */
@@ -120,5 +144,3 @@ void Forward(int*,int*,int*,int*,int*,int*,int*,int*,int*,tuple*,Graph*,int,int*
 /* popularidad sea mayor estricta que uno.                 */
 /***********************************************************/
 void new_max_color(int *, int,int *);
-
-void color_clique(Graph*, int*, int*, int*, int);
