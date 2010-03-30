@@ -103,3 +103,6 @@ Funcion Forward
 //int n_of_vertex,      <- Grado del grafo
 //int* coloring         <- Mejor coloracion encontrada hasta el momento
 void Forward(int*,int*,int*,int*,int*,int*,int*,int*,int*,tuple*,Graph*,int,int*, int);
+
+
+void new_max_color(int *, int,int *);

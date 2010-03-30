@@ -297,6 +297,7 @@ void Forward(int* start_vert,
     current_vert = nxt_vertex(satur_degree,clique,n_of_vertex,graph,deg_vert,lower_bound);
     FC_size = min((ub-1),(max_color+1));
     FC = graph[current_vert].FC;
+    new_max_color(popularity, *upper_bound, &max_color);
     genFC(current_vert,
 	  FC,
 	  FC_size,
@@ -313,6 +314,7 @@ void Forward(int* start_vert,
   //el upper_bound y el maximo color usado
   if (num_of_colored == num_of_uncolored) {
     *upper_bound = max_color;
+    printf("upper_bound %d", max_color);
     *max_used_color = (max_color-1);
     //*first_max_color = new_first_max_color( (max_color-1) ,trace,graph);
     *start_vert = trace[st_max_color];
@@ -327,5 +329,16 @@ void Forward(int* start_vert,
     *start_vert = current_vert;
     *depth = dth;
     trace[dth] = current_vert;
+  }
+}
+
+void new_max_color(int * popularity, int upper_bound,
+                   int * max_used_color) {
+  int i;
+  for(i = upper_bound; i >= 0; i--) {
+    if (popularity[i] > 0) {
+      *max_used_color = i;
+      return;
+    }
   }
 }

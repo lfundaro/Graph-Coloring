@@ -289,7 +289,7 @@ void update_all(int * trace, Graph * graph,
 
     // Bajamos grado de saturación a los vecinos
     // y restablecemos el grado de saturación a 0 
-    // para el vértice decoloreado.F
+    // para el vértice decoloreado.
     uncolor_satur(satur_degree, graph, trace[i], graph[trace[i]].color);
 
     // Decoloreamos el vértice
