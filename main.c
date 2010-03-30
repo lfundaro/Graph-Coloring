@@ -1,24 +1,5 @@
 # include "main.h"
 
-int check_col(Graph * graph, int vertex_num) {
-  int i;
-  int j;
-  
-  for(i = 0; i < vertex_num; i++) {
-    for(j = 0; j < graph[i].adj_size; j++) {
-      if (graph[graph[i].adjacents[j]].color == graph[i].color 
-          || graph[graph[i].adjacents[j]].color == -1
-          || graph[i].color == -1) {
-        exit(1);
-        printf("error \n");
-      }
-      
-    }
-  }
-  printf("correcto ! \n");
-  return 1;
-}
-
 int main() {
   // Se calcula el número de vértices del grafo
   int vertex_num = get_vertex_num();
@@ -36,8 +17,6 @@ int main() {
   // ordenados por orden decreciente de grados
   tuple * deg_vert = (tuple *) malloc(sizeof(tuple)*vertex_num);
   degree(graph, vertex_num, deg_vert);
-  
-
 
   // Par clique-coloración
   pair result;
@@ -49,18 +28,11 @@ int main() {
   //Se activa la alarma que dará la señal de
   // terminación al programa si el algoritmo
   // excede los 5 minutos.
-  //   signal(SIGALRM, alarmHandler);
-  //  alarm(300);
+  signal(SIGALRM, alarmHandler);
+  alarm(300);
 
   // Se obtiene cota superior
   result = dsatur(graph, deg_vert, vertex_num, -1);
-
-  /* printf("coloracion %d \n", result.coloring); */
-  /* if (check_col(graph,vertex_num)) */
-  /*   printf("Yeeeeeeeeeei\n"); */
-  /* else */
-  /*   printf("Inutil\n"); */
-  //  return EXIT_SUCCESS;
   
   int upper_bound = result.coloring;
   // Se obtiene cota inferior corriendo
@@ -102,35 +74,6 @@ int main() {
   free(members);
   return EXIT_SUCCESS;
 }
-
-
-
-
-  /* int t; */
-  /* int h; */
-  /* for(h = 0; h < vertex_num; h++) { */
-  /*   printf("Vértice %d \n", h+1); */
-  /*   printf("----------\n"); */
-  /*   int adj_size = graph[h].adj_size; */
-  /*   for(t = 0; t < adj_size; t++) */
-  /*     printf("%d \n", graph[h].adjacents[t]+1); */
-  /*   printf("\n"); */
-  /* } */
-  /* return EXIT_SUCCESS; */
-
-
-  //  int h;
-  // linked_list * aux;
-  /* for(h = 0; h < vertex_num-400; h++) { */
-  /*   printf("Vértice %d \n", h+1); */
-  /*   printf("----------\n"); */
-  /*   aux = tmp_graph[h]; */
-  /* while(aux != NULL) { */
-  /*   printf("%d \n", aux->vertex+1); */
-  /*   aux = aux->next; */
-  /* } */
-  /* printf("\n"); */
-  /* } */
 
 
 

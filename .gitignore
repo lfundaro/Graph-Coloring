@@ -1,5 +1,6 @@
 semantic.cache
 main
+leftovers
 *.h.gch
 *.o
 *~
