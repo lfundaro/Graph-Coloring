@@ -114,3 +114,5 @@ void Forward(int*,int*,int*,int*,int*,int*,int*,int*,int*,tuple*,Graph*,int,int*
 
 
 void new_max_color(int *, int,int *);
+
+void color_clique(Graph*, int*, int*, int*, int);

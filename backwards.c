@@ -28,7 +28,6 @@ void backwards(int * trace, int * max_used_color,
 
       // Se determina el máximo color utilizado hasta ahora
       *max_used_color = lower_bound;
-      //max_color(popularity, max_used_color, upper_bound);
     
       if (valid_FC(graph, trace[vertex_position],lower_bound)) {
         *current_vertex = trace[vertex_position];
