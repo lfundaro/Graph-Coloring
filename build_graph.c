@@ -48,7 +48,7 @@ struct linked_list ** fill_tmp_graph(int vertex_num) {
   linked_list ** tmp_graph = (linked_list **) malloc(sizeof(linked_list *) * vertex_num); 
   init_tmp_graph(tmp_graph, vertex_num);
   regex_t * __restrict compiled_edge = (regex_t *) malloc(sizeof (regex_t));
-  (void) regcomp(compiled_edge,"^e (.) (.)", REG_EXTENDED);   // Compilacion de RegEx para vertices  
+  (void) regcomp(compiled_edge,"^e (.*) (.*)", REG_EXTENDED);   // Compilacion de RegEx para vertices  
   char * line = NULL;
   size_t len = 0;
   ssize_t read;
@@ -61,6 +61,7 @@ struct linked_list ** fill_tmp_graph(int vertex_num) {
       sscanf(line,"%c %d %d", dump,&d1,&d2);
       d1 -= 1;
       d2 -= 1;
+      //      printf("%d <--> %d\n", d1+1,d2+1);
       if (d1 != d2) {
         // Arco d1 --> d2
         linked_list * adjacent1 = (linked_list *) malloc(sizeof(linked_list)); 
@@ -69,7 +70,7 @@ struct linked_list ** fill_tmp_graph(int vertex_num) {
         adjacent1->next = tmp_graph[d1];
         tmp_graph[d1] = (struct linked_list *) adjacent1;
         // Arco d2 --> d1
-        linked_list * adjacent2 = malloc(sizeof(linked_list)); 
+        linked_list * adjacent2 = (linked_list *) malloc(sizeof(linked_list)); 
         adjacent2->vertex = d1;
         // Insercion de elementos de lista por la izquierda
         adjacent2->next = tmp_graph[d2];

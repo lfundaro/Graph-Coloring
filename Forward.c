@@ -124,9 +124,12 @@ void color_ca_and_satur(Graph * graph, int* satur_degree, int v_i, int color){
     //if (graph[adjacents[i]].color == -1) {
       // Quiero saber si el vértice adyacente a v_i tiene en su
       // arreglo de colores adyacentes el color "color".
-      if (graph[adjacents[i]].color_around[color] == 0)
+    if (graph[adjacents[i]].color_around[color] == 0) {
+      if (satur_degree[adjacents[i]] != -1) {
         satur_degree[adjacents[i]] += 1;
-      graph[adjacents[i]].color_around[color]++;
+      }
+    }
+    graph[adjacents[i]].color_around[color]++;
       //caCheck(graph,20,adjacents[i],color);
       //}
   }
@@ -186,6 +189,7 @@ void genFC(int vert,
     else
       FC[i]=lookahead(vert,i,upper_bound,graph,satur_degree,depth,trace,max_color,clique);
   }
+  return;
 }
 
 
@@ -219,7 +223,8 @@ int lookahead(int vert,
     //Si su saturacion es igual la cota superior
     //su FC sera vacio, etiqueto y devuelvo falso.
     if (adj_satur == upper_bound){
-      label(graph, depth, trace, max_color,clique);
+      label_ahead(graph, depth, adjs[i], trace, 
+            max_color,clique);
       return 0;
     }
   }
@@ -314,6 +319,7 @@ void Forward(int* start_vert,
     current_vert = nxt_vertex(satur_degree,clique,n_of_vertex,graph,deg_vert,lower_bound);
     FC_size = min((ub-1),(max_color+1));
     FC = graph[current_vert].FC;
+    new_max_color(popularity, *upper_bound, &max_color);
     genFC(current_vert,
 	  FC,
 	  FC_size,
@@ -344,5 +350,16 @@ void Forward(int* start_vert,
     *start_vert = current_vert;
     *depth = dth;
     trace[dth] = current_vert;
+  }
+}
+
+void new_max_color(int * popularity, int upper_bound,
+                   int * max_used_color) {
+  int i;
+  for(i = upper_bound; i >= 0; i--) {
+    if (popularity[i] > 0) {
+      *max_used_color = i;
+      return;
+    }
   }
 }

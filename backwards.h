@@ -30,7 +30,7 @@ void uncolor_satur(int *, Graph *, int, int);
 /* decoloreando.                                         */
 /*********************************************************/
 void update_all(int *, Graph *, tuple *, int *, 
-                int, int, int *, int);
+                int, int, int *, int *);
 
 /*************************************************************/
 /* Función que determina si un elemento es adyacente a otro. */
@@ -81,5 +81,8 @@ int clique_member(int *, int);
 /*************************************************************/
 void calculate_satur_degree(int *, int, Graph *, int); 
 
+
+// Labeling cuando se aplica lookahead
+void label_ahead(Graph *, int, int, int *, int, int *);
 
 #endif
