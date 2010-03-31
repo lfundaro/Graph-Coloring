@@ -298,41 +298,6 @@ Número cromático = 11
 Tiempo en segundos de ejecución del programa: 0.0700
 
 
----- fpsol2.i.1.col -----
-Resultados de Brelaz+interchange
-Cota superior = 65
-Cota inferior = 55
-------------------
-Enumeración implícita
-Se ha excedido el límite de 5 minutos
-
-
----- fpsol2.i.2.col -----
-Resultados de Brelaz+interchange
-Cota superior = 30
-Cota inferior = 29
-------------------
-Enumeración implícita
-Se ha excedido el límite de 5 minutos
-
-
----- fpsol2.i.3.col -----
-Resultados de Brelaz+interchange
-Cota superior = 30
-Cota inferior = 29
-------------------
-Enumeración implícita
-Se ha excedido el límite de 5 minutos
-
-
----- games120.col -----
-Resultados de Brelaz+interchange
-Cota superior = 9
-Cota inferior = 9
-Número cromático = 9
-Tiempo en segundos de ejecución del programa: 0.1055
-
-
 ---- homer.col -----
 Resultados de Brelaz+interchange
 Cota superior = 13
@@ -348,6 +313,43 @@ Cota inferior = 11
 Número cromático = 11
 Tiempo en segundos de ejecución del programa: 0.0442
 
+---- jean.col -----
+Resultados de Brelaz+interchange
+Cota superior = 10
+Cota inferior = 10
+Número cromático = 10
+Tiempo en segundos de ejecución del programa: 0.0381
+
+---- fpsol2.i.1.col -----
+Resultados de Brelaz+interchange
+Cota superior = 65
+Cota inferior = 55
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+---- fpsol2.i.2.col -----
+Resultados de Brelaz+interchange
+Cota superior = 30
+Cota inferior = 29
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+---- fpsol2.i.3.col -----
+Resultados de Brelaz+interchange
+Cota superior = 30
+Cota inferior = 29
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+---- games120.col -----
+Resultados de Brelaz+interchange
+Cota superior = 9
+Cota inferior = 9
+Número cromático = 9
+Tiempo en segundos de ejecución del programa: 0.1055
 
 ---- inithx.i.2.col -----
 Resultados de Brelaz+interchange
@@ -356,22 +358,12 @@ Cota inferior = 31
 Número cromático = 31
 Tiempo en segundos de ejecución del programa: 41.0829
 
-
 ---- inithx.i.3.col -----
 Resultados de Brelaz+interchange
 Cota superior = 31
 Cota inferior = 31
 Número cromático = 31
 Tiempo en segundos de ejecución del programa: 38.1823
-
-
----- jean.col -----
-Resultados de Brelaz+interchange
-Cota superior = 10
-Cota inferior = 10
-Número cromático = 10
-Tiempo en segundos de ejecución del programa: 0.0381
-
 
 ---- le450_15a.col -----
 Resultados de Brelaz+interchange

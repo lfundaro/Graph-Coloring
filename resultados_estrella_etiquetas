@@ -1,0 +1,1004 @@
+---- 12-0,3-3.col ---- 
+Resultados de Brelaz+interchange 
+Cota superior = 4 
+Cota inferior = 3 
+------------------
+Enumeración implícita 
+Numero cromatico: 4
+Backtracks: 2
+Vertice --> Color
+1 --> 1
+2 --> 2
+3 --> 3
+4 --> 4
+5 --> 3
+6 --> 2
+7 --> 3
+8 --> 3
+9 --> 1
+10 --> 4
+11 --> 1
+12 --> 2
+Tiempo en segundos de ejecución del programa: 0.0003 
+
+---- 12-0,5-3.col ---- 
+Resultados de Brelaz+interchange 
+Cota superior = 5 
+Cota inferior = 4 
+------------------
+Enumeración implícita 
+Numero cromatico: 4
+Backtracks: 0
+Vertice --> Color
+1 --> 1
+2 --> 3
+3 --> 1
+4 --> 2
+5 --> 3
+6 --> 3
+7 --> 3
+8 --> 2
+9 --> 4
+10 --> 4
+11 --> 4
+12 --> 2
+Tiempo en segundos de ejecución del programa: 0.0004 
+
+ ---- 14-0,5-2.col ---- 
+Resultados de Brelaz+interchange 
+Cota superior = 5 
+Cota inferior = 4 
+------------------
+Enumeración implícita 
+Numero cromatico: 5
+Backtracks: 5
+Vertice --> Color
+1 --> 4
+2 --> 5
+3 --> 3
+4 --> 4
+5 --> 1
+6 --> 1
+7 --> 2
+8 --> 2
+9 --> 3
+10 --> 4
+11 --> 2
+12 --> 3
+13 --> 5
+14 --> 3
+Tiempo en segundos de ejecución del programa: 0.0006 
+
+ ---- 14-0,5-3.col ---- 
+Resultados de Brelaz+interchange 
+Cota superior = 5 
+Cota inferior = 4 
+------------------
+Enumeración implícita 
+Numero cromatico: 5
+Backtracks: 10
+Vertice --> Color
+1 --> 3
+2 --> 1
+3 --> 1
+4 --> 2
+5 --> 2
+6 --> 2
+7 --> 5
+8 --> 4
+9 --> 3
+10 --> 3
+11 --> 5
+12 --> 4
+13 --> 4
+14 --> 1
+Tiempo en segundos de ejecución del programa: 0.0007 
+
+ ---- 16-0,5-3.col ---- 
+Resultados de Brelaz+interchange 
+Cota superior = 6 
+Cota inferior = 5 
+------------------
+Enumeración implícita 
+Numero cromatico: 6
+Backtracks: 4
+Vertice --> Color
+1 --> 1
+2 --> 1
+3 --> 2
+4 --> 2
+5 --> 2
+6 --> 3
+7 --> 5
+8 --> 6
+9 --> 4
+10 --> 5
+11 --> 3
+12 --> 4
+13 --> 4
+14 --> 5
+15 --> 1
+16 --> 3
+Tiempo en segundos de ejecución del programa: 0.0010 
+
+ ---- 18-0,3-3.col ---- 
+Resultados de Brelaz+interchange 
+Cota superior = 5 
+Cota inferior = 4 
+------------------
+Enumeración implícita 
+Numero cromatico: 4
+Backtracks: 8
+Vertice --> Color
+1 --> 1
+2 --> 1
+3 --> 2
+4 --> 4
+5 --> 3
+6 --> 3
+7 --> 3
+8 --> 2
+9 --> 4
+10 --> 1
+11 --> 4
+12 --> 2
+13 --> 1
+14 --> 2
+15 --> 3
+16 --> 4
+17 --> 2
+18 --> 4
+Tiempo en segundos de ejecución del programa: 0.0009 
+
+ ---- 18-0,5-1.col ---- 
+Resultados de Brelaz+interchange 
+Cota superior = 5 
+Cota inferior = 4 
+------------------
+Enumeración implícita 
+Numero cromatico: 5
+Backtracks: 5
+Vertice --> Color
+1 --> 1
+2 --> 4
+3 --> 1
+4 --> 4
+5 --> 2
+6 --> 4
+7 --> 3
+8 --> 3
+9 --> 4
+10 --> 5
+11 --> 2
+12 --> 5
+13 --> 2
+14 --> 5
+15 --> 3
+16 --> 2
+17 --> 4
+18 --> 1
+Tiempo en segundos de ejecución del programa: 0.0011 
+
+ ---- 20-0,1-2.col ---- 
+Resultados de Brelaz+interchange 
+Cota superior = 3 
+Cota inferior = 2 
+------------------
+Enumeración implícita 
+Numero cromatico: 3
+Backtracks: 4
+Vertice --> Color
+1 --> 1
+2 --> 2
+3 --> 3
+4 --> 2
+5 --> 2
+6 --> 2
+7 --> 1
+8 --> 1
+9 --> 1
+10 --> 1
+11 --> 2
+12 --> 1
+13 --> 2
+14 --> 2
+15 --> 2
+16 --> 1
+17 --> 2
+18 --> 3
+19 --> 3
+20 --> 1
+
+ ---- 20-0,5-2.col ---- 
+Tiempo en segundos de ejecución del programa: 0.0005 
+Resultados de Brelaz+interchange 
+Cota superior = 6 
+Cota inferior = 5 
+------------------
+Enumeración implícita 
+Numero cromatico: 6
+Backtracks: 7
+Vertice --> Color
+1 --> 3
+2 --> 1
+3 --> 6
+4 --> 6
+5 --> 4
+6 --> 5
+7 --> 6
+8 --> 2
+9 --> 6
+10 --> 3
+11 --> 4
+12 --> 2
+13 --> 3
+14 --> 4
+15 --> 5
+16 --> 5
+17 --> 1
+18 --> 6
+19 --> 2
+20 --> 1
+Tiempo en segundos de ejecución del programa: 0.0016 
+
+ ---- 20-0,7-1.col ---- 
+Resultados de Brelaz+interchange 
+Cota superior = 9 
+Cota inferior = 8 
+------------------
+Enumeración implícita 
+Numero cromatico: 9
+Backtracks: 11
+Vertice --> Color
+1 --> 1
+2 --> 6
+3 --> 2
+4 --> 3
+5 --> 3
+6 --> 7
+7 --> 4
+8 --> 8
+9 --> 2
+10 --> 5
+11 --> 8
+12 --> 9
+13 --> 6
+14 --> 2
+15 --> 5
+16 --> 7
+17 --> 1
+18 --> 4
+19 --> 4
+20 --> 8
+Tiempo en segundos de ejecución del programa: 0.0049 
+
+
+---- anna.col -----
+Resultados de Brelaz+interchange
+Cota superior = 11
+Cota inferior = 11
+Número cromático = 11
+Tiempo en segundos de ejecución del programa: 0.2021
+
+
+---- david.col -----
+Resultados de Brelaz+interchange
+Cota superior = 11
+Cota inferior = 11
+Número cromático = 11
+Tiempo en segundos de ejecución del programa: 0.0700
+
+
+---- homer.col -----
+Resultados de Brelaz+interchange
+Cota superior = 13
+Cota inferior = 13
+Número cromático = 13
+Tiempo en segundos de ejecución del programa: 4.2672
+
+
+---- huck.col -----
+Resultados de Brelaz+interchange
+Cota superior = 11
+Cota inferior = 11
+Número cromático = 11
+Tiempo en segundos de ejecución del programa: 0.0442
+  
+
+---- jean.col -----
+Resultados de Brelaz+interchange
+Cota superior = 10
+Cota inferior = 10
+Número cromático = 10
+Tiempo en segundos de ejecución del programa: 0.0381
+
+
+---- fpsol2.i.1.col -----
+Resultados de Brelaz+interchange
+Cota superior = 65
+Cota inferior = 55
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- fpsol2.i.2.col -----
+Resultados de Brelaz+interchange
+Cota superior = 30
+Cota inferior = 29
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- fpsol2.i.3.col -----
+Resultados de Brelaz+interchange
+Cota superior = 30
+Cota inferior = 29
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- inithx.i.2.col -----
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 31
+Número cromático = 31
+Tiempo en segundos de ejecución del programa: 41.0829
+
+
+---- inithx.i.3.col -----
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 31
+Número cromático = 31
+Tiempo en segundos de ejecución del programa: 38.1823
+
+
+---- games120.col -----
+Resultados de Brelaz+interchange
+Cota superior = 9
+Cota inferior = 9
+Número cromático = 9
+Tiempo en segundos de ejecución del programa: 0.1055
+
+---- le450_15a.col -----
+Resultados de Brelaz+interchange
+Cota superior = 17
+Cota inferior = 15
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- le450_15b.col -----
+Resultados de Brelaz+interchange
+Cota superior = 17
+Cota inferior = 15
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- le450_15c.col -----
+Resultados de Brelaz+interchange
+Cota superior = 26
+Cota inferior = 15
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- le450_15d.col -----
+Resultados de Brelaz+interchange
+Cota superior = 26
+Cota inferior = 15
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- le450_25a.col -----
+Resultados de Brelaz+interchange
+Cota superior = 25
+Cota inferior = 25
+Número cromático = 25
+Tiempo en segundos de ejecución del programa: 4.8729
+
+
+---- le450_25b.col -----
+Resultados de Brelaz+interchange
+Cota superior = 25
+Cota inferior = 25
+Número cromático = 25
+Tiempo en segundos de ejecución del programa: 4.4598
+
+
+---- le450_25c.col -----
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 25
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- le450_25d.col -----
+Resultados de Brelaz+interchange
+Cota superior = 30
+Cota inferior = 25
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- le450_5a.col -----
+Resultados de Brelaz+interchange
+Cota superior = 11
+Cota inferior = 5
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- le450_5b.col -----
+Resultados de Brelaz+interchange
+Cota superior = 12
+Cota inferior = 5
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- le450_5c.col -----
+Resultados de Brelaz+interchange
+Cota superior = 12
+Cota inferior = 5
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- le450_5d.col -----
+Resultados de Brelaz+interchange
+Cota superior = 14
+Cota inferior = 5
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- miles1000.col -----
+Resultados de Brelaz+interchange
+Cota superior = 43
+Cota inferior = 41
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+ ---- miles1500.col ---- 
+Resultados de Brelaz+interchange                                                
+Cota superior = 73                                                              
+Cota inferior = 71                                                              
+------------------                                                              
+Enumeración implícita                                                           
+Numero cromatico: 73                                                            
+Backtracks: 3                                                                   
+Vertice --> Color                                                               
+1 --> 40                                                                        
+2 --> 1                                                                         
+3 --> 71                                                                        
+4 --> 29                                                                        
+5 --> 47                                                                        
+6 --> 2                                                                         
+7 --> 3                                                                         
+8 --> 4                                                                         
+9 --> 35                                                                        
+10 --> 5                                                                        
+11 --> 28                                                                       
+12 --> 48                                                                       
+13 --> 6                                                                        
+14 --> 7                                                                        
+15 --> 38                                                                       
+16 --> 61                                                                       
+17 --> 18                                                                       
+18 --> 27                                                                       
+19 --> 8                                                                        
+20 --> 9                                                                        
+21 --> 33                                                                       
+22 --> 45                                                                       
+23 --> 10                                                                       
+24 --> 11                                                                       
+25 --> 12                                                                       
+26 --> 26                                                                       
+27 --> 13                                                                       
+28 --> 14                                                                       
+29 --> 59                                                                       
+30 --> 15                                                                       
+31 --> 49                                                                       
+32 --> 69                                                                       
+33 --> 70                                                                       
+34 --> 36                                                                       
+35 --> 67                                                                       
+36 --> 54                                                                       
+37 --> 51                                                                       
+38 --> 16                                                                       
+39 --> 17                                                                       
+40 --> 22                                                                       
+41 --> 18                                                                       
+42 --> 37                                                                       
+43 --> 19                                                                       
+44 --> 41                                                                       
+45 --> 20                                                                       
+46 --> 21                                                                       
+47 --> 56                                                                       
+48 --> 53                                                                       
+49 --> 32                                                                       
+50 --> 34                                                                       
+51 --> 44                                                                       
+52 --> 22                                                                       
+53 --> 23                                                                       
+54 --> 57                                                                       
+55 --> 72                                                                       
+56 --> 65                                                                       
+57 --> 73                                                                       
+58 --> 24                                                                       
+59 --> 30                                                                       
+60 --> 68                                                                       
+61 --> 25                                                                       
+62 --> 26                                                                       
+63 --> 43                                                                       
+64 --> 27                                                                       
+65 --> 50                                                                       
+66 --> 28                                                                       
+67 --> 29                                                                       
+68 --> 30                                                                       
+69 --> 31                                                                       
+70 --> 32                                                                       
+71 --> 33                                                                       
+72 --> 23                                                                       
+73 --> 34                                                                       
+74 --> 35                                                                       
+75 --> 36                                                                       
+76 --> 37                                                                       
+77 --> 46                                                                       
+78 --> 38                                                                       
+79 --> 39                                                                       
+80 --> 25                                                                       
+81 --> 39                                                                       
+82 --> 40                                                                       
+83 --> 41                                                                       
+84 --> 42                                                                       
+85 --> 19                                                                       
+86 --> 72                                                                       
+87 --> 66                                                                       
+88 --> 43                                                                       
+89 --> 44                                                                       
+90 --> 45                                                                       
+91 --> 46                                                                       
+92 --> 47                                                                       
+93 --> 48                                                                       
+94 --> 49                                                                       
+95 --> 55
+96 --> 50
+97 --> 60
+98 --> 64
+99 --> 51
+100 --> 52
+101 --> 53
+102 --> 54
+103 --> 24
+104 --> 21
+105 --> 55
+106 --> 62
+107 --> 56
+108 --> 57
+109 --> 58
+110 --> 59
+111 --> 60
+112 --> 52
+113 --> 61
+114 --> 62
+115 --> 63
+116 --> 64
+117 --> 65
+118 --> 58
+119 --> 31
+120 --> 63
+121 --> 42
+122 --> 66
+123 --> 67
+124 --> 20
+125 --> 68
+126 --> 69
+127 --> 70
+128 --> 71
+Tiempo en segundos de ejecución del programa: 128.2984
+
+
+---- miles250.col -----
+Resultados de Brelaz+interchange
+Cota superior = 8
+Cota inferior = 8
+Número cromático = 8
+Tiempo en segundos de ejecución del programa: 0.0598
+
+
+---- miles500.col -----
+Resultados de Brelaz+interchange
+Cota superior = 20
+Cota inferior = 20
+Número cromático = 20
+Tiempo en segundos de ejecución del programa: 0.7852
+
+
+---- miles750.col -----
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 31
+Número cromático = 31
+Tiempo en segundos de ejecución del programa: 4.1516
+
+
+---- mulsol.i.1.col -----
+Resultados de Brelaz+interchange
+Cota superior = 49
+Cota inferior = 49
+Número cromático = 49
+Tiempo en segundos de ejecución del programa: 19.2826
+
+
+---- mulsol.i.2.col -----
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 31
+Número cromático = 31
+Tiempo en segundos de ejecución del programa: 4.3527
+
+
+---- mulsol.i.3.col -----
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 31
+Número cromático = 31
+Tiempo en segundos de ejecución del programa: 4.5376
+
+
+---- mulsol.i.4.col -----
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 31
+Número cromático = 31
+Tiempo en segundos de ejecución del programa: 4.3192
+
+
+---- mulsol.i.5.col -----
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 31
+Número cromático = 31
+Tiempo en segundos de ejecución del programa: 4.4902
+
+ ---- myciel3.col ---- 
+Resultados de Brelaz+interchange
+Cota superior = 4
+Cota inferior = 2
+------------------
+Enumeración implícita
+Numero cromatico: 4
+Backtracks: 2
+Vertice --> Color
+1 --> 1
+2 --> 2
+3 --> 1
+4 --> 2
+5 --> 3
+6 --> 3
+7 --> 3
+8 --> 1
+9 --> 4
+10 --> 3
+11 --> 2
+Tiempo en segundos de ejecución del programa: 0.0004
+
+ ---- myciel4.col ---- 
+Resultados de Brelaz+interchange
+Cota superior = 5
+Cota inferior = 2
+------------------
+Enumeración implícita
+Numero cromatico: 5
+Backtracks: 18
+Vertice --> Color
+1 --> 1
+2 --> 2
+3 --> 1
+4 --> 2
+5 --> 3
+6 --> 3
+7 --> 3
+8 --> 4
+9 --> 4
+10 --> 4
+11 --> 1
+12 --> 1
+13 --> 5
+14 --> 1
+15 --> 5
+16 --> 3
+17 --> 4
+18 --> 4
+19 --> 4
+20 --> 4
+21 --> 3
+22 --> 1
+23 --> 2
+Tiempo en segundos de ejecución del programa: 0.0020
+
+ ---- myciel5.col ---- 
+Resultados de Brelaz+interchange                                               
+Cota superior = 6                                                              
+Cota inferior = 2                                                              
+------------------                                                             
+Enumeración implícita                                                          
+Numero cromatico: 6                                                            
+Backtracks: 23157                                                              
+Vertice --> Color                                                              
+1 --> 1                                                                        
+2 --> 2                                                                        
+3 --> 1                                                                        
+4 --> 2                                                                        
+5 --> 3                                                                        
+6 --> 3                                                                        
+7 --> 3                                                                        
+8 --> 1                                                                        
+9 --> 4                                                                        
+10 --> 4                                                                       
+11 --> 2                                                                       
+12 --> 5                                                                       
+13 --> 5                                                                       
+14 --> 5                                                                       
+15 --> 5
+16 --> 3
+17 --> 3
+18 --> 3
+19 --> 6
+20 --> 6
+21 --> 3
+22 --> 2
+23 --> 1
+24 --> 1
+25 --> 4
+26 --> 1
+27 --> 6
+28 --> 3
+29 --> 4
+30 --> 4
+31 --> 4
+32 --> 4
+33 --> 4
+34 --> 5
+35 --> 5
+36 --> 5
+37 --> 5
+38 --> 5
+39 --> 3
+40 --> 4
+41 --> 3
+42 --> 5
+43 --> 4
+44 --> 3
+45 --> 5
+46 --> 4
+47 --> 2
+Tiempo en segundos de ejecución del programa: 0.5085
+
+ ---- myciel6.col ---- 
+Resultados de Brelaz+interchange
+Cota superior = 7
+Cota inferior = 2
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+ ---- myciel7.col ---- 
+Resultados de Brelaz+interchange
+Cota superior = 8
+Cota inferior = 2
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+---- queen10_10.col -----
+Resultados de Brelaz+interchange
+Cota superior = 13
+Cota inferior = 10
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- queen11_11.col -----
+Resultados de Brelaz+interchange
+Cota superior = 15
+Cota inferior = 11
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- queen12_12.col -----
+Resultados de Brelaz+interchange
+Cota superior = 16
+Cota inferior = 12
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- queen13_13.col -----
+Resultados de Brelaz+interchange
+Cota superior = 17
+Cota inferior = 13
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- queen14_14.col -----
+Resultados de Brelaz+interchange
+Cota superior = 18
+Cota inferior = 14
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- queen15_15.col -----
+Resultados de Brelaz+interchange
+Cota superior = 19
+Cota inferior = 15
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- queen16_16.col -----
+Resultados de Brelaz+interchange
+Cota superior = 22
+Cota inferior = 16
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- queen5_5.col -----
+Resultados de Brelaz+interchange
+Cota superior = 5
+Cota inferior = 5
+Número cromático = 5
+Tiempo en segundos de ejecución del programa: 0.0025
+
+---- queen9_9.col -----
+Resultados de Brelaz+interchange
+Cota superior = 12
+Cota inferior = 9
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+ ---- queen_8_8.col ---- 
+Resultados de Brelaz+interchange
+Cota superior = 11
+Cota inferior = 8
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+ ---- queen7_7.col ---- 
+Resultados de Brelaz+interchange                                                
+Cota superior = 10                                                              
+Cota inferior = 7                                                               
+------------------                                                              
+Enumeración implícita                                                           
+Numero cromatico: 7                                                             
+Backtracks: 192874                                                              
+Vertice --> Color                                                               
+1 --> 1                                                                         
+2 --> 4                                                                         
+3 --> 7                                                                         
+4 --> 3                                                                         
+5 --> 6                                                                         
+6 --> 2                                                                         
+7 --> 5                                                                         
+8 --> 6                                                                         
+9 --> 2                                                                         
+10 --> 5                                                                        
+11 --> 1                                                                        
+12 --> 4                                                                        
+13 --> 7                                                                        
+14 --> 3                                                                        
+15 --> 4                                                                        
+16 --> 7
+17 --> 3
+18 --> 6
+19 --> 2
+20 --> 5
+21 --> 1
+22 --> 2
+23 --> 5
+24 --> 1
+25 --> 4
+26 --> 7
+27 --> 3
+28 --> 6
+29 --> 7
+30 --> 3
+31 --> 6
+32 --> 2
+33 --> 5
+34 --> 1
+35 --> 4
+36 --> 5
+37 --> 1
+38 --> 4
+39 --> 7
+40 --> 3
+41 --> 6
+42 --> 2
+43 --> 3
+44 --> 6
+45 --> 2
+46 --> 5
+47 --> 1
+48 --> 4
+49 --> 7
+Tiempo en segundos de ejecución del programa: 3.9659
+
+ ---- queen6_6.col ---- 
+Resultados de Brelaz+interchange                                                
+Cota superior = 9                                                               
+Cota inferior = 6                                                               
+------------------                                                              
+Enumeración implícita                                                           
+Numero cromatico: 7                                                             
+Backtracks: 7856                                                                
+Vertice --> Color                                                               
+1 --> 1                                                                         
+2 --> 7                                                                         
+3 --> 6
+4 --> 3
+5 --> 2
+6 --> 5
+7 --> 6
+8 --> 2
+9 --> 5
+10 --> 7
+11 --> 4
+12 --> 3
+13 --> 5
+14 --> 4
+15 --> 3
+16 --> 6
+17 --> 1
+18 --> 7
+19 --> 7
+20 --> 6
+21 --> 1
+22 --> 4
+23 --> 3
+24 --> 2
+25 --> 4
+26 --> 3
+27 --> 7
+28 --> 2
+29 --> 5
+30 --> 1
+31 --> 2
+32 --> 5
+33 --> 4
+34 --> 1
+35 --> 7
+36 --> 6
+Tiempo en segundos de ejecución del programa: 0.1625

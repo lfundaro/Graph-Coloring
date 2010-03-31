@@ -118,7 +118,6 @@ void backwards(int * trace, int * max_used_color,
         graph[trace[i]].FC[vertex_color] = 0;
       
         // Se determina el máximo color
-        //        max_color(popularity, max_used_color);
 
         // Se elimina la etiqueta del vértice
         graph[trace[i]].label.flag = 0;
