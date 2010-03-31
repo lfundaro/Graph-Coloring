@@ -10,8 +10,7 @@
 
 %opening
 \title{Proyecto II}
-\author{Germán Jaber - 0639749}
-\author{Lorenzo Fundar\'o - 0639559}
+\author{Lorenzo Fundar\'o - 0639559 & Germán Jaber - 0639749}
 
 
 \begin{document}
@@ -141,8 +140,8 @@ Sino se busca en la penúltima casilla y así sucesivamente hasta llegar a la ca
 
 \subsubsection{Vértice de partida para Forward y de entrada para Backwards}
 
-La variable current_vertex se comparte entre los procedimientos Forward y Backwards. 
-Ésta es la variable ``r'' que se utiliza en el algoritmo de Kubale y Jackowski. 
+La variable current-vertex se comparte entre los procedimientos Forward y Backwards. 
+Ésta es la variable \textbf{r} que se utiliza en el algoritmo de Kubale y Jackowski. 
 
 \subsubsection{Mejor coloración obtenida hasta el momento}
 
@@ -186,7 +185,7 @@ Una manera rápida de encontrar éste vértice candidato. Se hace de la siguient
        si ese nodo est\'a etiquetado y a que profundidad de la rama
        explorada se encuentra. La estructura FC es un arreglo que se agrega en este 
        proyecto, el cual representa un conjunto de Colores Factibles (Feasible Colors).
-	El entero adj_size es útil para saber la cantidad de vecinos de un vértice.
+	El entero adj-size es útil para saber la cantidad de vecinos de un vértice.
  \item \textbf{Label}: Tupla que consta de dos enteros, uno es un flag
        que indica si el v\'ertice esta etiquetado o no y el otro es su
        profundidad de la rama que se estaba explorando cuando fue
@@ -239,7 +238,7 @@ Una manera rápida de encontrar éste vértice candidato. Se hace de la siguient
        repetición de grados de saturación devuelve el próximo vértice de
        grado mayor no coloreado.
 \end{itemize}
- \item \textbf{compare_vertices}: función de comparación utilizada por
+ \item \textbf{compare-vertices}: función de comparación utilizada por
        Quicksort y B\'usqueda binaria.
  \item \textbf{Degree}: prepara los vértices en una estructura
        vértice-grado llamada tupla, luego todos estos elementos se
@@ -353,15 +352,6 @@ se generan los nodos del \'arbol es la que sigue:
 \section{Detalles de Implementación}
 
 \subsection{Reseña de los elementos implementados, problemas encontrados y solución}
-
-\subsubsection{Modificaciones al algoritmo de Peemoller}
-
-El algoritmo de Peemoller siempre conserva las etiquetas. Esto introduce dos 
-posibilidades que pueden ser positivas o negativas. El hecho de mantener etiquetas 
-puede llevar a conseguir la solución más rápido sin embargo introduce más posibilidades 
-de backtracks. En la práctica nos dimos cuenta que habían problemas, que al mantener las 
-etiquetas, el algoritmo no convergía. Sin embargo quitando las etiquetas el algoritmo 
-llegaba a la solución de una manera más rápida y utilizando menos backtracks.
 
 \subsubsection{Representación y Actualización Del Grafo para Brelaz+Interchange}
 
@@ -485,7 +475,7 @@ para un v\'ertice, se utiliza un entero para indicar cual es el color
 m\'as grande que se puede usar. Durante el Forward estos se sobreescriben, ya que la
 informaci\'on que tuvieran previamente no es representativa de nada ya
 que se est\'a explorando una nueva rama. Hay que agregar que durante la
-generaci\'on del FC se aplica look_ahead para tratar de reducir su
+generaci\'on del FC se aplica look-ahead para tratar de reducir su
 cardinalidad, tambien se utiliza el procedimiento de etiquetado
 propuesto por Peemoller para el look-ahead.\\
 
@@ -627,7 +617,6 @@ entonces el algoritmo de enumeración implícita no se ejecuta.
 La aplicación en estos momentos está totalmente funcional. Las tablas 
 reflejan que el algoritmo DSATUR+ es mucho más efectivo que DSATUR* debido 
 a la heurística utilizada para elegir el próximo color a utilizar.
-\subsection{Errores}
 
 \section{Otros}
 \subsection{Demostración formal de Enumeración Implícita}
@@ -732,11 +721,10 @@ el algoritmo tarda mucho tiempo en converger, y cuando decimos mucho tiempo nos 
 a que excede el tiempo límite de 5 minutos. Es necesario entonces agregar nuevas optimizaciones 
 al algoritmo para así conseguir tiempos más bajos de solución. 
 
-Un resultado empírico interesante que obtuvimos durante las pruebas del algoritmo fue 
-la eliminición de las etiquetas cada vez que backwards devolvía un vértice válido desde 
-donde hacer backtraking. Sorprendentemente cuando conservabamos las etiquetas habían instancias 
-que ni si quiera convegían porque hacía una excesiva cantidad de backtrackings, mientras que al 
-quitar las etiquetas los backtracks se redujeron y el algoritmo comenzó a converger.
+Como muestran los resultados la técnica del labeling no logró solucionar todas las instancias
+propuestas. En muchas, el número de backtracks era tan alto que el algoritmo 
+nunca logró converger. Sin embargo las instancias que se corrieron en el proyecto 
+pasado se lograron resolver con la coloración óptima.
 
 
 \section{Referencias Bibliográficas}
