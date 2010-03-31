@@ -33,8 +33,15 @@ int main() {
 
   // Se obtiene cota superior
   result = dsatur(graph, deg_vert, vertex_num, -1);
+  
+  // Guardamos la coloración de Brelaz+Interchange
+  
+  int * saved = (int *) malloc(sizeof(int) * vertex_num);
 
   int upper_bound = result.coloring;
+
+  save_brelaz_col(graph, saved, vertex_num);
+
   // Se obtiene cota inferior corriendo
   // Brelaz+Interchange N veces
   int lower_bound = -1;
@@ -57,6 +64,7 @@ int main() {
 
   if (lower_bound == upper_bound){    
     printf("Número cromático = %d \n", upper_bound);
+    print_brelaz_col(saved, vertex_num);
   }
   else {
     upper_bound -= 1;
@@ -70,6 +78,7 @@ int main() {
   
   printf("Tiempo en segundos de ejecución del programa: %1.4f \n", (tiempo_inicial - tiempo_final)*-1);
 
+  free(saved);
   free_graph(graph, vertex_num);
   free(deg_vert);
   free(members);
