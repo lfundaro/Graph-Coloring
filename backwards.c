@@ -138,7 +138,7 @@ void backwards(int * trace, int * max_used_color,
 	   // Se quitan todas las etiquetas desde la posición
 	   // donde se comenzó a hacer labeling hasta el comienzo
 	   // de la traza.
-          undo_label(graph, vertex_position, trace);
+          //undo_label(graph, vertex_position, trace);
           return;
         }
         // Si su FC es vacío se busca el próximo vértice

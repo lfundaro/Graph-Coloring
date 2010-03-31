@@ -1,12 +1,13 @@
 ---- 12-0,3-3.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 4 
-Cota inferior = 3 
+Resultados de Brelaz+interchange
+Cota superior = 4
+Cota inferior = 3
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 3 
-Numero cromatico: 3
+Enumeración implícita
+Mejor coloración actual --> 4
+Numero cromatico: 4
 Backtracks: 3
+Tiempo en segundos de ejecución del programa: 0.0006
 Vertice --> Color
 1 --> 1
 2 --> 4
@@ -20,18 +21,18 @@ Vertice --> Color
 10 --> 2
 11 --> 4
 12 --> 2
-Tiempo en segundos de ejecución del programa: 0.0006 
---------- Exitosa ---------
+
 
 ---- 12-0,5-3.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 5 
-Cota inferior = 4 
+Resultados de Brelaz+interchange
+Cota superior = 5
+Cota inferior = 4
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 3 
-Numero cromatico: 3
+Enumeración implícita
+Mejor coloración actual --> 4
+Numero cromatico: 4
 Backtracks: 0
+Tiempo en segundos de ejecución del programa: 0.0009
 Vertice --> Color
 1 --> 1
 2 --> 3
@@ -45,18 +46,18 @@ Vertice --> Color
 10 --> 4
 11 --> 4
 12 --> 2
-Tiempo en segundos de ejecución del programa: 0.0009 
---------- Exitosa ---------
+
 
 ---- 14-0,5-2.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 5 
-Cota inferior = 4 
+Resultados de Brelaz+interchange
+Cota superior = 5
+Cota inferior = 4
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 4 
-Numero cromatico: 4
+Enumeración implícita
+Mejor coloración actual --> 5
+Numero cromatico: 5
 Backtracks: 5
+Tiempo en segundos de ejecución del programa: 0.0016
 Vertice --> Color
 1 --> 4
 2 --> 5
@@ -67,23 +68,23 @@ Vertice --> Color
 7 --> 3
 8 --> 2
 9 --> 3
-10 --> 4
+  10 --> 4
 11 --> 2
 12 --> 3
 13 --> 5
 14 --> 3
-Tiempo en segundos de ejecución del programa: 0.0016 
---------- Exitosa ---------
+
 
 ---- 14-0,5-3.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 5 
-Cota inferior = 4 
+Resultados de Brelaz+interchange
+Cota superior = 5
+Cota inferior = 4
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 4 
-Numero cromatico: 4
+Enumeración implícita
+Mejor coloración actual --> 5
+Numero cromatico: 5
 Backtracks: 7
+Tiempo en segundos de ejecución del programa: 0.0014
 Vertice --> Color
 1 --> 1
 2 --> 1
@@ -99,18 +100,18 @@ Vertice --> Color
 12 --> 4
 13 --> 4
 14 --> 1
-Tiempo en segundos de ejecución del programa: 0.0014 
---------- Exitosa ---------
+
 
 ---- 16-0,5-3.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 6 
-Cota inferior = 5 
+Resultados de Brelaz+interchange
+Cota superior = 6
+Cota inferior = 5
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 5 
-Numero cromatico: 5
+Enumeración implícita
+Mejor coloración actual --> 6
+Numero cromatico: 6
 Backtracks: 4
+Tiempo en segundos de ejecución del programa: 0.0022
 Vertice --> Color
 1 --> 6
 2 --> 1
@@ -128,19 +129,19 @@ Vertice --> Color
 14 --> 5
 15 --> 1
 16 --> 3
-Tiempo en segundos de ejecución del programa: 0.0022 
---------- Exitosa ---------
+
 
 ---- 18-0,3-3.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 5 
-Cota inferior = 4 
+Resultados de Brelaz+interchange
+Cota superior = 5
+Cota inferior = 4
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 4 
-Mejor coloración actual --> 3 
-Numero cromatico: 3
+Enumeración implícita
+Mejor coloración actual --> 5
+Mejor coloración actual --> 4
+Numero cromatico: 4
 Backtracks: 2
+Tiempo en segundos de ejecución del programa: 0.0019
 Vertice --> Color
 1 --> 1
 2 --> 4
@@ -160,18 +161,18 @@ Vertice --> Color
 16 --> 4
 17 --> 2
 18 --> 4
-Tiempo en segundos de ejecución del programa: 0.0019 
---------- Exitosa ---------
+
 
 ---- 18-0,5-1.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 5 
-Cota inferior = 4 
+Resultados de Brelaz+interchange
+Cota superior = 5
+Cota inferior = 4
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 4 
-Numero cromatico: 4
+Enumeración implícita
+Mejor coloración actual --> 5
+Numero cromatico: 5
 Backtracks: 5
+Tiempo en segundos de ejecución del programa: 0.0023
 Vertice --> Color
 1 --> 1
 2 --> 4
@@ -191,18 +192,18 @@ Vertice --> Color
 16 --> 2
 17 --> 4
 18 --> 5
-Tiempo en segundos de ejecución del programa: 0.0023 
---------- Exitosa ---------
+
 
 ---- 20-0,1-2.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 3 
-Cota inferior = 2 
+Resultados de Brelaz+interchange
+Cota superior = 3
+Cota inferior = 2
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 2 
-Numero cromatico: 2
+Enumeración implícita
+Mejor coloración actual --> 3
+Numero cromatico: 3
 Backtracks: 4
+Tiempo en segundos de ejecución del programa: 0.0010
 Vertice --> Color
 1 --> 1
 2 --> 2
@@ -224,18 +225,18 @@ Vertice --> Color
 18 --> 2
 19 --> 3
 20 --> 1
-Tiempo en segundos de ejecución del programa: 0.0010 
---------- Exitosa ---------
+
 
 ---- 20-0,5-2.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 6 
-Cota inferior = 5 
+Resultados de Brelaz+interchange
+Cota superior = 6
+Cota inferior = 5
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 5 
-Numero cromatico: 5
+Enumeración implícita
+Mejor coloración actual --> 6
+Numero cromatico: 6
 Backtracks: 6
+Tiempo en segundos de ejecución del programa: 0.0037
 Vertice --> Color
 1 --> 5
 2 --> 1
@@ -257,18 +258,18 @@ Vertice --> Color
 18 --> 6
 19 --> 2
 20 --> 1
-Tiempo en segundos de ejecución del programa: 0.0037 
---------- Exitosa ---------
+
 
 ---- 20-0,7-1.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 9 
-Cota inferior = 8 
+Resultados de Brelaz+interchange
+Cota superior = 9
+Cota inferior = 8
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 8 
-Numero cromatico: 8
+Enumeración implícita
+Mejor coloración actual --> 9
+Numero cromatico: 9
 Backtracks: 11
+Tiempo en segundos de ejecución del programa: 0.0104
 Vertice --> Color
 1 --> 1
 2 --> 5
@@ -290,222 +291,222 @@ Vertice --> Color
 18 --> 4
 19 --> 4
 20 --> 8
-Tiempo en segundos de ejecución del programa: 0.0104 
---------- Exitosa ---------
+
 
 ---- anna.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 11 
-Cota inferior = 11 
-Número cromático = 11 
-Tiempo en segundos de ejecución del programa: 0.1880 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 11
+Cota inferior = 11
+Número cromático = 11
+Tiempo en segundos de ejecución del programa: 0.1880
+
 
 ---- david.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 11 
-Cota inferior = 11 
-Número cromático = 11 
-Tiempo en segundos de ejecución del programa: 0.0685 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 11
+Cota inferior = 11
+Número cromático = 11
+Tiempo en segundos de ejecución del programa: 0.0685
+
 
 ---- fpsol2.i.1.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 65 
-Cota inferior = 55 
+Resultados de Brelaz+interchange
+Cota superior = 65
+Cota inferior = 55
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 64 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
+Enumeración implícita
+Mejor coloración actual --> 65
+Se ha excedido el límite de 5 minutos
+
 
 ---- fpsol2.i.2.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 30 
-Cota inferior = 29 
+Resultados de Brelaz+interchange
+Cota superior = 30
+Cota inferior = 29
 ------------------
-Enumeración implícita 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
 
 ---- fpsol2.i.3.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 30 
-Cota inferior = 29 
+Resultados de Brelaz+interchange
+Cota superior = 30
+Cota inferior = 29
 ------------------
-Enumeración implícita 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
 
 ---- games120.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 9 
-Cota inferior = 9 
-Número cromático = 9 
-Tiempo en segundos de ejecución del programa: 0.1113 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 9
+Cota inferior = 9
+Número cromático = 9
+Tiempo en segundos de ejecución del programa: 0.1113
+
 
 ---- homer.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 13 
-Cota inferior = 13 
-Número cromático = 13 
-Tiempo en segundos de ejecución del programa: 4.2658 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 13
+Cota inferior = 13
+Número cromático = 13
+Tiempo en segundos de ejecución del programa: 4.2658
+
 
 ---- huck.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 11 
-Cota inferior = 11 
-Número cromático = 11 
-Tiempo en segundos de ejecución del programa: 0.0507 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 11
+Cota inferior = 11
+Número cromático = 11
+Tiempo en segundos de ejecución del programa: 0.0507
+
 
 ---- inithx.i.2.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 31 
-Cota inferior = 31 
-Número cromático = 31 
-Tiempo en segundos de ejecución del programa: 40.1465 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 31
+Número cromático = 31
+Tiempo en segundos de ejecución del programa: 40.1465
+
 
 ---- inithx.i.3.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 31 
-Cota inferior = 31 
-Número cromático = 31 
-Tiempo en segundos de ejecución del programa: 37.5462 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 31
+Número cromático = 31
+Tiempo en segundos de ejecución del programa: 37.5462
+
 
 ---- jean.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 10 
-Cota inferior = 10 
-Número cromático = 10 
-Tiempo en segundos de ejecución del programa: 0.0454 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 10
+Cota inferior = 10
+Número cromático = 10
+Tiempo en segundos de ejecución del programa: 0.0454
+
 
 ---- le450_15a.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 17 
-Cota inferior = 15 
+Resultados de Brelaz+interchange
+Cota superior = 17
+Cota inferior = 15
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 16 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
+Enumeración implícita
+Mejor coloración actual --> 17
+Se ha excedido el límite de 5 minutos
+
 
 ---- le450_15b.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 17 
-Cota inferior = 15 
+Resultados de Brelaz+interchange
+Cota superior = 17
+Cota inferior = 15
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 16 
-Mejor coloración actual --> 15 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
+Enumeración implícita
+Mejor coloración actual --> 17
+Mejor coloración actual --> 16
+Se ha excedido el límite de 5 minutos
+
 
 ---- le450_15c.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 26 
-Cota inferior = 15 
+Resultados de Brelaz+interchange
+Cota superior = 26
+Cota inferior = 15
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 25 
-Mejor coloración actual --> 24 
-Mejor coloración actual --> 23 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
+Enumeración implícita
+Mejor coloración actual --> 26
+Mejor coloración actual --> 25
+Mejor coloración actual --> 24
+Se ha excedido el límite de 5 minutos
+
 
 ---- le450_15d.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 26 
-Cota inferior = 15 
+Resultados de Brelaz+interchange
+Cota superior = 26
+Cota inferior = 15
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 25 
-Mejor coloración actual --> 24 
-Mejor coloración actual --> 23 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
+Enumeración implícita
+Mejor coloración actual --> 26
+Mejor coloración actual --> 25
+Mejor coloración actual --> 24
+Se ha excedido el límite de 5 minutos
+
 
 ---- le450_25a.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 25 
-Cota inferior = 25 
-Número cromático = 25 
-Tiempo en segundos de ejecución del programa: 4.7544 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 25
+Cota inferior = 25
+Número cromático = 25
+Tiempo en segundos de ejecución del programa: 4.7544
+
 
 ---- le450_25b.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 25 
-Cota inferior = 25 
-Número cromático = 25 
-Tiempo en segundos de ejecución del programa: 4.4200 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 25
+Cota inferior = 25
+Número cromático = 25
+Tiempo en segundos de ejecución del programa: 4.4200
+
 
 ---- le450_25c.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 31 
-Cota inferior = 25 
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 25
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 29 
-Mejor coloración actual --> 28 
-Mejor coloración actual --> 27 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
+Enumeración implícita
+Mejor coloración actual --> 30
+Mejor coloración actual --> 29
+Mejor coloración actual --> 28
+Se ha excedido el límite de 5 minutos
+
 
 ---- le450_25d.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 30 
-Cota inferior = 25 
+Resultados de Brelaz+interchange
+Cota superior = 30
+Cota inferior = 25
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 29 
-Mejor coloración actual --> 28 
-Mejor coloración actual --> 27 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
+Enumeración implícita
+Mejor coloración actual --> 30
+Mejor coloración actual --> 29
+Mejor coloración actual --> 28
+Se ha excedido el límite de 5 minutos
+
 
 ---- le450_5a.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 11 
-Cota inferior = 5 
+Resultados de Brelaz+interchange
+Cota superior = 11
+Cota inferior = 5
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 10 
-Mejor coloración actual --> 9 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
+Enumeración implícita
+Mejor coloración actual --> 11
+Mejor coloración actual --> 10
+Se ha excedido el límite de 5 minutos
+
 
 ---- le450_5b.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 12 
-Cota inferior = 5 
+Resultados de Brelaz+interchange
+Cota superior = 12
+Cota inferior = 5
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 11 
-Mejor coloración actual --> 10 
-Mejor coloración actual --> 9 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
+Enumeración implícita
+Mejor coloración actual --> 12
+Mejor coloración actual --> 11
+Mejor coloración actual --> 10
+Se ha excedido el límite de 5 minutos
+
 
 ---- le450_5c.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 12 
-Cota inferior = 5 
+Resultados de Brelaz+interchange
+Cota superior = 12
+Cota inferior = 5
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 11 
-Mejor coloración actual --> 10 
-Mejor coloración actual --> 9 
-Mejor coloración actual --> 8 
-Mejor coloración actual --> 7 
-Numero cromatico: 7
+Enumeración implícita
+Mejor coloración actual --> 12
+Mejor coloración actual --> 11
+Mejor coloración actual --> 10
+Mejor coloración actual --> 9
+Mejor coloración actual --> 8
+Numero cromatico: 8
 Backtracks: 92786
+Tiempo en segundos de ejecución del programa: 26.8765
 Vertice --> Color
 1 --> 1
 2 --> 1
@@ -957,21 +958,21 @@ Vertice --> Color
 448 --> 5
 449 --> 3
 450 --> 2
-Tiempo en segundos de ejecución del programa: 26.8765 
---------- Exitosa ---------
+
 
 ---- le450_5d.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 14 
-Cota inferior = 5 
+Resultados de Brelaz+interchange
+Cota superior = 14
+Cota inferior = 5
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 11 
-Mejor coloración actual --> 10 
-Mejor coloración actual --> 9 
-Mejor coloración actual --> 8 
-Numero cromatico: 8
+Enumeración implícita
+Mejor coloración actual --> 12
+Mejor coloración actual --> 11
+Mejor coloración actual --> 10
+Mejor coloración actual --> 9
+Numero cromatico: 9
 Backtracks: 230360
+Tiempo en segundos de ejecución del programa: 47.9781
 Vertice --> Color
 1 --> 8
 2 --> 2
@@ -1423,19 +1424,19 @@ Vertice --> Color
 448 --> 4
 449 --> 1
 450 --> 5
-Tiempo en segundos de ejecución del programa: 47.9781 
---------- Exitosa ---------
+
 
 ---- miles1000.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 43 
-Cota inferior = 41 
+Resultados de Brelaz+interchange
+Cota superior = 43
+Cota inferior = 41
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 42 
-Mejor coloración actual --> 41 
-Numero cromatico: 41
+Enumeración implícita
+Mejor coloración actual --> 43
+Mejor coloración actual --> 42
+Numero cromatico: 42
 Backtracks: 105
+Tiempo en segundos de ejecución del programa: 14.0499
 Vertice --> Color
 1 --> 14
 2 --> 1
@@ -1565,18 +1566,18 @@ Vertice --> Color
 126 --> 40
 127 --> 41
 128 --> 26
-Tiempo en segundos de ejecución del programa: 14.0499 
---------- Exitosa ---------
+
 
 ---- miles1500.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 73 
-Cota inferior = 71 
+Resultados de Brelaz+interchange
+Cota superior = 73
+Cota inferior = 71
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 72 
-Numero cromatico: 72
+Enumeración implícita
+Mejor coloración actual --> 73
+Numero cromatico: 73
 Backtracks: 3
+Tiempo en segundos de ejecución del programa: 83.7567
 Vertice --> Color
 1 --> 40
 2 --> 1
@@ -1706,82 +1707,82 @@ Vertice --> Color
 126 --> 69
 127 --> 70
 128 --> 71
-Tiempo en segundos de ejecución del programa: 83.7567 
---------- Exitosa ---------
+
 
 ---- miles250.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 8 
-Cota inferior = 8 
-Número cromático = 8 
-Tiempo en segundos de ejecución del programa: 0.0595 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 8
+Cota inferior = 8
+Número cromático = 8
+Tiempo en segundos de ejecución del programa: 0.0595
+
 
 ---- miles500.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 20 
-Cota inferior = 20 
-Número cromático = 20 
-Tiempo en segundos de ejecución del programa: 0.7670 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 20
+Cota inferior = 20
+Número cromático = 20
+Tiempo en segundos de ejecución del programa: 0.7670
+
 
 ---- miles750.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 31 
-Cota inferior = 31 
-Número cromático = 31 
-Tiempo en segundos de ejecución del programa: 4.1676 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 31
+Número cromático = 31
+Tiempo en segundos de ejecución del programa: 4.1676
+
 
 ---- mulsol.i.1.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 49 
-Cota inferior = 49 
-Número cromático = 49 
-Tiempo en segundos de ejecución del programa: 18.7010 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 49
+Cota inferior = 49
+Número cromático = 49
+Tiempo en segundos de ejecución del programa: 18.7010
+
 
 ---- mulsol.i.2.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 31 
-Cota inferior = 31 
-Número cromático = 31 
-Tiempo en segundos de ejecución del programa: 4.3642 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 31
+Número cromático = 31
+Tiempo en segundos de ejecución del programa: 4.3642
+
 
 ---- mulsol.i.3.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 31 
-Cota inferior = 31 
-Número cromático = 31 
-Tiempo en segundos de ejecución del programa: 4.3206 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 31
+Número cromático = 31
+Tiempo en segundos de ejecución del programa: 4.3206
+
 
 ---- mulsol.i.4.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 31 
-Cota inferior = 31 
-Número cromático = 31 
-Tiempo en segundos de ejecución del programa: 4.2597 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 31
+Número cromático = 31
+Tiempo en segundos de ejecución del programa: 4.2597
+
 
 ---- mulsol.i.5.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 31 
-Cota inferior = 31 
-Número cromático = 31 
-Tiempo en segundos de ejecución del programa: 4.4299 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 31
+Cota inferior = 31
+Número cromático = 31
+Tiempo en segundos de ejecución del programa: 4.4299
+
 
 ---- myciel3.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 4 
-Cota inferior = 2 
+Resultados de Brelaz+interchange
+Cota superior = 4
+Cota inferior = 2
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 3 
-Numero cromatico: 3
+Enumeración implícita
+Mejor coloración actual --> 4
+Numero cromatico: 4
 Backtracks: 4
+Tiempo en segundos de ejecución del programa: 0.0003
 Vertice --> Color
 1 --> 1
 2 --> 2
@@ -1794,18 +1795,18 @@ Vertice --> Color
 9 --> 4
 10 --> 4
 11 --> 2
-Tiempo en segundos de ejecución del programa: 0.0003 
---------- Exitosa ---------
+
 
 ---- myciel4.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 5 
-Cota inferior = 2 
+Resultados de Brelaz+interchange
+Cota superior = 5
+Cota inferior = 2
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 4 
-Numero cromatico: 4
+Enumeración implícita
+Mejor coloración actual --> 5
+Numero cromatico: 5
 Backtracks: 45
+Tiempo en segundos de ejecución del programa: 0.0016
 Vertice --> Color
 1 --> 1
 2 --> 2
@@ -1830,18 +1831,18 @@ Vertice --> Color
 21 --> 3
 22 --> 5
 23 --> 2
-Tiempo en segundos de ejecución del programa: 0.0016 
---------- Exitosa ---------
+
 
 ---- myciel5.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 6 
-Cota inferior = 2 
+Resultados de Brelaz+interchange
+Cota superior = 6
+Cota inferior = 2
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 5 
-Numero cromatico: 5
+Enumeración implícita
+Mejor coloración actual --> 6
+Numero cromatico: 6
 Backtracks: 23
+Tiempo en segundos de ejecución del programa: 0.0093
 Vertice --> Color
 1 --> 1
 2 --> 2
@@ -1890,18 +1891,18 @@ Vertice --> Color
 45 --> 5
 46 --> 1
 47 --> 2
-Tiempo en segundos de ejecución del programa: 0.0093 
---------- Exitosa ---------
+
 
 ---- myciel6.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 7 
-Cota inferior = 2 
+Resultados de Brelaz+interchange
+Cota superior = 7
+Cota inferior = 2
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 6 
-Numero cromatico: 6
+Enumeración implícita
+Mejor coloración actual --> 7
+Numero cromatico: 7
 Backtracks: 814
+Tiempo en segundos de ejecución del programa: 0.0879
 Vertice --> Color
 1 --> 1
 2 --> 2
@@ -1998,18 +1999,18 @@ Vertice --> Color
 93 --> 1
 94 --> 3
 95 --> 2
-Tiempo en segundos de ejecución del programa: 0.0879 
---------- Exitosa ---------
+
 
 ---- myciel7.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 8 
-Cota inferior = 2 
+Resultados de Brelaz+interchange
+Cota superior = 8
+Cota inferior = 2
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 7 
-Numero cromatico: 7
+Enumeración implícita
+Mejor coloración actual --> 8
+Numero cromatico: 8
 Backtracks: 8919
+Tiempo en segundos de ejecución del programa: 0.9336
 Vertice --> Color
 1 --> 1
 2 --> 2
@@ -2202,99 +2203,27 @@ Vertice --> Color
 189 --> 3
 190 --> 1
 191 --> 2
-Tiempo en segundos de ejecución del programa: 0.9336 
---------- Exitosa ---------
 
----- queen10_10.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 13 
-Cota inferior = 10 
-------------------
-Enumeración implícita 
-Mejor coloración actual --> 12 
-Mejor coloración actual --> 11 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
-
----- queen11_11.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 15 
-Cota inferior = 11 
-------------------
-Enumeración implícita 
-Mejor coloración actual --> 14 
-Mejor coloración actual --> 13 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
-
----- queen12_12.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 16 
-Cota inferior = 12 
-------------------
-Enumeración implícita 
-Mejor coloración actual --> 15 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
-
----- queen13_13.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 17 
-Cota inferior = 13 
-------------------
-Enumeración implícita 
-Mejor coloración actual --> 16 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
-
----- queen14_14.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 18 
-Cota inferior = 14 
-------------------
-Enumeración implícita 
-Mejor coloración actual --> 17 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
-
----- queen15_15.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 19 
-Cota inferior = 15 
-------------------
-Enumeración implícita 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
-
----- queen16_16.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 22 
-Cota inferior = 16 
-------------------
-Enumeración implícita 
-Mejor coloración actual --> 21 
-Mejor coloración actual --> 20 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
 
 ---- queen5_5.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 5 
-Cota inferior = 5 
-Número cromático = 5 
-Tiempo en segundos de ejecución del programa: 0.0025 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 5
+Cota inferior = 5
+Número cromático = 5
+Tiempo en segundos de ejecución del programa: 0.0025
+
 
 ---- queen6_6.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 9 
-Cota inferior = 6 
+Resultados de Brelaz+interchange
+Cota superior = 9
+Cota inferior = 6
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 8 
-Mejor coloración actual --> 7 
-Numero cromatico: 7
+Enumeración implícita
+Mejor coloración actual --> 9
+Mejor coloración actual --> 8
+Numero cromatico: 8
 Backtracks: 609
+Tiempo en segundos de ejecución del programa: 0.0293
 Vertice --> Color
 1 --> 1
 2 --> 5
@@ -2332,21 +2261,21 @@ Vertice --> Color
 34 --> 2
 35 --> 7
 36 --> 6
-Tiempo en segundos de ejecución del programa: 0.0293 
---------- Exitosa ---------
+
 
 ---- queen7_7.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 10 
-Cota inferior = 7 
+Resultados de Brelaz+interchange
+Cota superior = 10
+Cota inferior = 7
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 9 
-Mejor coloración actual --> 8 
-Mejor coloración actual --> 7 
-Mejor coloración actual --> 6 
-Numero cromatico: 6
+Enumeración implícita
+Mejor coloración actual --> 10
+Mejor coloración actual --> 9
+Mejor coloración actual --> 8
+Mejor coloración actual --> 7
+Numero cromatico: 7
 Backtracks: 1588
+Tiempo en segundos de ejecución del programa: 0.0871
 Vertice --> Color
 1 --> 1
 2 --> 6
@@ -2397,29 +2326,19 @@ Vertice --> Color
 47 --> 4
 48 --> 2
 49 --> 7
-Tiempo en segundos de ejecución del programa: 0.0871 
---------- Exitosa ---------
 
----- queen8_12.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 13 
-Cota inferior = 12 
-------------------
-Enumeración implícita 
-Mejor coloración actual --> 12 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
 
 ---- queen8_8.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 11 
-Cota inferior = 8 
+Resultados de Brelaz+interchange
+Cota superior = 11
+Cota inferior = 8
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 10 
-Mejor coloración actual --> 9 
-Numero cromatico: 9
+Enumeración implícita
+Mejor coloración actual --> 11
+Mejor coloración actual --> 10
+Numero cromatico: 10
 Backtracks: 602701
+Tiempo en segundos de ejecución del programa: 11.6926
 Vertice --> Color
 1 --> 1
 2 --> 5
@@ -2485,67 +2404,146 @@ Vertice --> Color
 62 --> 4
 63 --> 5
 64 --> 8
-Tiempo en segundos de ejecución del programa: 11.6926 
---------- Exitosa ---------
+
+
+---- queen8_12.col -----
+Resultados de Brelaz+interchange
+Cota superior = 13
+Cota inferior = 12
+------------------
+Enumeración implícita
+Mejor coloración actual --> 13
+Se ha excedido el límite de 5 minutos
+
 
 ---- queen9_9.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 12 
-Cota inferior = 9 
+Resultados de Brelaz+interchange
+Cota superior = 12
+Cota inferior = 9
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 11 
-Mejor coloración actual --> 10 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
+Enumeración implícita
+Mejor coloración actual --> 12
+Mejor coloración actual --> 11
+Se ha excedido el límite de 5 minutos
+
+
+---- queen10_10.col -----
+Resultados de Brelaz+interchange
+Cota superior = 13
+Cota inferior = 10
+------------------
+Enumeración implícita
+Mejor coloración actual --> 13
+Mejor coloración actual --> 12
+Se ha excedido el límite de 5 minutos
+
+
+---- queen11_11.col -----
+Resultados de Brelaz+interchange
+Cota superior = 15
+Cota inferior = 11
+------------------
+Enumeración implícita
+Mejor coloración actual --> 15
+Mejor coloración actual --> 14
+Se ha excedido el límite de 5 minutos
+
+
+---- queen12_12.col -----
+Resultados de Brelaz+interchange
+Cota superior = 16
+Cota inferior = 12
+------------------
+Enumeración implícita
+Mejor coloración actual --> 16
+Se ha excedido el límite de 5 minutos
+
+
+---- queen13_13.col -----
+Resultados de Brelaz+interchange
+Cota superior = 17
+Cota inferior = 13
+------------------
+Enumeración implícita
+Mejor coloración actual --> 17
+Se ha excedido el límite de 5 minutos
+
+
+---- queen14_14.col -----
+Resultados de Brelaz+interchange
+Cota superior = 18
+Cota inferior = 14
+------------------
+Enumeración implícita
+Mejor coloración actual --> 18
+Se ha excedido el límite de 5 minutos
+
+
+---- queen15_15.col -----
+Resultados de Brelaz+interchange
+Cota superior = 19
+Cota inferior = 15
+------------------
+Enumeración implícita
+Se ha excedido el límite de 5 minutos
+
+
+---- queen16_16.col -----
+Resultados de Brelaz+interchange
+Cota superior = 22
+Cota inferior = 16
+------------------
+Enumeración implícita
+Mejor coloración actual --> 22
+Mejor coloración actual --> 21
+Se ha excedido el límite de 5 minutos
+
 
 ---- school1.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 36 
-Cota inferior = 14 
+Resultados de Brelaz+interchange
+Cota superior = 36
+Cota inferior = 14
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 35 
-Mejor coloración actual --> 34 
-Mejor coloración actual --> 33 
-Mejor coloración actual --> 32 
-Mejor coloración actual --> 31 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
+Enumeración implícita
+Mejor coloración actual --> 36
+Mejor coloración actual --> 35
+Mejor coloración actual --> 34
+Mejor coloración actual --> 33
+Mejor coloración actual --> 32
+Se ha excedido el límite de 5 minutos
+
 
 ---- school1_nsh.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 29 
-Cota inferior = 14 
+Resultados de Brelaz+interchange
+Cota superior = 29
+Cota inferior = 14
 ------------------
-Enumeración implícita 
-Mejor coloración actual --> 28 
-Mejor coloración actual --> 27 
-Mejor coloración actual --> 26 
-Se ha excedido el límite de 5 minutos 
---------- Exitosa ---------
+Enumeración implícita
+Mejor coloración actual --> 29
+Mejor coloración actual --> 28
+Mejor coloración actual --> 27
+Se ha excedido el límite de 5 minutos
+
 
 ---- zeroin.i.1.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 49 
-Cota inferior = 49 
-Número cromático = 49 
-Tiempo en segundos de ejecución del programa: 25.0744 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 49
+Cota inferior = 49
+Número cromático = 49
+Tiempo en segundos de ejecución del programa: 25.0744
+
 
 ---- zeroin.i.2.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 30 
-Cota inferior = 30 
-Número cromático = 30 
-Tiempo en segundos de ejecución del programa: 5.6011 
---------- Exitosa ---------
+Resultados de Brelaz+interchange
+Cota superior = 30
+Cota inferior = 30
+Número cromático = 30
+Tiempo en segundos de ejecución del programa: 5.6011
+
 
 ---- zeroin.i.3.col -----
-Resultados de Brelaz+interchange 
-Cota superior = 30 
-Cota inferior = 30 
-Número cromático = 30 
-Tiempo en segundos de ejecución del programa: 5.4215 
---------- Exitosa ---------
-
+Resultados de Brelaz+interchange
+Cota superior = 30
+Cota inferior = 30
+Número cromático = 30
+Tiempo en segundos de ejecución del programa: 5.4215

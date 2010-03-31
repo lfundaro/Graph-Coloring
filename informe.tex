@@ -142,7 +142,7 @@ Sino se busca en la penúltima casilla y así sucesivamente hasta llegar a la ca
 \subsubsection{Vértice de partida para Forward y de entrada para Backwards}
 
 La variable current_vertex se comparte entre los procedimientos Forward y Backwards. 
-Ésta es la variable "r`` que se utiliza en el algoritmo de Kubale y Jackowski. 
+Ésta es la variable ``r'' que se utiliza en el algoritmo de Kubale y Jackowski. 
 
 \subsubsection{Mejor coloración obtenida hasta el momento}
 
@@ -502,7 +502,7 @@ para la obtención de resultados. Ambas funciones propiciaban efectos de borde a
 datos compartidos, y cualquier error cometido en la modificación de estos datos hacía 
 que el algoritmo simplemente nunca llegara a una solución o fallara en el intento. 
 Luego de solucionar todos estos problemas de dependencia de datos, se arreglaron 
-algunos "leaks`` de memoria (memoria no liberada). 
+algunos ``leaks'' de memoria (memoria no liberada). 
 \newpage
 
 \section{Instrucciones de Operación}
@@ -615,6 +615,7 @@ Explicación de cada línea:
  \item A continuación líneas que van informando del progreso del
        algoritmo de backtracking.
  \item Número cromático encontrado por enumeración implícita.
+ \item Cantidad de backtracks realizados por el algoritmo.
  \item Tiempo en segundos según función provista en el proyecto.
  \item A partir de la l\'inea 10 tenemos la coloraci\'on encontrada.
 \end{enumerate}
