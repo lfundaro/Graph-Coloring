@@ -204,6 +204,20 @@ int lin_search(int * trace, int vertex, int depth) {
   }
 }
 
+void save_brelaz_col(Graph * graph, int * saved, int vertex_num) {
+  int i;
+  for(i = 0; i < vertex_num; i++)
+    saved[i] = graph[i].color;
+}
+
+void print_brelaz_col(int * saved, int vertex_num) {
+  int i;
+  printf("Vertice --> Color\n");
+  for(i = 0; i < vertex_num; i++) 
+    printf("%d --> %d\n",i+1,saved[i]+1);
+
+    
+}
 
 
 

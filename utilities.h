@@ -108,4 +108,13 @@ int break_tie(tuple *, struct Graph *, int);
 /*******************************************************/
 void order_graph(int, Graph *);
 
+/**********************************************/
+/* Salva coloreaciones de Brelaz+Interchange. */
+/**********************************************/
+void save_brelaz_col(Graph *, int *, int);
+
+/********************************************/
+/* Imprime coloración de Brelas+Interchange */
+/********************************************/
+void print_brelaz_col(int *, int);
 #endif
