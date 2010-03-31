@@ -572,8 +572,7 @@ Cada instancia arroja un resultado con la siguiente estructura:
 . Mejor Coloración Actual --> Cota_inferior
 7 Numero cromatico: 9              
 8 Backtracks: 3                    
-9 Tiempo en segundos de ejecución del programa: 0.0262
-10 Vertice --> Color                
+9 Vertice --> Color                
    1 --> 1                          
    2 --> 6                          
    3 --> 2                          
@@ -594,6 +593,7 @@ Cada instancia arroja un resultado con la siguiente estructura:
    18 --> 4
    19 --> 4
    20 --> 8
+9 Tiempo en segundos de ejecución del programa: 0.0262
 \end{verbatim}
 Explicación de cada línea:
 \begin{enumerate}
@@ -606,8 +606,8 @@ Explicación de cada línea:
        algoritmo de backtracking.
  \item Número cromático encontrado por enumeración implícita.
  \item Cantidad de backtracks realizados por el algoritmo.
- \item Tiempo en segundos según función provista en el proyecto.
  \item A partir de la l\'inea 10 tenemos la coloraci\'on encontrada.
+ \item Tiempo en segundos según función provista en el proyecto.
 \end{enumerate}
 Si Brelaz-Interchange arroja una cota superior igual a la inferior
 entonces el algoritmo de enumeración implícita no se ejecuta.
@@ -711,6 +711,226 @@ encontrada debe ser la \'optima encontrada.
 
 
 \subsection{Tabla de resultados}
+A continuaci\'on se presentan las tablas de resultados. Se dar\'an ahora
+las instrucciones para interpretar estas tablas y las descripciones de
+las instancias con las que se experiment\'o.
+
+\subsubsection{Leyenda de las tablas de resultados}
+\indent En la cabezera de la tabla se encuentra el tipo de instancia
+seguida de una expresi\'on regular encerrada entre par\'entesis
+que indica el nombre que tienen todos los archivos pertenecientes
+a dicha instancia.
+
+\indent Los nombres de las instancias est\'an escritos de la siguiente forma:
+\begin{itemize}
+ \item Primero, entre par\'etesis, el n\'umero de nodos y la densidad
+       separados por un espacio. En caso de no conocerse la densidad se
+       pondr\'a el n\'umero de lados precedido por un '?'
+ \item Despu\'es de esta informaci\'on est\'a el nombre del archivo con
+       la instancia probada.
+ \item Debajo de los nombres de las instancias tenemos los campos donde
+       se encuentran los resultados de los algoritmos analizados.
+\end{itemize}
+
+\indent Para el algoritmo DSATUR+Interchange:
+\begin{itemize}
+ \item El primer n\'umero es la cantidad de colores que utiliz\'o el
+       algoritmo para la instancia dada.
+ \item El segundo n\'umero esta seguido siempre por una letra 'k' y es el n\'umero crom\'atico de la
+       instancia. En caso de que no se conozca el n\'umero crom\'atico,
+       se colocar\'a un '?'. Si se conoce el n\'umero crom\'atico gracias a
+       referencias externas y no debido a la salida del algoritmo de
+       enumeraci\'on impl\'icita, se colocar\'a un '*' al final del
+       mismo.
+ \item Por \'ultimo tenemos el tiempo en segundos que tard\'o el algorimo en
+       encontrar la soluci\'on. Si el tiempo que tard\'o el algorimo es
+       menor a 0,01 segundos, se indicar\'a que el algoritmo tard\'o
+       cero segundos. Solo se colocan dos cifras decimales para los tiempos.
+\end{itemize}
+
+\indent Para el algoritmo DSATUR* y DSATUR+ (Enumeraci\'on impl\'icita):
+\begin{itemize}
+ \item El primer n\'umero es el n\'umero crom\'atico \'optimo
+       determinado por el algoritmo.
+ \item El segundo n\'umero esta seguido siempre por una letra 'b' y es
+       el n\'umero de backtracks que hizo el algoritmo mientras buscaba
+       la soluci\'on.
+ \item Por \'ultimo tenemos el tiempo en segundos que tard\'o el algorimo en
+       encontrar la soluci\'on. Si el tiempo que tard\'o el algorimo es
+       menor a 0,01 segundos, se indicar\'a que el algoritmo tard\'o
+       cero segundos. Solo se colocan dos cifras decimales para los
+       tiempos.
+ \item En caso de que el algoritmo halla tardado m\'as de 5 minutos, el
+       campo s\'olo tendr\'a el texto ``Tiempo excedido''.
+\end{itemize}
+
+\indent Las instancias en las cuales se ejecut\'o el algoritmo de
+enumeraci\'on impl\'icita tienen su nombre en negritas.
+\indent Aquellas instancias para las cuales Brelaz+Interchange estan
+tienen su nombre en letra cursiva.
+\indent Aquellas instancias que tardar\'on m\'as de 5 minutos tienen el
+texto ``Tiempo excedido'' en letra roja en el campo del algoritmo de
+enumeraci\'on impl\'icita.
+\indent Aquellas instancias donde el algoritmo de enumeraci\'on
+impl\'icita encontr\'o una mejor soluci\'on que Brelaz+Interchange
+tienen un fondo amarillo.
+
+\subsubsection{Resumen de resultados}
+Para el algoritmo DSATUR+:\\
+\textbf{Instancias para las cuales el algoritmo DSATUR+ se activa}
+\begin{itemize}
+ \item 12-0,3-3.col
+ \item 12-0,5-3.col
+ \item 14-0,5-2.col
+ \item 14-0,5-3.col
+ \item 16-0,5-3.col
+ \item 18-0,3-3.col
+ \item 18-0,5-1.col
+ \item 20-0,1-2.col
+ \item 20-0,5-2.col
+ \item 20-0,7-1.col
+ \item fpsol2.i.1.col
+ \item fpsol2.i.2.col
+ \item fpsol2.i.3.col
+ \item le450\_15a.col
+ \item le450\_15b.col
+ \item le450\_15c.col
+ \item le450\_15d.col
+ \item le450\_25c.col
+ \item le450\_25d.col
+ \item le450\_5a.col
+ \item le450\_5b.col
+ \item le450\_5c.col
+ \item le450\_5d.col
+ \item miles1000.col
+ \item miles1500.col
+ \item myciel3.col
+ \item myciel4.col
+ \item myciel5.col
+ \item myciel6.col
+ \item myciel7.col
+ \item queen6\_6.col
+ \item queen7\_7.col
+ \item queen8\_8.col
+ \item queen8\_12.col
+ \item queen9\_9.col
+ \item queen10\_10.col
+ \item queen11\_11.col
+ \item queen12\_12.col
+ \item queen13\_13.col
+ \item queen14\_14.col
+ \item queen15\_15.col
+ \item queen16\_16.col
+ \item school1.col
+ \item school1\_nsh.col
+\end{itemize}
+\indent Total:\textbf{44}\\
+
+\textbf{Instancias que tardan mas de 5 minutos}
+\begin{itemize}
+ \item fpsol2.i.1.col
+ \item fpsol2.i.2.col
+ \item fpsol2.i.3.col
+ \item le450\_15a.col
+ \item le450\_15b.col
+ \item le450\_15c.col
+ \item le450\_15d.col
+ \item le450\_25c.col
+ \item le450\_25d.col
+ \item le450\_5a.col
+ \item le450\_5b.col
+ \item le450\_5c.col
+ \item le450\_5d.col
+ \item myciel6.col
+ \item myciel7.col
+ \item queen8\_12.col
+ \item queen9\_9.col
+ \item queen10\_10.col
+ \item queen11\_11.col
+ \item queen12\_12.col
+ \item queen13\_13.col
+ \item queen14\_14.col
+ \item queen15\_15.col
+ \item queen16\_16.col
+ \item school1.col
+ \item school1\_nsh.col
+\end{itemize}
+\indent Total:\textbf{26}\\
+
+\textbf{Instancias para las cuales el algoritmo DSATUR+ da mejores resultados que Brelaz+Interchange}
+\begin{itemize}
+ \item 12-0,5-3.col
+ \item 18-0,3-3.col
+ \item queen6\_6.col
+ \item queen7\_7.col
+ \item queen8\_8.col
+\end{itemize}
+\indent Total:\textbf{5}\\
+
+\textbf{Resumen}
+\begin{itemize}
+ \item 66 instancias probadas.
+ \item 40 instancias resueltas
+ \item 26 instancias no resueltas.
+ \item 22 instancias resueltas por Brelaz+Interchange.
+ \item 18 instancias resueltas por DSATUR+.
+ \item 5 instancias donde DSATUR+ mejora la cota superior de
+       Brelaz+Interchange.
+ \item 35 instancias donde la cota superior propuesta por
+       Brelaz+Interchange era el n\'umero crom\'atico.
+\end{itemize}
+\indent Porcentaje de instancias resuelas: \textbf{60,6\%}
+
+\subsubsection{Descripci\'on de instancias}
+\begin{itemize}
+ \item \textbf{Grafos aleatorios usados en el proyecto 1}: son los
+       grafos generados aleatoriamente en el proyecto 1 para los cuales
+       Brelaz+Interchange arrojaba cotas superior e inferior distintas.
+ \item \textbf{Grafos de asignaci\'on de registros}: grafos usados para
+       la asignaci\'on de registros a variables durante la ejecuci\'on
+       de programas.\\
+       http://mat.gsia.cmu.edu/COLOR/instances.html#XXREG
+ \item \textbf{Grafos de relaciones de personajes literarios}: cada nodo
+       representa un personaje de una obra literaria. Dos nodos estan
+       conectados si esos dos personajes se encuentran en el libro.\\
+       http://mat.gsia.cmu.edu/COLOR/instances.html#XXSGB
+ \item \textbf{Grafo de temporada de f\'utbol americano}: cada nodo
+       representa un equipo universitario de f\'utbol americano. Dos
+       nodos est\'an conectados si esos dos equipos se enfrentaron
+       durante la temporada.\\
+       http://mat.gsia.cmu.edu/COLOR/instances.html#XXSGB
+ \item \textbf{Grafos geom\'etricos}: cada nodo representa una ciudad de
+       los Estado Unidos, dos nodos est\'an conectados el costo
+       distancia/gasolina entre las ciudades es lo suficientemente
+       peque\~no. El criterio para decidir que tan peque\~no es
+       suficientemente pequen\~no no lo conocemos.\\
+       http://mat.gsia.cmu.edu/COLOR/instances.html#XXSGB
+ \item \textbf{Grafos del problema de las N reinas}: cada nodo
+       representa un escaque en un tablero de ajedrez. Dos nodos est\'an
+       conectados si alguna l\'inea de escaques horizontal, vertical o
+       diagonal los une.\\
+       http://mat.gsia.cmu.edu/COLOR/instances.html#XXSGB
+ \item \textbf{Grafos de planificaci\'on de clases}: cada nodo
+       representa una clase. Dos nodos est\'an conectados si esas clases
+       se dictan al mismo tiempo.
+       http://mat.gsia.cmu.edu/COLOR/instances.html#XXSCH
+ \item \textbf{Grafos de Mycielski}: grafos basados en la
+       Transformaci\'on de Mycielski. Estos grafos tienen clique
+       m\'axima de dos pero n\'umero crom\'atico creciente.\\
+       http://mat.gsia.cmu.edu/COLOR/instances.html#XXMYC
+ \item \textbf{Grafos de Leighton}: grafos con n\'umero crom\'atico
+       asegurado y n\'umero de nodos constante. El n\'umero al final del
+       nombre del archivo es el n\'umero crom\'atico del grafo. Estos
+       grafos est\'an descritos en detalle en:
+       \begin{verbatim}
+	F.T. Leighton.	
+	Journal of Research of the National Bureau of Standards,  
+	vol. 84, no. 6,  Nov-Dec 1979, pp 489-505.
+       \end{verbatim}
+       http://mat.gsia.cmu.edu/COLOR/instances.html#XXLEI
+\end{itemize}
+
+
 \newpage
 
 \section{Conclusiones y recomendaciones}
